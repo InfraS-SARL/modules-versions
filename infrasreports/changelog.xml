@@ -1,0 +1,102 @@
+<changelog>
+	<Version Number="8.0.0" MonthVersion="2019-03">
+		<change type='add'>Initial release</change>
+	</Version>
+	<Version Number="8.0.4" MonthVersion="2020-03">
+		<change type='add'>Compatibilité Dolibarr 10.0.x</change>
+		<change type='add'>Nouveau rapport de projets</change>
+	</Version>
+	<Version Number="8.0.5" MonthVersion="2020-03">
+		<change type='add'>Compatibilité Dolibarr 11.0.x</change>
+		<change type='add'>Rapport de projets : Ajout colonne 'Delta facturation'</change>
+		<change type='add'>Menu : Déplacement vers le menu 'Projet'</change>
+	</Version>
+	<Version Number="14.0.1" MonthVersion="2024-01">
+		<change type='chg'>Dolibarr 14.0.x minimum</change>
+		<change type='chg'>PHP 7.0.0 minimum</change>
+		<change type='chg'>Rapport de projets => Modification des filtres de date (date début / date fin pour chaque champ)</change>
+		<change type='chg'>Rapport de projets => Modification du calcul de la colonne 'Marge' (de montant opprtunité - budget à factures - achat)</change>
+		<change type='add'>Rapport de projets => Compatibilité avec le module externe ListInCSV (ATM consulting)</change>
+	</Version>
+	<Version Number="14.1.0" MonthVersion="2024-05">
+		<change type='fix'>Compatibilité PHP 8.1</change>
+		<change type='fix'>Amélioration de la gestion des versions déclarées du module</change>
+		<change type='add'>Gestion des versions minimum / maximum de PHP centralisée dans le fichier changelog</change>
+	</Version>
+	<Version Number="14.2.0" MonthVersion="2024-07">
+		<change type='add'>Nouveau fichier data.sql</change>
+		<change type='add'>Nouvel option pour utiliser les dates d'échéances plutôt que les dates de documents dans les filtres de factures</change>
+	</Version>
+	<Version Number="14.2.1" MonthVersion="2024-08">
+		<change type='add'>Ajout de la créance dans le rapport de facture regoupées par client et par période => sur le tooltip, en lecture directe et totalisée</change>
+		<change type='add'>Ajout de la créance dans le rapport de facture fournisseur regoupées par fournisseur et par période => sur le tooltip, en lecture directe et totalisée</change>
+		<change type='add'>Ajout d'une colonne total ligne dans les rapports de facture regoupées par client et par période et de facture fournisseur regoupées par fournisseur et par période</change>
+	</Version>
+	<Version Number="14.2.2" MonthVersion="2024-08">
+		<change type='fix'>Compatibilité de l'analyse des projets avec Dolibarr v18 +</change>
+	</Version>
+	<Version Number="15.0.0" MonthVersion="2024-08">
+		<change type='fix'>Clean a lot of few small problems - improvements</change>
+		<change type='chg'>Compatibilité Dolibarr : Abandon de Dolibarr v14</change>
+		<change type='chg'>Compatibilité Dolibarr : Amélioration de la compatibilité v19</change>
+		<change type='chg'>Compatibilité Dolibarr : Amélioration de l'utilisation des fonctions Dolibarr</change>
+		<change type='fix'>Configuration => Amélioration de la compatibilité avec PHP 8.1 et supérieur (typage des variables extraites du changelog.xml)</change>
+	</Version>
+	<Version Number="15.0.1" MonthVersion="2024-08">
+		<change type='chg'>Amélioration du CSS</change>
+	</Version>
+	<Version Number="15.0.2" MonthVersion="2024-08">
+		<change type='fix'>Amélioration de l'expérience utilisateur pour l'analyse des projets (gestion des filtres et des colonnes)</change>
+		<change type='fix'>Amélioration des calculs de créance des rapports de facture regoupées par client et par période et de facture fournisseur regoupées par fournisseur et par période (meilleur prise en compte des avoirs transformés en crédit disponible)</change>
+	</Version>
+	<Version Number="15.0.3" MonthVersion="2024-08">
+		<change type='fix'>Traductions => Ajout / correction des traductions en anglais et espagnol</change>
+		<change type='fix'>Rapports de facture regoupées par client et par période => correction d'une erreur d'affichage (total des totaux de lignes doublé)</change>
+		<change type='chg'>Utilisation Des dates d'échéances plutôt que les dates de documents dans les filtres de factures => Affichage du choix sur le tableau de résultat</change>
+	</Version>
+	<Version Number="15.0.4" MonthVersion="2024-08">
+		<change type='chg'>Amélioration du fichier readme</change>
+	</Version>
+	<Version Number="15.1.0" MonthVersion="2025-03">
+		<change type='fix'>Compatibilité PHP 8.1 +</change>
+		<change type='fix'>Amélioration de l'affichage des tableaux (largeur de colonnes, répartition) => CSS</change>
+		<change type='chg'>Amélioration des traductions</change>
+		<change type='add'>Ajout d'une option pour afficher le SIREN des tiers sur le regroupement des factures fournisseurs par tiers et par mois => Aide à la déclaration d'honoraires ou de commissions (DAS 2)</change>
+	</Version>
+	<Version Number="15.1.1" MonthVersion="2025-06">
+		<change type='chg'>Compatibilité PHP 8.1 +</change>
+		<change type='chg'>Clean code</change>
+		<change type='chg'>Mise à jour du logo</change>
+		<change type='chg'>Mise à jour du fichier readme</change>
+	</Version>
+	<Version Number="15.1.2" MonthVersion="2025-06">
+		<change type='fix'>Correction du contrôle de version</change>
+		<change type='chg'>Amélioration du process de téléchargement du fichier changelog</change>
+	</Version>
+	<Version Number="15.1.3" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de la compatibilité PHP8.1 et supérieur</change>
+		<change type='chg'>Amélioration de l'affichage des paramètres (en fonction des choix utilisateur et du thème appliqué dans Dolibarr)</change>
+	</Version>
+	<Version Number="15.1.4" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de la compatibilité CSS avec les thèmes Dolibarr</change>
+	</Version>
+	<Version Number="15.2.0" MonthVersion="2026-02">
+		<change type='fix'>Sécurité : échappement des URL de formulaires basées sur PHP_SELF dans les pages admin, rapports et bibliothèques (prévention XSS réfléchi)</change>
+		<change type='fix'>Sécurité : échappement de l'affichage de SERVER_SOFTWARE dans les informations techniques</change>
+		<change type='fix'>Paramètres : isolation du cookie JS de l'état des panneaux (infrasreports_tblPSexp au lieu de tblPSexp) pour éviter les collisions inter-modules</change>
+		<change type='fix'>Paramètres : variable cookieName déplacée au scope script pour corriger la persistance de l'état des panneaux après soumission de formulaire</change>
+		<change type='chg'>Nouveau lien vers le Wiki InfraSReports</change>
+		<change type='chg'>Amélioration du CSS</change>
+		<change type='add'>Ajout du fichier CLAUDE.md pour documentation contextuelle du module</change>
+	</Version>
+	<Version Number="15.3.0" MonthVersion="2026-03">
+		<change type='chg'>Amélioration du descripteur CLAUDE.md : ajout des Notes Techniques</change>
+		<change type='add'>Ajout d'un test de comparaison de la version majeur de Dolibarr supportée (avertissement si version non supportée)</change>
+	</Version>
+	<Version Number="15.3.1" MonthVersion="2026-03">
+		<change type='fix'>Compatibilité avec PHP 8.4</change>
+	</Version>
+	<InfraS Downloaded="20260301"/>
+	<Dolibarr minVersion="15.0.0" maxVersion="24.x.x"/>
+	<PHP minVersion="7.4" maxVersion="8.4"/>
+</changelog>

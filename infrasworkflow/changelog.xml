@@ -1,0 +1,153 @@
+<changelog>
+	<Version Number="18.0.0" MonthVersion="2025-06">
+		<change type='add'>Initiale release.</change>
+	</Version>
+	<Version Number="18.0.1" MonthVersion="2025-06">
+		<change type='fix'>Correction du contrôle de version</change>
+		<change type='chg'>Amélioration du process de téléchargement du fichier changelog</change>
+	</Version>
+	<Version Number="18.1.0" MonthVersion="2025-07">
+		<change type='add'>Ajout de la gestion centralisée des attributs supplémentaires</change>
+	</Version>
+	<Version Number="18.1.1" MonthVersion="2025-07">
+		<change type='fix'>Correction de la création automatique de la 1ère facture d'acompte en cas de signature électronique du devis (UpToSign)</change>
+		<change type='chg'>Gestion des attributs supplémentaires => Ajout d'une fonction pour cocher/décocher toutes les cases à cocher de la fenêtre popup de confirmation en même temps</change>
+	</Version>
+	<Version Number="18.2.0" MonthVersion="2025-07">
+		<change type='add'>Ajout d'une option de test de compatibilité des attributs supplémentaires pour Dolibarr v20+</change>
+	</Version>
+	<Version Number="18.3.0" MonthVersion="2025-07">
+		<change type='add'>Ajout d'une option de tri pour n'afficher que les attributs inactifs (complète le filtre d'affichage => Exhaustif, Visible, Caché, Inactif)</change>
+	</Version>
+	<Version Number="18.3.1" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de l'affichage des paramètres (en fonction des choix utilisateur et du thème appliqué dans Dolibarr)</change>
+	</Version>
+	<Version Number="18.3.2" MonthVersion="2025-07">
+		<change type='chg'>Ajout de tests de compatibilité des attributs supplémentaires lors des mises à jour dans une chaine de propagation</change>
+	</Version>
+	<Version Number="18.3.3" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de la compatibilité PHP8.1 et supérieur</change>
+	</Version>
+	<Version Number="18.3.4" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de la compatibilité CSS avec les thèmes Dolibarr</change>
+	</Version>
+	<Version Number="18.3.5" MonthVersion="2025-08">
+		<change type='chg'>Nettoyage du code et modification de MAIN_DB_PREFIX par la fonction prefix()</change>
+	</Version>
+	<Version Number="18.4.0" MonthVersion="2025-08">
+		<change type='add'>Compatibilité avec Dolibarr v22</change>
+	</Version>
+	<Version Number="18.4.1" MonthVersion="2025-08">
+		<change type='fix'>Correction du lien vers le Dolistore</change>
+	</Version>
+	<Version Number="18.5.0" MonthVersion="2025-09">
+		<change type='Add'>Ajout d'une boutton "scan" pour trouver les anomalies des extrafields.</change>
+		<change type='Add'>Ajout d'une boutton "Nettoyer" pour nettoyer les anomalies des extrafields suivants les types(Type Orphelins: colonne ou ligne d'extrafields manquante dans les tables. Type Désactivé: extrafields des modules externe desactivé. Type Effacé: extrafields des modules interne effacés).</change>
+	</Version>
+	<Version Number="18.5.1" MonthVersion="2025-09">
+		<change type='add'>Ajout d'une option pour contrôler l'ouverture d'un compte client.</change>
+	</Version>
+	<Version Number="18.6.0" MonthVersion="2025-09">
+		<change type='add'>Rendre les champs : Code client, Assujetti à la TVA, Numéro de TVA, Code comptable, Mode de règlement, Condition de règlement, Date de signature, Siret, Email client, pays client, Maison mère, Contact/ Adresse client obligatoires pour l'ouverture des comptes clients</change>
+		<change type='add'>Ajout d'une option pour créer une commande fournisseur à partir de la facture fournisseur</change>
+		<change type='add'>Ajout d'une option pour désactiver le type de tiers Prospect/Client </change>
+		<change type='chg'>Lors de la création d'une commande fournisseur à partir d'une facture fournisseur, la commande est automatiquement validée, mise en approuvée et facturée</change>
+		<change type='chg'>Obliger la saisie du champ Code comptable (vente, vente intra-communautaire, vente à l'export, achat, ahat intra-communautaire, achat import), du champ Nomenclature douanière ou Code SH, poids, pays d'origine, zone de stockage, entrepôt par defaut pour valider une fiche produit</change>
+	</Version>
+	<Version Number="18.6.1" MonthVersion="2025-10">
+		<change type='fix'>Correction du contrôle d'ouverture d'un compte client => suppression des boutons (créer commandes, factures) si le tiers est Prospect ou Prospect|Client (uniquement si l'option est activé)</change>
+	</Version>
+	<Version Number="18.7.0" MonthVersion="2025-10">
+		<change type='add'>Afficher les lignes produits de la source (devis, commande, facture) vers le contrat lors de la création du contrat depuis cette source</change>
+		<change type='add'>Nouveau Onglet "Produits du contrat" dans le contrat pour afficher les produits associés</change>
+	</Version>
+	<Version Number="18.8.0" MonthVersion="2025-10">
+		<change type='add'>Ajout d'une option pour autoriser l'envoi d'email pour les contrats provisoires</change>
+	</Version>
+	<Version Number="18.8.1" MonthVersion="2025-10">
+		<change type='fix'>Correction de l'affichage des conditions d'activation d'un attribut supplémentaire lors d'une mise à jour</change>
+		<change type='fix'>Correction d'une erreur empêchant la modification d'un attribut supplémentaire si les données enregistrées étaient un entier</change>
+	</Version>
+	<Version Number="18.9.0" MonthVersion="2025-11">
+		<change type='add'>Ajout d'une option pour choisir les attributs supplémentaires à ne pas transférer du devis vers les factures d'acompte</change>
+	</Version>
+	<Version Number="18.9.1" MonthVersion="2025-11">
+		<change type='chg'>Améliore la solidité du code</change>
+	</Version>
+	<Version Number="18.9.2" MonthVersion="2025-12">
+		<change type='chg'>Amélioration de la compatibilité avec les fonctions natives de Dolibarr (La méthode de selection des factures liées à un devis est récursive => L'option de liaison automatique des acomptes à la facture finale doit effectuer cette recherche en s'arrêtant au premier niveau)</change>
+	</Version>
+	<Version Number="18.10.0" MonthVersion="2025-12">
+		<change type='chg'>Améliore la solidité du code et les commentaires</change>
+		<change type='add'>Ajout d'une option pour régénérer automatiquement la facture lors de la classification "payée"</change>
+	</Version>
+	<Version Number="18.11.0" MonthVersion="2026-01">
+		<change type='add'>Ajout d'une option pour activer automatiquement les services à la validation du contrat</change>
+	</Version>
+	<Version Number="18.11.1" MonthVersion="2026-02">
+		<change type='fix'>Correction d'une erreur empêchant la modification des attributs supplémentaires</change>
+		<change type='add'>Ajout de textes d'aide pour les attributs supplémentaires concernant l'utilisation des guillemets dans les expressions calculées</change>
+	</Version>
+	<Version Number="18.11.2" MonthVersion="2026-02">
+		<change type='fix'>Correction d'une erreur empêchant la liaison de la facture d'acompte sur la facture finale</change>
+	</Version>
+	<Version Number="18.12.0" MonthVersion="2026-02">
+		<change type='chg'>Amélioration de la compatibilité avec les versions 18 à 22 de Dolibarr</change>
+		<change type='add'>Ajout d'une option de sélection du signataire par défaut des contrats (utilisateur sélectionné par défaut dans le champ de signature commerciale des contrats)</change>
+		<change type='add'>Ajout d'une option de sélection des attributs supplémentaires à copier de la facture vers le contrat lors de la liaison d'une facture standard avec ce contrat</change>
+	</Version>
+	<Version Number="18.12.1" MonthVersion="2026-02">
+		<change type='fix'>Correction d'une erreur empêchant la modification des attributs supplémentaires lorsqu'il n'y a pas de liste de propagation pour les attributs de ligne</change>
+	</Version>
+	<Version Number="18.12.2" MonthVersion="2026-02">
+		<change type='chg'>Amélioration de la compatibilité avec les branches 18 à 22 de Dolibarr</change>
+		<change type='chg'>Nouveau lien vers le Wiki InfraSWorkflow</change>
+		<change type='add'>Ajout de la compatibilité avec Dolibarr v23.0.x</change>
+		<change type='add'>Ajout d'un fichier descripteur CLAUDE.md</change>
+	</Version>
+	<Version Number="18.12.3" MonthVersion="2026-02">
+		<change type='fix'>Correction d'une chaîne non traduite lors de la création d'une commande fournisseur depuis une facture fournisseur</change>
+		<change type='chg'>Amélioration de l'onglet "Produits du contrat" avec la gestion complète des attributs supplémentaires et le réordonnancement des lignes</change>
+		<change type='chg'>Séparation de l'affichage des produits et des services dans la fiche contrat</change>
+		<change type='add'>Ajout d'une option pour normaliser automatiquement les rangs des lignes de produits des contrats</change>
+		<change type='add'>Ajout de la duplication des lignes de produits dans l'onglet "Produits du contrat"</change>
+		<change type='add'>Ajout d'une option de sélection des attributs supplémentaires de lignes à afficher dans l'onglet "Produits du contrat"</change>
+	</Version>
+	<Version Number="18.12.4" MonthVersion="2026-02">
+		<change type='fix'>Sécurité : Échappement SQL $db->escape() et cast (int) sur 5 variables dans la bibliothèque principale (infrasworkflow.lib.php)</change>
+		<change type='fix'>Correction de la perte de description lors de la modification d'une ligne dans l'onglet "Produits du contrat"</change>
+	</Version>
+	<Version Number="18.13.0" MonthVersion="2026-03">
+		<change type='chg'>Amélioration du descripteur CLAUDE.md : ajout des Notes Techniques</change>
+		<change type='add'>Ajout d'un test de comparaison de la version majeur de Dolibarr supportée (avertissement si version non supportée)</change>
+	</Version>
+	<Version Number="18.13.1" MonthVersion="2026-03">
+		<change type='fix'>Compatibilité avec PHP 8.4</change>
+	</Version>
+	<Version Number="18.14.0" MonthVersion="2026-03">
+		<change type='add'>Ajout d'une option pour choisir l'attribut supplémentaire de type date du contrat dans lequel copier la date de la facture standard liée </change>
+	</Version>
+	<Version Number="18.14.1" MonthVersion="2026-03">
+		<change type='fix'>Simplification de la fonction infrasworkflow_is_substitution_page() : utilisation de strpos() au lieu de regex complexe</change>
+		<change type='chg'>Ajout de la fonction infrasworkflow_getSubstitutionRedirectUrl() pour gérer les redirections avec filtrage des paramètres GET (exclusion du token CSRF)</change>
+	</Version>
+	<Version Number="18.15.0" MonthVersion="2026-04">
+		<change type='add'>Ajout d'une option pour permettre de changer le tiers associé au contrat lors de sa création depuis un devis ou une commande (constante CHANGE_TIERS_CONTRACT_FROM_PROPAL_COMMANDE)</change>
+		<change type='add'>Ajout d'une option de catégorie parente pour la gestion des produits dans les contrats (alternative à la sélection d'attributs supplémentaires de lignes)</change>
+	</Version>
+	<Version Number="18.15.1" MonthVersion="2026-04">
+		<change type='chg'>Compatibilité Dolibarr v22 à v24</change>
+	</Version>
+	<Version Number="18.15.2" MonthVersion="2026-04">
+		<change type='fix'>Correction d'une erreur de structure dans le template objectline_create_24.tpl.php et objectline_create_23.tpl.php</change>
+	</Version>
+	<Version Number="18.16.0" MonthVersion="2026-05">
+		<change type='chg'>Drag and drop documents joints : ajout d'une invite visible (icône + texte "ou déposez un fichier ici") après le titre du tableau pour informer l'utilisateur de la zone de drop</change>
+		<change type='chg'>Drag and drop documents joints : forçage du z-index du message "Déposez le fichier..." au tout premier plan (99999) pour garantir sa visibilité au-dessus des autres calques</change>
+		<change type='add'>Ajout d'une option pour activer une zone de glisser-déposer (drag and drop) sur la barre de titre du tableau "Fichiers joints" des onglets "Documents joints" de tous les objets (constante INFRASWORKFLOW_DOCUMENTS_DRAGDROP)</change>
+		<change type='add'>Ajout d'une sous-option (visible si la zone de drag and drop est activée) pour conserver le nom original du fichier lors d'un glisser-déposer sur un produit ou service (désactivation du préfixage automatique par la référence) - constante INFRASWORKFLOW_DOCUMENTS_DRAGDROP_PRODUCT_NO_MASK et endpoint AJAX dédié infrasworkflow/ajax/dragdropupload.php</change>
+	</Version>
+	<InfraS Downloaded="20260506"/>
+	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
+	<PHP minVersion="7.4" maxVersion="8.4"/>
+</changelog>

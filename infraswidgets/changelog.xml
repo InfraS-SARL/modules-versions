@@ -1,0 +1,113 @@
+<changelog>
+	<Version Number="1.0.0" MonthVersion="2022-07">
+		<change type='add'>Initial release</change>
+	</Version>
+	<Version Number="1.0.1" MonthVersion="2022-08">
+		<change type='add'>Ajout d'un widget rapport de rentabilité (marges réalisées par mois)</change>
+	</Version>
+	<Version Number="1.0.2" MonthVersion="2022-08">
+		<change type='add'>Ajout d'une option pour gérer le nombre d'années calculées dans le widget rapport de rentabilité</change>
+	</Version>
+	<Version Number="14.0.0" MonthVersion="2024-05">
+		<change type='fix'>Amélioration de la gestion des versions déclarées du module</change>
+		<change type='fix'>Avertissement lié à la version maximum de Dolibarr</change>
+		<change type='fix'>Gestion des versions : Amélioration de l'affichage suivant différent cénarios (changelog téléchargé identique au local, module désactivé par Dolibarr)</change>
+		<change type='chg'>Nettoyage de code</change>
+		<change type='chg'>Compatibilité PHP8.1</change>
+		<change type='chg'>Modification de la numérotation => (version minimum requise de Dolibarr) . (ajout de fonction) . (correctif)</change>
+		<change type='chg'>Nettoyage du code plus ancien (pour des versions de Dolibarr antérieur à la version minimum supportée)</change>
+		<change type='add'>Ajout d'un menu vers l'onglet "Changelog" => Facilite l'utilisation du lien vers le support</change>
+		<change type='add'>Compatibilité Dolibarr : Ajout d'un paramètre de gestion de la version maximale compatible</change>
+		<change type='add'>Compatibilité : Ajout de la compatibilité avec Dolibarr v19.0.x</change>
+		<change type='add'>Gestion des versions minimum / maximum de PHP centralisée dans le fichier changelog</change>
+	</Version>
+	<Version Number="14.1.0" MonthVersion="2025-03">
+		<change type='add'>Ajout de 2 widgets graphiques => Montant des factures brouillon par mois + montant des factures validées, en cours de règlement et/ou payée (pour les clients et pour les fournisseurs)</change>
+	</Version>
+	<Version Number="15.0.0" MonthVersion="2025-03">
+		<change type='chg'>Abandon de la version 14 de Dolibarr</change>
+	</Version>
+	<Version Number="15.0.1" MonthVersion="2025-05">
+		<change type='chg'>Nettoyage du code</change>
+		<change type='chg'>Compatibilité améliorée avec PHP8.2 et versions ultérieures</change>
+		<change type='chg'>Amélioration de la lisibilité du code</change>
+	</Version>
+	<Version Number="15.0.2" MonthVersion="2025-06">
+		<change type='fix'>Correction du contrôle de version</change>
+		<change type='chg'>Amélioration du process de téléchargement du fichier changelog</change>
+	</Version>
+	<Version Number="15.0.3" MonthVersion="2025-06">
+		<change type='chg'>Mise à jour du logo et de l'URL du Dolistore</change>
+	</Version>
+	<Version Number="15.0.4" MonthVersion="2025-06">
+		<change type='chg'>Mise à jour du fichier readme</change>
+	</Version>
+	<Version Number="15.0.5" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de la compatibilité PHP8.1 et supérieur</change>
+		<change type='chg'>Amélioration de l'affichage des paramètres (en fonction des choix utilisateur et du thème appliqué dans Dolibarr)</change>
+	</Version>
+	<Version Number="15.0.6" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de la compatibilité CSS avec les thèmes Dolibarr</change>
+	</Version>
+	<Version Number="15.0.7" MonthVersion="2025-08">
+		<change type='chg'>Nettoyage du code et modification de MAIN_DB_PREFIX par la fonction prefix()</change>
+	</Version>
+	<Version Number="15.1.0" MonthVersion="2025-08">
+		<change type='add'>Compatibilité avec Dolibarr v22</change>
+	</Version>
+	<Version Number="15.1.1" MonthVersion="2025-08">
+		<change type='fix'>Correction du lien vers le Dolistore</change>
+	</Version>
+	<Version Number="18.0.0" MonthVersion="2025-11">
+		<change type='fix'>Correction des erreurs de calcul des KPIs et amélioration de la logique d'affichage par défaut</change>
+		<change type='fix'>Résolution des problèmes d'affichage des graphiques Chart.js et de persistance des filtres</change>
+		<change type='chg'>Nettoyage et refactorisation du code pour meilleure maintenabilité et performances optimisées</change>
+		<change type='chg'>Abandon de la compatibilité avec les versions de Dolibarr inférieures à 18.0.0</change>
+		<change type='add'>Nouveau widget "Dashboard de Suivi Commercial" avec gestion complète des objectifs et KPIs en temps réel</change>
+		<change type='add'>Interface d'administration pour la gestion des objectifs commerciaux avec import/export CSV</change>
+		<change type='add'>Graphiques interactifs Chart.js : évolution mensuelle, progression trimestrielle et comparaison par utilisateur</change>
+		<change type='add'>Vue individuelle avec objectifs personnels et vue équipe avec tableau comparatif des commerciaux</change>
+		<change type='add'>Calcul automatique des KPIs : CA réalisé, prospects créés, propositions émises et taux de conversion</change>
+		<change type='add'>Double mode de saisie : objectif annuel auto-divisé en trimestres ou saisie trimestrielle manuelle</change>
+		<change type='add'>Barres de progression avec code couleur automatique (vert/orange/rouge) selon seuils configurables</change>
+		<change type='add'>Filtres intelligents avec mémorisation par cookies (année, trimestre, mois, vue individuelle/équipe)</change>
+		<change type='add'>Job CRON pour mise à jour automatique du cache des réalisations commerciales</change>
+	</Version>
+	<Version Number="18.0.1" MonthVersion="2026-02">
+		<change type='fix'>Correction et nettoyage du code pour la mise en cache des données des réalisations commerciales</change>
+		<change type='fix'>Correction et amélioration de la méthode de mise en cache pour gagner en performance</change>
+		<change type='chg'>Nouveau lien vers le Wiki InfraSWorkflow</change>
+		<change type='chg'>Amélioration/correction des traductions</change>
+		<change type='add'>Ajout d'un fichier descripteur CLAUDE.md</change>
+	</Version>
+	<Version Number="18.0.2" MonthVersion="2026-02">
+		<change type='chg'>Amélioration du CSS</change>
+	</Version>
+	<Version Number="18.0.3" MonthVersion="2026-02">
+		<change type='fix'>Correction du CSS (chemin des fichiers de polices de caractères)</change>
+	</Version>
+	<Version Number="18.0.4" MonthVersion="2026-02">
+		<change type='fix'>Sécurité : échappement des URL de formulaires basées sur PHP_SELF dans les pages admin et widgets (prévention XSS réfléchi)</change>
+		<change type='fix'>Sécurité : échappement des liens d'actions construits avec PHP_SELF dans l'administration des objectifs commerciaux</change>
+		<change type='fix'>Sécurité : échappement de l'affichage de SERVER_SOFTWARE dans les informations techniques</change>
+		<change type='chg'>Sécurité : renforcement de la validation du paramètre action dans le dashboard commercial (GETPOST avec type aZ09)</change>
+		<change type='chg'>Compatibilité PHP : validation officielle du support PHP 8.4</change>
+		<change type='chg'>Mise à jour des métadonnées de compatibilité PHP du module</change>
+		<change type='fix'>Paramètres : correction du bouton update_views (changement de input à button pour envoi correct de la valeur d'action)</change>
+		<change type='fix'>Paramètres : isolation du cookie JS de l'état des panneaux (infraswidgets_tblPSexp au lieu de tblPSexp) pour éviter les collisions inter-modules</change>
+		<change type='fix'>Paramètres : variable cookieName déplacée au scope script pour corriger la persistance de l'état des panneaux après soumission de formulaire</change>
+		<change type='fix'>Paramètres : noms de table rendus uniques (tblGen, tblTeam, tblIndividual) pour la persistance cookie par panneau</change>
+		<change type='add'>Traductions : clés dédiées InfraSWidgetsUpdateSQLViewsDone / InfraSWidgetsUpdateSQLViewsError (FR, EN, ES)</change>
+		<change type='add'>Paramètres : messages de succès/erreur dédiés pour l'action update_views</change>
+	</Version>
+	<Version Number="18.1.0" MonthVersion="2026-03">
+		<change type='chg'>Amélioration du descripteur CLAUDE.md : ajout des Notes Techniques</change>
+		<change type='add'>Ajout d'un test de comparaison de la version majeur de Dolibarr supportée (avertissement si version non supportée)</change>
+	</Version>
+	<Version Number="18.1.1" MonthVersion="2026-03">
+		<change type='fix'>Compatibilité avec PHP 8.4</change>
+	</Version>
+	<InfraS Downloaded="20260301"/>
+	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
+	<PHP minVersion="7.4" maxVersion="8.4"/>
+</changelog>

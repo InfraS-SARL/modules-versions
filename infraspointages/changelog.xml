@@ -1,0 +1,210 @@
+<changelog>
+	<Version Number="14.1.02" MonthVersion="2023-09">
+		<change type='add'>Version initiale</change>
+	</Version>
+	<Version Number="14.1.03" MonthVersion="2023-09">
+		<change type='chg'>Amélioration de la création de pointages par les administrateurs</change>
+		<change type='chg'>Logo et traductions</change>
+	</Version>
+	<Version Number="14.1.04" MonthVersion="2023-09">
+		<change type='add'>Ajout d'un droit => lire les pointages de tous</change>
+	</Version>
+	<Version Number="14.1.05" MonthVersion="2023-09">
+		<change type='chg'>Amélioration du menu d'accès aux paramètres pour les utilisateurs non administrateur</change>
+	</Version>
+	<Version Number="14.1.06" MonthVersion="2023-09">
+		<change type='add'>Création d'un mode de pointage administrateur => un administrateur peut pointer pour les autres utiliusateurs : il peut soit juste pointer une entrée, soit créer un enregistrement complet (Entrée + Sortie + Pause + Repas)</change>
+	</Version>
+	<Version Number="14.1.07" MonthVersion="2023-10">
+		<change type='chg'>Menu d'accès aux paramètres du module pour les utilisateurs non-administrateur => Création d'un menu général pour les modules InfraS</change>
+	</Version>
+	<Version Number="14.1.08" MonthVersion="2023-10">
+		<change type='fix'>Correction d'une erreur à la modification de l'heure d'arrivée quand aucun pointage de sortie n'est enregistré (Le temps enregistré ne tenait pas compte du fuseau horaire)</change>
+	</Version>
+	<Version Number="14.2.01" MonthVersion="2024-02">
+		<change type='chg'>Mode de pointage administrateur => un administrateur peut pointer une sortie si une entrée est déjà enregistrée</change>
+		<change type='add'>Récapitulatif par période / salarié => Ajout d'une option pour définir le type de congé sans solde</change>
+		<change type='add'>Récapitulatif par période / salarié => Ajout d'une option pour définir le(s) type(s) de congé à prendre en compte dans les calculs</change>
+	</Version>
+	<Version Number="14.3.00" MonthVersion="2024-04">
+		<change type='fix'>Correction d'une erreur de création des sauvegardes paramètres (le fichier créé ne pouvait pas être appliqué pour rétablir les paramètres)</change>
+		<change type='fix'>Compatibilité PHP 8.1</change>
+		<change type='fix'>Amélioration de la gestion des versions déclarées du module</change>
+		<change type='add'>Gestion des versions minimum / maximum de PHP centralisée dans le fichier changelog</change>
+		<change type='add'>Amélioration de l'onglet "Changelog" => Ajout d'un lien vers le support</change>
+		<change type='add'>Ajout d'un menu vers l'onglet "Changelog" => Facilite l'utilisation du lien vers le support</change>
+	</Version>
+	<Version Number="15.0.0" MonthVersion="2024-08">
+		<change type='fix'>Clean a lot of few small problems - improvements</change>
+		<change type='fix'>Configuration => Amélioration de la compatibilité avec PHP 8.1 et supérieur (typage des variables extraites du changelog.xml)</change>
+		<change type='fix'>Changelog / Support => Mise à jour des liens</change>
+		<change type='chg'>Compatibilité Dolibarr : Abandon de Dolibarr v14</change>
+		<change type='chg'>Compatibilité Dolibarr : Amélioration de l'utilisation des fonctions Dolibarr</change>
+		<change type='chg'>Compatibilité Dolibarr : Amélioration de la compatibilité Dolibarr v16, v18 et v19</change>
+		<change type='chg'>Amélioration du code => meilleur utilisation du CSS</change>
+		<change type='chg'>Paramètres : Amélioration du téléchargement du changelog</change>
+	</Version>
+	<Version Number="15.1.0" MonthVersion="2024-08">
+		<change type='add'>Pauses => Ajout d'une option pour définir un temps de pause automatiquement déduit du temps de présence (dans le cadre de la journée continue)</change>
+	</Version>
+	<Version Number="15.2.0" MonthVersion="2024-08">
+		<change type='add'>Horaires => Définition des horaires, jours ouvrables, temps de travail et temps de pause par salarié</change>
+	</Version>
+	<Version Number="15.3.0" MonthVersion="2024-09">
+		<change type='chg'>Paramètres liés aux utilisateurs => "Permettre la saisie des paniers repas" devient une option définie par utilisateur au lieu d'être globale</change>
+		<change type='add'>Contrôle de compatibilité : Ajout d'un contrôle de la version de Dolibarr en fonction de la version maximum supporté (message d'avertissement)</change>
+	</Version>
+	<Version Number="15.4.0" MonthVersion="2024-12">
+		<change type='add'>Ajout d'une option pour définir le Jour du mois utilisé comme date de fin de mois pour le regroupement des paniers repas et/ou primes journalières => exemple : le 21 pour un calcul du  21 au 20</change>
+		<change type='add'>Ajout d'une option pour activer un compteur de primes journalières => incrémentation pour chaque jour ouvré</change>
+	</Version>
+	<Version Number="15.5.0" MonthVersion="2025-01">
+		<change type='add'>Ajout d'une option pour Inclure / Exclure les congés et jours fériés dans le calcul des heures supplémentaires</change>
+		<change type='add'>Ajout de la gestion d'un compte temps pour chaque collaborateur</change>
+		<change type='add'>Ajout d'une option pour définir le type de congé utilisé pour les consommations du panier temps (récupération)</change>
+	</Version>
+	<Version Number="15.5.1" MonthVersion="2025-01">
+		<change type='chg'>Modification du tri par année pour le récapitulatif par période / salarié => la date de fin de période doit être incluse dans l'année sélectionnée</change>
+	</Version>
+	<Version Number="15.5.2" MonthVersion="2025-03">
+		<change type='fix'>Correction du calcul des primes => l'heure prise en compte pour le dernier jour de la période dans la requête doit être 23:59:59</change>
+		<change type='fix'>Amélioration de la compatibilité PHP 8.1 et supérieur</change>
+		<change type='chg'>Amélioration de la gestion du menu 'Outils' (Accès aux paramètres du module et aux demandes de support)</change>
+	</Version>
+	<Version Number="15.6.0" MonthVersion="2025-04">
+		<change type='fix'>Amélioration de la compatibilité PHP 8.1 et supérieur</change>
+		<change type='add'>Prise en compte des intervenants externes (sous-traitants travaillant sur site, intérimaires, etc.)</change>
+	</Version>
+	<Version Number="15.7.0" MonthVersion="2025-04">
+		<change type='fix'>Amélioration de la compatibilité PHP 8.1 et supérieur</change>
+		<change type='fix'>Correction de la fiche de pointage => Poste/fonction, photo du salarié(e)</change>
+		<change type='fix'>Correction des calculs et enregistrements des pointages en fonction des fuseaux horaires => l'enregistrement en base de données est désormais relatif au fuseau horaire sélectionné pour la société dans les paramètres du module</change>
+		<change type='chg'>Amélioration de la saisie des corrections => utilisateur administrateur</change>
+		<change type='chg'>Amélioration de l'apparence : CSS</change>
+		<change type='chg'>Amélioration de l'affichage des liste : "liste des pointages" et "récapitulatif par période / salarié" => conditionnement de l'affichage de la colonne des repas à l'activation de l'option correcpondante</change>
+		<change type='chg'>Amélioration des automatismes : Quand des heures de travail sont saisie le jour corespondant devient forcément ouvré</change>
+		<change type='chg'>Amélioration des processus de pointage par les administrateurs et / ou les responsables d'équipe</change>
+		<change type='add'>Ajout d'une option pour activer la prise en compte des paniers repas</change>
+		<change type='add'>Ajout d'une option pour gérer les jours fériés en fonction du pays de résidence du salarié</change>
+	</Version>
+	<Version Number="15.7.1" MonthVersion="2025-04">
+		<change type='fix'>Correction de l'affichage du temps de travail prévu pour la journée : en Heures Minutes plutôt qu'en Heures (affichage d'un entier)</change>
+		<change type='fix'>Correction d'une erreur d'enregistrement des comptes temps</change>
+		<change type='fix'>Correction d'une erreur de sauvegarde des paramètres</change>
+		<change type='chg'>Affichage du temps de pause en Heures Minutes pour une meilleure lisibilité</change>
+		<change type='chg'>Amélioration des liens de modification des paramètres pour les administrateurs</change>
+		<change type='chg'>Amélioration de la liste des pointages => Standard Dolibarr</change>
+		<change type='chg'>Amélioration de la liste des pointages => compatibilité avec le module externe ListInCSV (ATM Consulting)</change>
+	</Version>
+	<Version Number="15.7.2" MonthVersion="2025-04">
+		<change type='fix'>Compatibilité Dolibarr v21</change>
+		<change type='chg'>Amélioration de la gestion des fuseaux horaires => Ajout d'un dictionnaire caché des fuseaux acceptés en PHP</change>
+	</Version>
+	<Version Number="15.8.0" MonthVersion="2025-04">
+		<change type='add'>Ajout d'une option pour afficher le cumul d'heure mensuel (Collaborateurs non mensualisés) dans le récapitulatif par période / salarié</change>
+		<change type='chg'>Les liens vers la fiche d'un salarié ouvrent directement l'onglet de gestion du compte temps dédié aux heures supplémentaires</change>
+		<change type='chg'>Amélioration de la gestion des comptes temps (ajout de l'enregistrement de la décomposition des heures supplémentaires incluses dans le compte temps) => permet de retrouver le nombre d'heures associées à chacun des 2 paliers d'heures supplémentaires</change>
+	</Version>
+	<Version Number="15.9.0" MonthVersion="2025-04">
+		<change type='fix'>Inclusion des liens de bibliothèques manquants</change>
+		<change type='add'>Ajout d'une option pour afficher un lien de pointage dans le message du jour</change>
+	</Version>
+	<Version Number="15.10.0" MonthVersion="2025-05">
+		<change type='fix'>Correction du calcul des équivalences sur la fenêtre popup dez paiement des heures supplémentaires</change>
+		<change type='chg'>Amélioration de l'affichage du tableau récapitulatif des heures supplémentaires</change>
+		<change type='chg'>Amélioration de l'affichage de la liste des pointages => recherche de dates par colonne (du ... au ...), gestion de la position de la colonne 'action' suivant l'option native 'Afficher la colonne de sélection de champ et de ligne à gauche (à droite par défaut)'</change>
+		<change type='chg'>Amélioration de l'affichage de la liste des pointages => Ajout des cases à cocher natives pour les actions de masse (suppression)</change>
+		<change type='chg'>Amélioration de l'affichage de la liste des pointages => Ajout d'une colonne ID comprenant un lien cliquable vers la fiche du pointage</change>
+		<change type='chg'>Amélioration de l'affichage de la fiche des pointages => utilisation des fonctions natives de Dolibarr</change>
+		<change type='chg'>Ajout du choix de la date pour la création d'un pointage complet (dans une fenêtre popup de confirmation)</change>
+		<change type='chg'>Compatibilité améliorée avec PHP8.2 et versions ultérieures</change>
+		<change type='add'>Ajout d'une fonction pour mettre en évidence les jours fériés travaillés dans la liste des pointages</change>
+		<change type='add'>Ajout de la gestion des heures complémentaires => temps de travail effectué au-delà de la durée contractuelle sans déclenchement d'heures supplémentaires (exemple heures supplémentaires effectuées une journée comprise dans une semaine incluant un jour férié chomé)</change>
+		<change type='add'>Ajout d'un tableau de préparation des feuilles de paie</change>
+		<change type='add'>Ajout d'une option pour que les temps saisis les jours fériés (jour férié travaillé) soit automatiquement et systématiquement ajoutés aux heures complémentaires => payé double !</change>
+		<change type='add'>Ajout d'une option pour la gestion des mensualisations => prise en compte des spécificités liées aux contrats de travail</change>
+		<change type='add'>Ajout d'une tâche planifiée pour le calcul automatique des heures supplémentaires</change>
+	</Version>
+	<Version Number="15.10.1" MonthVersion="2025-05">
+		<change type='chg'>Amélioration de la fonction 'getNomUrl'</change>
+	</Version>
+	<Version Number="15.10.2" MonthVersion="2025-05">
+		<change type='chg'>Nettoyage du code</change>
+	</Version>
+	<Version Number="15.10.3" MonthVersion="2025-05">
+		<change type='fix'>Amélioration du calcul des périodes prises en compte (quand des périodes d'une semaine servaient aux calculs il fallait que la dernière semaine soit révolue pour afficher son récapitulatif)</change>
+	</Version>
+	<Version Number="15.10.4" MonthVersion="2025-06">
+		<change type='chg'>Utilisation d'objet DateTime en lieu et place des fonctions natives Dolibarr pour la gestion des durées</change>
+		<change type='chg'>Intégration des heures complémentaires dans le panier temps</change>
+		<change type='chg'>Ajout d'une colonne pour les jours fériés travaillés dans le tableau de préparation des feuilles de paies</change>
+	</Version>
+	<Version Number="15.10.5" MonthVersion="2025-06">
+		<change type='fix'>Affichage des heures supplémentaires payées dans le tableau de préparation des feuilles de paye</change>
+	</Version>
+	<Version Number="15.10.6" MonthVersion="2025-06">
+		<change type='chg'>Amélioration des actions de masse pour la liste des pointages => utilisation de la confirmation de suppression</change>
+		<change type='chg'>Amélioration des icones (utilisation de Font Awesome)</change>
+		<change type='chg'>Ajout de l'état du panier repas (si active) sur la fiche de pointage</change>
+	</Version>
+	<Version Number="15.10.7" MonthVersion="2025-06">
+		<change type='fix'>Correction du contrôle de version</change>
+		<change type='chg'>Amélioration du process de téléchargement du fichier changelog</change>
+		<change type='chg'>Amélioration de l'enregistrement des pointages complets => ajout du panier repas et/ou de la saisie des pauses (suivant les options sélectionnées)</change>
+	</Version>
+	<Version Number="15.10.8" MonthVersion="2025-06">
+		<change type='fix'>Correction des traductions et du CSS</change>
+	</Version>
+	<Version Number="15.10.9" MonthVersion="2025-06">
+		<change type='chg'>Mise à jour du logo</change>
+		<change type='chg'>Mise à jour du fichier readme</change>
+	</Version>
+	<Version Number="15.10.10" MonthVersion="2025-07">
+		<change type='fix'>Correction des droits d'accès à l'onglet de préparation des feuilles de paies</change>
+	</Version>
+	<Version Number="15.10.11" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de l'affichage des paramètres (en fonction des choix utilisateur et du thème appliqué dans Dolibarr)</change>
+	</Version>
+	<Version Number="15.10.12" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de la compatibilité PHP8.1 et supérieur</change>
+	</Version>
+	<Version Number="15.10.13" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de la compatibilité CSS avec les thèmes Dolibarr</change>
+	</Version>
+	<Version Number="15.10.14" MonthVersion="2025-07">
+		<change type='fix'>Gestion des fuseaux horaires (timezone) suivant la version de PHP utilisée (obsolescence de la base PHP)</change>
+	</Version>
+	<Version Number="15.10.15" MonthVersion="2025-07">
+		<change type='fix'>Gestion des fuseaux horaires (timezone) correction de l'enregistrement du choix de l'utilisateur</change>
+	</Version>
+	<Version Number="15.11.0" MonthVersion="2025-08">
+		<change type='add'>Compatibilité avec Dolibarr v22</change>
+	</Version>
+	<Version Number="15.11.1" MonthVersion="2025-08">
+		<change type='fix'>Contrôle de la saisie des horaires</change>
+	</Version>
+	<Version Number="15.11.2" MonthVersion="2026-01">
+		<change type='fix'>Saisie d'un pointage complet pour une journée non continue (matin + après-midi)</change>
+	</Version>
+	<Version Number="15.12.0" MonthVersion="2026-02">
+		<change type='fix'>Sécurité : Validation des paramètres GETPOST avec typage systématique (aZ09 pour les actions, GETPOSTINT pour les entiers, alpha/alphanohtml pour les textes)</change>
+		<change type='fix'>Sécurité : Protection contre les injections SQL dans les classes métier (escape des dates, cast des entiers, utilisation de $db->plimit pour la pagination)</change>
+		<change type='fix'>Sécurité : Protection XSS par échappement des URL de formulaires basées sur $_SERVER['PHP_SELF'] avec dol_escape_htmltag() dans les formulaires et les liens</change>
+		<change type='fix'>Paramètres : isolation du cookie JS de l'état des panneaux (infraspointages_tblPSexp au lieu de tblPSexp) pour éviter les collisions inter-modules</change>
+		<change type='fix'>Paramètres : variable cookieName déplacée au scope script pour corriger la persistance de l'état des panneaux après soumission de formulaire</change>
+		<change type='fix'>Paramètres : noms de table rendus uniques (tblGen, tblTeam, tblIndividual) pour la persistance cookie par panneau</change>
+		<change type='chg'>Amélioration du CSS</change>
+		<change type='chg'>Nouveau lien vers le Wiki InfraSPointages</change>
+		<change type='add'>Ajout du fichier CLAUDE.md - Documentation complète du module pour l'assistant IA (architecture, classes, tables, fonctionnalités, configuration)</change>
+	</Version>
+	<Version Number="15.12.1" MonthVersion="2026-03">
+		<change type='fix'>Correction de la comparaison de version max Dolibarr : utilisation du numéro de branche majeur uniquement</change>
+		<change type='chg'>Amélioration du descripteur CLAUDE.md : ajout des Notes Techniques</change>
+	</Version>
+	<Version Number="15.12.2" MonthVersion="2026-03">
+		<change type='fix'>Compatibilité avec PHP 8.4</change>
+	</Version>
+	<InfraS Downloaded="20260301"/>
+	<Dolibarr minVersion="15.0.0" maxVersion="24.x.x"/>
+	<PHP minVersion="7.4" maxVersion="8.2"/>
+</changelog>

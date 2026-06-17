@@ -1,0 +1,96 @@
+<changelog>
+	<Version Number="18.0.0" MonthVersion="2025-07">
+		<change type='add'>Initiale release.</change>
+	</Version>
+	<Version Number="18.0.1" MonthVersion="2025-09">
+		<change type='chg'>Ouverture du lien vers l'application Bridge dans un nouvel onglet</change>
+		<change type='chg'>Révocation automatique d'un ancien lien de paiement existant avant la création d'un nouveau pour une même facture</change>
+		<change type='add'>Création d'un nouveau menu principal "InfraS-2" contenant le sous-menu "Infras2Bridge"</change>
+		<change type='add'>Ajout de l'option pour déclencher la génération du lien de paiement InfraS2Bridge selon le mode de règlement sélectionné</change>
+	</Version>
+	<Version Number="18.0.2" MonthVersion="2025-09">
+		<change type='chg'>Création du logo</change>
+		<change type='chg'>Nettoyage du code</change>
+	</Version>
+	<Version Number="18.0.3" MonthVersion="2025-09">
+		<change type='add'>Ajout d’options de configuration pour le paiement : possibilité de ne pas générer automatiquement le règlement ni marquer la facture comme payée</change>
+		<change type='add'>Activation du lien de paiement sur les devis</change>
+	</Version>
+	<Version Number="18.0.4" MonthVersion="2025-09">
+		<change type='chg'>Meilleure gestion des attributs supplémentaires utilisés par le module (gestion de l'activation / désactivation du module)</change>
+		<change type='chg'>Nettoyage du code</change>
+	</Version>
+	<Version Number="18.1.0" MonthVersion="2025-09">
+		<change type='chg'>Amélioration du code des paramètres</change>
+		<change type='chg'>Ajout des fonctions de regénération de PDF après la création du lien de paiement sur les devis (Permet d'inclure automatiquement le lien et/ou le code QR sur le devis si le modèle d'édition le permet => exemple InfraSPlus_D)</change>
+		<change type='add'>Ajout d'une option pour définir le délai de révocation du lien de paiement (en jours)</change>
+	</Version>
+	<Version Number="18.1.1" MonthVersion="2025-10">
+		<change type='fix'>Optimisation du code : Ajout d'une meilleure détection du préfixe de référence (facture, acompte ou devis)</change>
+	</Version>
+	<Version Number="18.1.2" MonthVersion="2025-10">
+		<change type='chg'>Amélioration de la gestion des liens (révocation automatique d'un lien lors d'évènements sur l'objet => paiement de la facture par d'autres moyens, suppression, modification, etc.)</change>
+	</Version>
+	<Version Number="18.1.3" MonthVersion="2025-12">
+		<change type='chg'>Amélioration de la compatibilité avec InfraSPackPlus => prise en compte de la gestion des paiements spéciaux (subventions, primes)</change>
+	</Version>
+	<Version Number="18.2.0" MonthVersion="2026-01">
+		<change type='fix'>Révocation en masse des liens de paiement</change>
+		<change type='chg'>Amélioration de la gestion de l'enregistrement des liens de paiement pour éviter les flux d'interrogation API inutiles</change>
+		<change type='chg'>Amélioration de la sauvegarde des paramètres du module</change>
+		<change type='add'>Ajout d'un fiche de détail pour les liens de paiement</change>
+		<change type='add'>Ajout d'une tâche planifiée pour la mise à jour des liens de paiement</change>
+	</Version>
+	<Version Number="18.2.1" MonthVersion="2026-01">
+		<change type='chg'>Amélioration de la gestion de référence des objets(Devis, Facture et Acompte)</change>
+	</Version>
+	<Version Number="18.2.2" MonthVersion="2026-02">
+		<change type='chg'>Amélioration de la gestion de référence du lien de paiement</change>
+	</Version>
+	<Version Number="18.3.0" MonthVersion="2026-02">
+		<change type='fix'>Correction de la clé de traduction InfraSWidgetsParamPresent2 → InfraS2BridgeParamPresent2 dans en_US, es_ES et it_IT</change>
+		<change type='fix'>Correction de 18 anomalies dans infras2bridgeAdmin.lib.php (XSS, bug critique de condition, balises manquantes, gestion d'erreurs)</change>
+		<change type='fix'>Correction de 8 incohérences dans le bloc JavaScript de infras2bridgesetup.php (cookie, toggle, XSS, classes CSS, fermeture de table)</change>
+		<change type='fix'>Correction XSS : échappement de $_SERVER['PHP_SELF'] dans card.php, list.php, about.php et actions_infras2bridge.class.php</change>
+		<change type='fix'>Correction XSS : échappement des valeurs dans les champs hidden du formulaire de list.php (sortfield, sortorder, contextpage, search_*)</change>
+		<change type='fix'>Correction XSS : échappement de $object->link dans l'attribut value de card.php</change>
+		<change type='fix'>Correction d'un bug d'affichage dans card.php : user_firstname, user_lastname et user_externalref étaient affichés comme des liens HTML au lieu de texte simple</change>
+		<change type='fix'>Correction injection SQL : ajout de $db->escape() sur les dates dans les requêtes WHERE de list.php</change>
+		<change type='fix'>Correction SQL : ajout des guillemets manquants autour des valeurs string dans ipn.php (ext_payment_id, ext_payment_site)</change>
+		<change type='fix'>Correction SQL : remplacement du cast string par un cast entier pour $conf->entity dans modinfras2bridge.class.php</change>
+		<change type='fix'>Correction : ajout du type 'alpha' manquant sur GETPOST('value') dans infras2bridgesetup.php</change>
+		<change type='chg'>Amélioration du CSS</change>
+		<change type='chg'>Synchronisation complète des traductions : ajout des clés manquantes dans les fichiers de langue en_US, es_ES et it_IT</change>
+		<change type='add'>Ajout du fichier CLAUDE.md : documentation technique complète du module pour l'assistant IA</change>
+	</Version>
+	<Version Number="18.3.1" MonthVersion="2026-03">
+		<change type='chg'>Amélioration du descripteur CLAUDE.md : ajout des Notes Techniques</change>
+		<change type='add'>Ajout d'un test de comparaison de la version majeur de Dolibarr supportée (avertissement si version non supportée)</change>
+		<change type='add'>Compatibilité avec Dolibarr V24</change>
+	</Version>
+	<Version Number="18.3.2" MonthVersion="2026-03">
+		<change type='fix'>Compatibilité avec php 8.4</change>
+	</Version>
+	<Version Number="18.3.3" MonthVersion="2026-04">
+		<change type='fix'>Trigger : exclusion des factures de type avoir (credit note) de la création et de la révocation automatique des liens de paiement</change>
+	</Version>
+	<Version Number="18.4.0" MonthVersion="2026-05">
+		<change type='chg'>Trigger : adjustTotalTtcWithSpecialPayments() déduit aussi le total des écotaxes du montant du lien (si option active)</change>
+		<change type='add'>Nouvelle option INFRAS2BRIDGE_COMPLETE_ON_SPECIAL_REMAINING : à chaque paiement client, si la somme effectivement payée couvre le montant payable (total TTC − paiements spéciaux INFRASPLUS_PDF_EXF_PAY_SPEC − écotaxes INFRASPLUS_PDF_EXF_ECOTAX), le lien de paiement Bridge est révoqué via API, marqué comme "completed" en local et le QR code disparaît du PDF</change>
+		<change type='add'>Nouveau trigger PAYMENT_CUSTOMER_CREATE : déclenche la vérification "paiements spéciaux + écotaxes couvrent le reste" à chaque création de paiement client</change>
+		<change type='add'>Nouvelle méthode Bridge::completePaymentLink() et infras2bridge_paymentlinks::set_as_complete() pour distinguer un lien "completed" (paiement effectif via autres moyens) d'un lien "revoked" (annulation pure)</change>
+		<change type='add'>Nouveau hook beforePDFCreation (contexte pdfgeneration) : rattrapage pour les factures dont le paiement a été créé avant l'activation de l'option ; vérifie à chaque régénération PDF si la condition est remplie et marque le lien comme completed (révocation API + vidage extrafield QR) avant la génération, pour que le QR disparaisse du PDF re-généré</change>
+	</Version>
+	<Version Number="18.4.1" MonthVersion="2026-06">
+		<change type='fix'>API Bridge : suppression du slash final sur l'endpoint payment-links qui provoquait une erreur 404 sur la création et la liste des liens (aucun lien créé, donc rien affiché sur la fiche ni dans le PDF). Construction d'URL robuste dans getBridgeConnexion (slash ajouté uniquement devant l'ID pour fetch/revoke).</change>
+	</Version>
+	<Version Number="18.4.2" MonthVersion="2026-06">
+		<change type='fix'>Fatal error "Call to undefined function infraspackplus_getEcoTaxesTotal()" à la validation de facture (BILL_VALIDATE) et au paiement client quand l'option INFRAS2BRIDGE_COMPLETE_ON_SPECIAL_REMAINING est active : la fonction de calcul du total des écotaxes était appelée mais n'existait pas. Ajout de la fonction interne infras2bridge_getEcoTaxesTotal() dans core/lib/infras2bridge.lib.php (lecture de l'extrafield produit INFRASPLUS_PDF_EXF_ECOTAX d'infraspackplus, somme écotaxe unitaire × quantité par ligne, mode HT ou TTC).</change>
+	</Version>
+	<Version Number="18.4.3" MonthVersion="2026-06">
+		<change type='chg'>Affichage du lien de paiement sur la fiche facture (hook formObjectOptions) : le lien n'est plus affiché lorsqu'il est au statut "completed", c'est-à-dire une fois que le client a réglé sa part (total TTC − paiements spéciaux/primes). Seuls les liens "valid" restent affichés. Le lien disparaît donc de la fiche dès que la part client est payée, même si la part de l'État (Prime CEE, GRDF, coup de pouce…) reste impayée.</change>
+	</Version>
+	<InfraS Downloaded="20260608"/>
+	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
+	<PHP minVersion="7.4" maxVersion="8.4"/>
+</changelog>

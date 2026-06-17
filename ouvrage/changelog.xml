@@ -1,0 +1,30 @@
+<changelog>
+	<Version Number="4.0.0 - InfraS" MonthVersion="2021-07">
+		<change type='add'>Version initiale => à partir de la version 4.0.0 d'Inovea Conseil</change>
+	</Version>
+	<Version Number="4.0.1 - InfraS" MonthVersion="2021-08">
+		<change type='chg'>Paramètres => Refonte de la gestion des paramètres (simplification)</change>
+		<change type='add'>Paramètres => Ajout de la gestion des sauvegardes/restaurations des paramètres</change>
+		<change type='add'>Paramètres => Ajout d'un onglet "historique" (changelog)</change>
+	</Version>
+	<Version Number="5.0.0 - InfraS" MonthVersion="2021-09">
+		<change type='add'>Modification des ouvrages/forfaits du document par fenêtre popup</change>
+		<change type='add'>Sous-ouvrage possible</change>
+	</Version>
+	<Version Number="5.2.0 - InfraS" MonthVersion="2022-05">
+		<change type='add'>Changement d'ordre des lignes possible</change>
+		<change type='add'>Ajout des lignes supplémentaires dans les sous-ouvrages présents</change>
+	</Version>
+	<Version Number="5.2.1 - InfraS" MonthVersion="2023-03">
+		<change type='chg'>Amélioration de la gestion des modifications du coeur de Dolibarr (core change) => Arrêt complet du mécanisme (utilisation d'un mécanisme de substitution)</change>
+	</Version>
+	<Version Number="5.3.0 - InfraS" MonthVersion="2023-12">
+		<change type='chg'>Dolibarr v14 minimum est requis</change>
+		<change type='chg'>Amélioration de la présentation des ouvrages (lien cliquable, tooltip)</change>
+		<change type='add'>Amélioration de l'étendu de la sauvegarde des paramètres => Les tables contenant les ouvrages et leur détails sont incluses</change>
+		<change type='add'>Activation de la gestion des statuts (Brouillon, Actif, Caché)</change>
+		<change type='add'>Ajout d'un statut 'Caché' aux ouvrages => les détails de ces ouvrages n'apparaitrons pas sur les PDF (InfraSPackPlus)</change>
+	</Version>
+	<InfraS Downloaded="20231201"/>
+	<Dolibarr minVersion="14.0.0"/>
+</changelog>

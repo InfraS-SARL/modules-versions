@@ -1,0 +1,160 @@
+<changelog>
+	<Version Number="1.0.0" MonthVersion="2019-09">
+		<change type='add'>Template release</change>
+	</Version>
+	<Version Number="1.1.0" MonthVersion="2019-11">
+		<change type='add'>First release</change>
+	</Version>
+	<Version Number="1.2.0" MonthVersion="2019-11">
+		<change type='chg'>Paramètres : Amélioration des mises à jour (ajout de la lecture de la dernière sauvegarde après réactivation du module)</change>
+		<change type='add'>Saisie des frais : Nouvelle option pour gérer les frais kilométriques</change>
+	</Version>
+	<Version Number="1.2.1" MonthVersion="2019-11">
+		<change type='chg'>Logo : Amélioration de la recherche du logo à afficher (dans le module, le sous-répertoire Logos, puis le logo par défaut enfin un texte descriptif)</change>
+	</Version>
+	<Version Number="1.2.2" MonthVersion="2019-11">
+		<change type='add'>Temps : Ajout d'un rappel des temps enregistrés pour chaque jour tous chantiers / projets confondus</change>
+		<change type='add'>Tâches : Ajout d'une option pour afficher / masquer la sélection de l'avancement déclaré</change>
+		<change type='chg'>Saisie des frais : Amélioration de la saisie (les déplacements sont enregistrés par chantier / projet)</change>
+	</Version>
+	<Version Number="1.3.0" MonthVersion="2019-12">
+		<change type='fix'>Saisie des frais kilométriques : Amélioration de la saisie pour les terminaux mobiles (navigateurs Android)</change>
+		<change type='chg'>Logo et en-tête : Amélioration de la gestion des options d'affichages du logo et du texte de l'en-tête</change>
+		<change type='add'>Connexion : Ajout d'une option pour sélectionner les utilisateurs qui ne doivent utiliser que la page de saisie dans Dolibarr (elle devient leur page d'accueil par défaut)</change>
+	</Version>
+	<Version Number="1.3.5" MonthVersion="2019-12">
+		<change type='add'>Page de saisie : Ajout d'une page de saisie interne à Dolibarr et du menu correspondant (GRH => InfraSTime => Saisie)</change>
+		<change type='add'>Droits : Ajout d'un drout d'utilisation de la page de saisie interne pour soi-même</change>
+		<change type='add'>Droits : Ajout d'un drout d'utilisation de la page de saisie interne pour tous les utilisateurs Dolibarr actifs</change>
+	</Version>
+	<Version Number="1.3.6" MonthVersion="2019-12">
+		<change type='add'>Page de saisie : Ajout d'une option pour afficher la liste des saisies effectuées lors de la session en cours</change>
+	</Version>
+	<Version Number="2.0.0" MonthVersion="2020-01">
+		<change type='add'>Page de saisie : Ajout du mode de saisie "par équipe"</change>
+	</Version>
+	<Version Number="2.1.0" MonthVersion="2020-01">
+		<change type='fix'>Page de saisie : En mode saisie par utilisateur correction d'une erreur empêchant le fonctionnement du filtre avec la sélection des projets (chantier) par liste de choix</change>
+		<change type='add'>Rapport : Ajout d'une page de rapport RH</change>
+		<change type='add'>Rapport : Ajout d'un récapitulatif des saisies du mois en cours à partir de la saisie utilisateur (popup)</change>
+	</Version>
+	<Version Number="2.1.1" MonthVersion="2020-01">
+		<change type='add'>Rapport : Ajout d'une option permettant l'affichage des libellés des projets et tâches en plus des références</change>
+		<change type='add'>Rapport : Ajout d'un droit utilisateur pour l'affichage du rapport et du menu</change>
+		<change type='chg'>Rapport : Amélioration de l'utilisation des raccourcis de périodes (Semaine en cours, Mois en cours, etc...) => leurs utilisation ne réinitialise plus l'utilisateur sélectionné</change>
+		<change type='chg'>Rapport : Optimistaion du chargement de la page => le rapport du mois en cours pour l'utilisateur connecté est chargé par défaut à l'affichage de la page</change>
+		<change type='chg'>Rapport : Optimistaion du code et de l'habillage de la page</change>
+	</Version>
+	<Version Number="2.1.2" MonthVersion="2020-01">
+		<change type='chg'>Rapport : Ajout d'un message d'avertissement quand aucune données n'est disponible pour l'utilisateur et la période demandé</change>
+		<change type='chg'>Page de saisie : Ajout d'une sécurité pour interdire la navigation vers la page précédente (Cela pourrait donner accès à l'acceuil standard de Dolibarr)</change>
+	</Version>
+	<Version Number="2.2.0" MonthVersion="2020-02">
+		<change type='add'>Core change : Ajout d'un core change automatique (correction d'un bug Dolibarr ./htdocs/projet/class/project.class.php)</change>
+	</Version>
+	<Version Number="2.2.1" MonthVersion="2020-03">
+		<change type='chg'>Saisie RH : Ajout du titre du projet avec sa référence</change>
+		<change type='chg'>Vue "par équipe" : Saisie RH => pas de tri utilisateur assigné sur les projets</change>
+		<change type='add'>Core change : Compatibilité Dolibarr 11.0.2</change>
+	</Version>
+	<Version Number="2.2.2" MonthVersion="2020-03">
+		<change type='fix'>Rapport : Correction de la gestion des filtres de date pour la création des rapports d'activités</change>
+	</Version>
+	<Version Number="2.2.3" MonthVersion="2020-04">
+		<change type='add'>Saisie RH : Les références projets (chantiers) et tâches sont cliquable (lien vers l'objet)</change>
+	</Version>
+	<Version Number="2.2.4" MonthVersion="2020-04">
+		<change type='fix'>Saisies : Amélioration de la gestion du formulaire quand un trop grand nombre de projets est présent (limite de la variable système PHP max_input_vars)</change>
+		<change type='chg'>Saisies : Amélioration de l'affichage des détails des tâches (cliquer sur le bouton '+' ne développe que la ligne concernée)</change>
+		<change type='add'>Saisies : Ajout d'une option pour filtrer sur un libellé de tâche spécifique</change>
+		<change type='add'>Saisies : Amélioration des enregistrements du journal système</change>
+	</Version>
+	<Version Number="2.2.5" MonthVersion="2020-06">
+		<change type='add'>Papport : Ajout d'un rapport de gestion des compte temps et des congés (requiers Dolibarr 11.0.x)</change>
+	</Version>
+	<Version Number="2.2.6" MonthVersion="2020-07">
+		<change type='add'>Core change : Compatibilité Dolibarr 11.0.5</change>
+		<change type='add'>Core change : Compatibilité Dolibarr 12.0.0</change>
+	</Version>
+	<Version Number="2.2.7" MonthVersion="2021-01">
+		<change type='fix'>Erreur 500 à l'export Excel d'un rapport individuel</change>
+	</Version>
+	<Version Number="2.2.8" MonthVersion="2021-02">
+		<change type='add'>Core change : Compatibilité Dolibarr 13.0.0</change>
+	</Version>
+	<Version Number="2.2.9" MonthVersion="2021-03">
+		<change type='add'>Core change : Compatibilité Dolibarr 13.0.2</change>
+	</Version>
+	<Version Number="2.3.0" MonthVersion="2021-04">
+		<change type='fix'>Traductions : Correction d'une erreur Dolibarr => les fichiers de traduction en anglais britanique (en_GB) et anglais US (en_US) ne peuvent pas cohabiter => les traduction anglais britanique sont supprimées</change>
+		<change type='fix'>Paramètres : Modification du répertoire de stockage des fichiers de sauvegarde => déplacement des sauvegardes précédentes</change>
+		<change type='fix'>Paramètres : Correction d'une erreur Dolibarr => Toute modification des droits utilisateur supprime la valeur du THM (taux horaire moyen) renseigné pour cet utilisateur. L'erreur DOlibarr persiste lors des actions manuelles mais les modifications apportées via le module n'induisent plus ce comportement.</change>
+		<change type='chg'>Paramètres : Optimisation de la présentation</change>
+		<change type='add'>Paramètres : Ajout d'un lien de téléchargement du fichier de sauvegarde des paramètres dans le commentaire des boutons de sauvegarde / restauration (en haut des onglets de paramètres)</change>
+	</Version>
+	<Version Number="2.3.1" MonthVersion="2021-05">
+		<change type='add'>Saisies : Ajout d'un filtre sur un libellé de tâche spécifique pour les chefs de chantier</change>
+		<change type='add'>Saisies : Ajout d'un filtre sur un libellé de tâche spécifique pour un chef de chantier particulier</change>
+		<change type='chg'>Saisies : Modification du filtre sur un libellé de tâche spécifique => le filtre s'applique désormais sur les libellés commençant par ...</change>
+	</Version>
+	<Version Number="2.3.2" MonthVersion="2021-08">
+		<change type='fix'>Paramètres : Correction d'un bug suite à des modifications du coeur de Dolibarr (nouvelle classe html depuis v13.0.0)</change>
+	</Version>
+	<Version Number="2.3.3" MonthVersion="2021-11">
+		<change type='add'>Core change : Compatibilité Dolibarr 14.0.3</change>
+	</Version>
+	<Version Number="2.3.4" MonthVersion="2021-11">
+		<change type='fix'>Rapport annuel : Correction d'une erreur de prise en compte des 1/2 journées de congés (ou RTT)</change>
+		<change type='add'>Paramètres : Amélioration de la gestion des paramètres (cohérence accrue avec les standards InfraS)</change>
+	</Version>
+	<Version Number="2.3.5" MonthVersion="2022-02">
+		<change type='add'>Saisies : Ajout de la saisie des nuits à l'hôtel</change>
+	</Version>
+	<Version Number="2.3.6" MonthVersion="2022-03">
+		<change type='chg'>Saisies : Notes de frais simplifiées => Création des notes de frais pour le mois en cours</change>
+		<change type='add'>Saisies : Ajout de la saisie des jours de télétravail</change>
+	</Version>
+	<Version Number="2.3.7" MonthVersion="2022-03">
+		<change type='fix'>Saisies : Notes de frais simplifiées => Meilleur gestion des semaines à cheval sur 2 mois</change>
+		<change type='add'>Core change : Compatibilité Dolibarr 15.0.1</change>
+	</Version>
+	<Version Number="2.3.8" MonthVersion="2022-05">
+		<change type='fix'>Rapports : Correction d'un changement de nom de fichier Dolibarr pour les exports Excel</change>
+		<change type='chg'>Core change : Abandon des compatibilités Dolibarr Antérieures à la version 13.0.x</change>
+	</Version>
+	<Version Number="2.3.9" MonthVersion="2022-08">
+		<change type='fix'>Rapport annuel : Correction d'une erreur de calcul quand les dates de début et de fin du tri étaient sur des années différentes</change>
+		<change type='fix'>Rapport annuel : Correction d'une erreur CSS</change>
+		<change type='add'>Paramètres => Ajout d'un numéro d'option (rupture par chapitre ou sous-titre)</change>
+		<change type='add'>Ajout d'une option pour sélectionner le type de congés utilisés comme récupération</change>
+	</Version>
+	<Version Number="2.4.0" MonthVersion="2022-10">
+		<change type='fix'>Rapport annuel : Gestion des congés incluant des 1/2 journées</change>
+		<change type='chg'>Saisies : Autorise la saisie explicite d'heure à 0</change>
+	</Version>
+	<Version Number="18.0.0" MonthVersion="2025-01">
+		<change type='fix'>Amélioration de la gestion des versions déclarées du module</change>
+		<change type='chg'>Modification de la numérotation => (version minimum requise de Dolibarr) . (ajout de fonction) . (correctif)</change>
+		<change type='chg'>Compatibilité Dolibarr : Abandon de Dolibarr antérieur à v18</change>
+		<change type='add'>Gestion des versions minimum / maximum de PHP centralisée dans le fichier changelog</change>
+	</Version>
+	<Version Number="18.1.0" MonthVersion="2026-03">
+		<change type='fix'>Correction d'une injection SQL dans la saisie de l'avancement (GETPOST non typé)</change>
+		<change type='fix'>Correction du bug explode/implode dans les requêtes SQL de rapport</change>
+		<change type='fix'>Correction des variables non initialisées ($note, $duration, $nbHoursCP, $listNight, $listHomeWork, $idTrips, $checked, $HTMLRes)</change>
+		<change type='fix'>Correction de l'accès $this->user en tableau dans infrastime.class.php</change>
+		<change type='fix'>Correction de l'ordre d'initialisation des variables dans anualreport.php</change>
+		<change type='chg'>Compatibilité Dolibarr v22 : remplacement $conf->global par getDolGlobalString/getDolGlobalInt</change>
+		<change type='chg'>Compatibilité Dolibarr v22 : remplacement $_SESSION['newtoken'] par newToken()</change>
+		<change type='chg'>Compatibilité Dolibarr v22 : remplacement $user->rights par $user->hasRight()</change>
+		<change type='add'>Ajout du contrôle d'accès restrictedArea() dans public/reportuser.php</change>
+		<change type='add'>Typage de tous les GETPOST() avec les types appropriés (alpha, int, restricthtml)</change>
+		<change type='add'>Cast (int) sur les paramètres SQL numériques pour la sécurité</change>
+	</Version>
+	<Version Number="18.1.1" MonthVersion="2026-04">
+		<change type='fix'>Correction du filtre utilisateur dans public/index.php (Changement Dolibarr 21+)</change>
+	</Version>
+	<InfraS Downloaded="20250428"/>
+	<Dolibarr minVersion="18.0.0" maxVersion="22.0.4"/>
+	<PHP minVersion="7.4" maxVersion="8.4"/>
+</changelog>

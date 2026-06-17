@@ -1,0 +1,182 @@
+<changelog>
+	<Version Number="1.0" MonthVersion="2017-01">
+		<change type='add'>Version initiale</change>
+	</Version>
+	<Version Number="1.1" MonthVersion="2017-02">
+		<change type='add'>Ajout d’un compte par défaut</change>
+		<change type='add'>Ajout de la traduction anglaise</change>
+		<change type='fix'>Ajustement du panier temps lors de la suppression d’une consommation</change>
+	</Version>
+	<Version Number="1.2" MonthVersion="2017-03">
+		<change type='chg'>Amélioration de la gestion des erreurs quand une constante n’est pas définie ou aucun panier par défaut</change>
+		<change type='add'>Ajout automatique du temps produit au panier lors de la facturation</change>
+		<change type='fix'>Correction de l’affichage du type de consommation sans traduction</change>
+		<change type='add'>Ajout de boutons radio pour faciliter la saisie de consommation</change>
+		<change type='fix'>Correction d’un problème de panier perdu si aucun panier par défaut n’est défini</change>
+	</Version>
+	<Version Number="1.3" MonthVersion="2017-04">
+		<change type='add'>Ajout de la gestion des compteurs pour les paniers de temps</change>
+		<change type='add'>Ajout du menu dans le menu commercial</change>
+		<change type='chg'>Suppression de l’obligation du socid pour lister les paniers</change>
+		<change type='add'>La date de validité n’est plus obligatoire pour créer un panier</change>
+	</Version>
+	<Version Number="1.3.1" MonthVersion="2017-04">
+		<change type='add'>Ajout d’une page d’administration pour la configuration du module</change>
+		<change type='fix'>Utilisation correcte du répertoire personnalisé</change>
+	</Version>
+	<Version Number="1.3.2" MonthVersion="2017-05">
+		<change type='fix'>Correction d’une faute de frappe</change>
+	</Version>
+	<Version Number="1.3.3" MonthVersion="2017-06">
+		<change type='add'>Amélioration de la sélection d’intervention</change>
+		<change type='fix'>Ne pas afficher les informations de panier dans le formulaire de création de facture</change>
+	</Version>
+	<Version Number="1.4.0" MonthVersion="2017-07">
+		<change type='add'>Ajout d’un accès REST API pour les paniers de temps</change>
+	</Version>
+	<Version Number="1.5.0" MonthVersion="2018-01">
+		<change type='add'>Choix du mode de minutage pour les paniers (heure ou jour)</change>
+		<change type='chg'>Amélioration de l’interface utilisateur : ajout d’onglets dans les bannières</change>
+		<change type='chg'>Amélioration de la liste des paniers</change>
+		<change type='add'>Travail sur l’API</change>
+	</Version>
+	<Version Number="1.5.1" MonthVersion="2018-03">
+		<change type='fix'>Correction d’un bug avec le module formstyler</change>
+		<change type='fix'>Correction #6 : Réinitialisation du temps lors du basculement ajout/retrait</change>
+		<change type='add'>Nouveau (#4) : gestion du mode de minutage (heure/jour)</change>
+		<change type='fix'>Éviter un mauvais affichage quand la date de validité est vide</change>
+		<change type='add'>Nouvelle option (#5) : choix de l’action lors de la création d’une consommation</change>
+		<change type='add'>Ajout d’une traduction italienne (merci à `paolapenati` sur transifex.com)</change>
+	</Version>
+	<Version Number="1.5.2" MonthVersion="2018-04">
+		<change type='add'>Compatibilité avec l’API Dolibarr 6.0.3</change>
+		<change type='add'>Création automatique d’un panier de temps pour les nouveaux clients</change>
+		<change type='add'>Possibilité de supprimer un panier</change>
+		<change type='chg'>Mise à jour des traductions</change>
+		<change type='fix'>Correction du retrait de temps lors de l’arrêt d’un compteur</change>
+		<change type='add'>Gestion du mode de minutage (heure ou jour)</change>
+	</Version>
+	<Version Number="1.6.0" MonthVersion="2019-01">
+		<change type='add'>Compatibilité PostgreSQL</change>
+		<change type='fix'>Fichier manquant dans l’API</change>
+	</Version>
+	<Version Number="1.6.1" MonthVersion="2019-02">
+		<change type='chg'>Amélioration de l’interface utilisateur ("war of click!")</change>
+		<change type='fix'>Champ société manquant sur la page de création</change>
+		<change type='fix'>Erreurs durant l’installation</change>
+	</Version>
+	<Version Number="1.6.2" MonthVersion="2019-03">
+		<change type='chg'>Affichage de l’unité de temps uniquement pour le mode "heure"</change>
+		<change type='chg'>Restauration du champ société sur les cartes ajout/édition</change>
+		<change type='chg'>Remplacement des attributs HTML par des sélecteurs CSS</change>
+		<change type='fix'>(API) Alignement des champs obligatoires avec la fonction create et correction du nom de classe</change>
+	</Version>
+	<Version Number="1.6.3" MonthVersion="2019-04">
+		<change type='add'>Mise à jour des traductions</change>
+		<change type='add'>Vérification si la fiche d’intervention est déjà enregistrée</change>
+		<change type='add'>Amélioration de l’enregistrement des fiches d’intervention</change>
+		<change type='add'>Ajout d’un bouton pour créer une fiche d’intervention depuis une carte panier</change>
+		<change type='add'>Affichage du nombre d’objets dans la barre de navigation</change>
+		<change type='add'>Ajout d’onglets dans la fiche projet pour afficher la liste des paniers</change>
+		<change type='fix'>Erreur de redirection et affichage du temps disponible</change>
+	</Version>
+	<Version Number="1.6.4" MonthVersion="2019-05">
+		<change type='add'>Mode comptable pour la création de facture : panier par défaut du tiers ou lié au projet</change>
+		<change type='add'>Lien automatique du panier à la facture lors de la création depuis un projet</change>
+		<change type='add'>Bouton pour créer une facture depuis un panier</change>
+		<change type='chg'>Amélioration de l’affichage des durées avec le mode de minutage</change>
+		<change type='fix'>Erreurs PHPCS, noms de variables et méthodes API</change>
+		<change type='fix'>Ajustement de l’affichage du temps sur la fiche facture</change>
+	</Version>
+	<Version Number="1.6.5" MonthVersion="2019-06">
+		<change type='add'>Création automatique d’un panier après validation de projet</change>
+		<change type='fix'>Lien incorrect vers les événements</change>
+		<change type='fix'>Paramètre socid manquant lors de la création de panier depuis projet</change>
+		<change type='fix'>Clé de traduction erronée pour le lien de création de facture</change>
+	</Version>
+	<Version Number="1.6.6" MonthVersion="2019-07">
+		<change type='fix'>Enregistrement de fiche d’intervention</change>
+		<change type='fix'>Erreur de syntaxe / échec de validation projet</change>
+	</Version>
+	<Version Number="1.6.7" MonthVersion="2019-08">
+		<change type='fix'>Mauvais calcul du temps ajouté après facturation (mode jour)</change>
+	</Version>
+	<Version Number="1.6.8" MonthVersion="2019-09">
+		<change type='fix'>Erreur de calcul quand une facture est payée (mode heure)</change>
+	</Version>
+	<Version Number="1.6.9" MonthVersion="2019-10">
+		<change type='add'>Possibilité de générer un rapport PDF pour un tiers ou un panier</change>
+		<change type='add'>Prise en compte d’une tâche projet comme consommation</change>
+		<change type='fix'>Méthode trigger extend</change>
+	</Version>
+	<Version Number="1.6.10" MonthVersion="2019-11">
+		<change type='chg'>Amélioration du rapport PDF (ajout de la date de génération et du temps disponible)</change>
+		<change type='fix'>Erreur PHP lors de la génération du rapport</change>
+	</Version>
+	<Version Number="1.6.11" MonthVersion="2020-01">
+		<change type='fix'>Correction d'une classe manquante lors du déclenchement depuis d’autres objets</change>
+		<change type='chg'>Amélioration du bloc d’objets liés</change>
+	</Version>
+	<Version Number="18.0.0" MonthVersion="2025-10">
+		<change type='chg'>Nettoyage du code</change>
+		<change type='add'>Compatibilité avec Dolibarr v18</change>
+	</Version>
+	<Version Number="18.0.1" MonthVersion="2025-10">
+		<change type='chg'>Exclure la comptabilisation des factures d'acompte dans les paniers temps</change>
+	</Version>
+	<Version Number="18.0.2" MonthVersion="2025-10">
+		<change type='fix'>Enregistrer l'id du projet lors de la création d'un panier</change>
+		<change type='chg'>Mise à jour de la table Timebasket (si existe) en InfraSTimebasket</change>
+	</Version>
+	<Version Number="18.0.3" MonthVersion="2025-12">
+		<change type='fix'>Gestion des projets</change>
+		<change type='chg'>Nettoyage du code</change>
+	</Version>
+	<Version Number="18.1.0" MonthVersion="2026-01">
+		<change type='add'>Ajout des liens avec ls module externe OnePageBasket en utilisant les hooks</change>
+	</Version>
+	<Version Number="18.1.1" MonthVersion="2026-01">
+		<change type='fix'>Comptabilisation manuelle des factures</change>
+	</Version>
+	<Version Number="18.1.2" MonthVersion="2026-01">
+		<change type='fix'>Correction de l'exécution involontaire d'actions infrastimebasket dans des contextes non liés.</change>
+	</Version>
+	<Version Number="18.2.0" MonthVersion="2026-03">
+		<change type='fix'>Sécurité : Correction des appels GETPOST sans type ou avec type déprécié 'none' => utilisation de 'alphanohtml' et 'alpha'</change>
+		<change type='fix'>Sécurité : Échappement de $_SERVER['PHP_SELF'] et $_SERVER['SERVER_SOFTWARE'] avec dol_escape_htmltag() contre les failles XSS</change>
+		<change type='fix'>Sécurité : Remplacement de addslashes() par $db->escape() dans la fonction de sauvegarde SQL</change>
+		<change type='chg'>Nouveau lien vers le Wiki InfraSTimeBasket</change>
+		<change type='chg'>Amélioration du CSS</change>
+		<change type='chg'>Remplacement de la syntaxe dépréciée $user->rights->timebasket->use par $user->hasRight()</change>
+		<change type='add'>Ajout du fichier CLAUDE.md complet pour guider le développement avec l'IA</change>
+		<change type='add'>Compatibilité avec Dolibarr v24</change>
+	</Version>
+	<Version Number="18.2.1" MonthVersion="2026-03">
+		<change type='fix'>Correction du filtre dans l'affichage des paniers temps</change>
+		<change type='fix'>Création du Wiki pour InfraSTimeBasket</change>
+	</Version>
+	<Version Number="18.3.0" MonthVersion="2026-04">
+		<change type='fix'>Méthode update() des consommations : colonne comments absente du SQL UPDATE</change>
+		<change type='fix'>Libellé de la permission consumptions.write corrigé (Créer ≠ Modifier)</change>
+		<change type='fix'>Onglets fichinter/facture : fond incorrect, layout clearboth et affichage durée totale alignés avec le natif Dolibarr</change>
+		<change type='fix'>Page admin : onglet actif non sélectionné, actions backup/restore pointant sur le mauvais module, lien de téléchargement incorrect</change>
+		<change type='fix'>Bouton "Comptabiliser une facture" : time_sub utilisé à la place de time_add</change>
+		<change type='fix'>getTimeBasketForProject() : filtres active, entity et ORDER BY absents — mauvais panier retourné</change>
+		<change type='fix'>Sélecteur de panier dans consumption.php : valeur par défaut calculée depuis la consommation existante, le projet ou le tiers</change>
+		<change type='fix'>Logo trop grand dans le sous-onglet Tâche projet (getNomUrl picto non contraint)</change>
+		<change type='add'>Bouton de modification des consommations : popup jQuery UI permettant d'éditer commentaires, temps (si sans objet lié) et panier cible</change>
+		<change type='add'>Sauvegarde des tables métier (paniers, consommations, dictionnaire types) dans le backup module</change>
+		<change type='add'>Suppression des tables à la désactivation du module</change>
+		<change type='add'>Badge du nombre de paniers temps sur l'onglet "Panier temps" de la fiche tiers</change>
+	</Version>
+	<Version Number="18.3.1" MonthVersion="2026-06">
+		<change type='fix'>Migration SQL manquante : colonnes fk_contract/fk_contract_line renommées en fk_contrat/fk_contrat_det dans update.sql — liste des paniers temps toujours vide après mise à jour depuis une ancienne version</change>
+		<change type='fix'>Audit sécurité : XSS dans tpl/linkedobjectblock.tpl.php — attributs data-element et data-id non échappés/non castés</change>
+		<change type='fix'>Audit sécurité : XSS dans class/infrastimebasketconsumption.class.php — $obj->ref affiché sans dol_escape_htmltag() dans un &lt;option&gt;</change>
+		<change type='fix'>Audit sécurité : IDOR dans consumption.php — suppression d'une consommation possible sans vérification d'appartenance au panier courant</change>
+		<change type='fix'>Audit sécurité : IDOR dans consumption.php — edit_fk_basket accepté sans vérification que le panier cible appartient au même tiers</change>
+	</Version>
+	<InfraS Downloaded="20260605"/>
+	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
+	<PHP minVersion="7.4" maxVersion="8.4"/>
+</changelog>

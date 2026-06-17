@@ -1,0 +1,55 @@
+<changelog>
+	<Version Number="15.0.2" MonthVersion="2025-02">
+		<change type='add'>Initiale release.</change>
+	</Version>
+	<Version Number="15.0.3" MonthVersion="2025-06">
+		<change type='chg'>Améliorations du code</change>
+	</Version>
+	<Version Number="15.0.4" MonthVersion="2025-07">
+		<change type='chg'>Amélioration de la compatibilité CSS avec les thèmes Dolibarr</change>
+	</Version>
+	<Version Number="15.0.5" MonthVersion="2025-08">
+		<change type='chg'>Nettoyage du code</change>
+	</Version>
+	<Version Number="18.1.0" MonthVersion="2025-09">
+		<change type='fix'> Correction de la liste Dolibarr pour la liste des Ibans et la liste de Demande</change>
+		<change type='fix'> Correction du lien vers la modification d'IBAN du Tiers/Users depuis les listes d'Iban en cliquant sur le nom (User/Tiers)</change>
+		<change type='fix'> Correction du boutton valider/Refuser et supprimer dans la liste des demandes</change>
+		<change type='fix'> Correction du boutton menu (Sécurité IBAN dans Banque) et son icône</change>
+		<change type='fix'> Correction du boutton choix de colonne à afficher</change>
+		<change type='chg'> Prise en charge du boutton de recherche à gauche/droite</change>
+		<change type='add'> Ajout d'une contrôle au niveau des droits pour empécher un utilisateur d'avoir à la fois le droit de modification et validation/supression d'IBAN</change>
+		<change type='add'> Ajout des filtres de recherche pour la liste des Ibans et la liste de Demande</change>
+		<change type='add'> Ajout de l'action de masse pour valider, Refuser et supprimer les demandes de modifications d'iban</change>
+		<change type='add'> Ajout de vérification de validité d'Identifiant IBAN et code SWIFT pour les listes d'Ibans et les Demandes</change>
+	</Version>
+	<Version Number="18.1.1" MonthVersion="2025-09">
+		<change type='fix'> Correction de la méthode de modification et validation d'iban pour les utilisateurs</change>
+		<change type='chg'> Ajout d'informations sur les fonctions</change>
+	</Version>
+	<Version Number="18.2.0" MonthVersion="2025-09">
+		<change type='add'> Ajout de nouvelle colonne 'Numéro de compte bancaire(RIB)' pour afficher les fichiers joints(pdf) du RIB</change>
+		<change type='fix'> Correction du lien vers la page de demandes de modifications depuis le widget du Tableau de Bord. </change>
+	</Version>
+	<Version Number="18.2.1" MonthVersion="2025-10">
+		<change type='fix'> Correction du nom de l'utilisateur/Tiers propriétaires de l'IBAN</change>
+		<change type='fix'> Correction de la logique de validation d'IBAN</change>
+	</Version>
+	<Version Number="18.3.0" MonthVersion="2026-03">
+		<change type='fix'>Sécurité : échappement des URL de formulaires basées sur PHP_SELF pour limiter les risques XSS réfléchis</change>
+		<change type='fix'>Paramètres : isolation du cookie JS de l'état des panneaux (infrassecureiban_tblPSexp au lieu de tblPSexp) pour éviter les collisions inter-modules</change>
+		<change type='fix'>Paramètres : variable cookieName déplacée au scope script pour corriger la persistance de l'état des panneaux après soumission de formulaire</change>
+		<change type='fix'>Correction injection SQL : ajout de $db->escape()</change>
+		<change type='fix'>Correction de l'identifiant du compte bancaire lors de l'ajout d'un IBAN utilisateur</change>
+		<change type='fix'>Correction du périmètre de chiffrement des IBAN : limitation aux tables du module uniquement</change>
+		<change type='fix'>Correction de l'identification utilisateur dans ibanManager (getUserId remplacé par $this->user->id)</change>
+		<change type='fix'>Remplacement des messages en dur par des clés de traduction ($langs->trans())</change>
+		<change type='chg'>Amélioration du CSS</change>
+		<change type='add'>Ajout d'un test de comparaison de la version majeur de Dolibarr supportée (avertissement si version non supportée)</change>
+		<change type='add'>Ajout du fichier CLAUDE.md : documentation technique complète du module pour l'assistant IA</change>
+		<change type='add'>Ajout de la permission superIBAN : demander et valider la création/modification d'un IBAN en une seule opération</change>
+	</Version>
+	<InfraS Downloaded="20260301"/>
+	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
+	<PHP minVersion="7.4" maxVersion="8.4"/>
+</changelog>
