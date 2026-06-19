@@ -144,10 +144,38 @@
 	<Version Number="18.16.0" MonthVersion="2026-05">
 		<change type='chg'>Drag and drop documents joints : ajout d'une invite visible (icône + texte "ou déposez un fichier ici") après le titre du tableau pour informer l'utilisateur de la zone de drop</change>
 		<change type='chg'>Drag and drop documents joints : forçage du z-index du message "Déposez le fichier..." au tout premier plan (99999) pour garantir sa visibilité au-dessus des autres calques</change>
+		<change type='chg'>Refactoring des templates objectline_create vers le pattern hook + arborescence linecreates/ (alignement avec infrasproject) : dispatcher objectline_create.tpl.php + fichiers versionnés v18 à v24 dans core/tpl/linecreates/</change>
+		<change type='chg'>Hook afterFetchLines (normalisation des rangs de lignes contrat) intégré dans ActionsInfraSWorkflow + contexte contractcard ajouté dans module_parts hooks ; classe ActionsInfrasworkflowContract supprimée</change>
+		<change type='chg'>Fonctions infrasworkflow_pickLineTpl(), infrasworkflow_needRankNormalization(), infrasworkflow_normalizeContractProductRanks() déplacées de la classe hook vers infrasworkflow.lib.php</change>
 		<change type='add'>Ajout d'une option pour activer une zone de glisser-déposer (drag and drop) sur la barre de titre du tableau "Fichiers joints" des onglets "Documents joints" de tous les objets (constante INFRASWORKFLOW_DOCUMENTS_DRAGDROP)</change>
 		<change type='add'>Ajout d'une sous-option (visible si la zone de drag and drop est activée) pour conserver le nom original du fichier lors d'un glisser-déposer sur un produit ou service (désactivation du préfixage automatique par la référence) - constante INFRASWORKFLOW_DOCUMENTS_DRAGDROP_PRODUCT_NO_MASK et endpoint AJAX dédié infrasworkflow/ajax/dragdropupload.php</change>
 	</Version>
-	<InfraS Downloaded="20260506"/>
-	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
+	<Version Number="18.16.1" MonthVersion="2026-05">
+		<change type='chg'>Compatibilité Dolibarr v22 à v24</change>
+	</Version>
+	<Version Number="18.17.0" MonthVersion="2026-05">
+		<change type='add'>Ajout d'une option pour transférer des mentions complémentaires du devis vers la facture (nécessite le module InfraSPackPlus)</change>
+	</Version>
+	<Version Number="18.17.1" MonthVersion="2026-06">
+		<change type='fix'>Classement automatique des devis en "facturé" (option INFRASWORKFLOW_INVOICES_CLASSIFY_BILLED_PROPALS) : l'option ne fonctionnait pas car le code lisait la constante native WORKFLOW_INVOICES_CLASSIFY_BILLED_PROPALS au lieu de la constante du module, exigeait le module Workflow natif activé, et contenait un exit; qui interrompait le script lorsqu'une facture liée n'était pas validée. Le devis est désormais classé "facturé" lorsque la somme HT de toutes ses factures liées (validées/payées, acomptes inclus) égale son montant HT, arrondis pris en compte</change>
+	</Version>
+	<Version Number="21.0.0" MonthVersion="2026-06">
+		<change type='chg'>Templates admin_extrafields_ : refactoring vers le pattern hook + arborescence adminextrafields/ (aligné sur objectline_create) ; dispatchers migrés vers (int) DOL_VERSION ; hooks formAdminExtrafieldsList, formAdminExtrafieldsActions, formAdminExtrafieldsCreate, formAdminExtrafieldsEdit ajoutés dans admin/extrafields.php</change>
+		<change type='chg'>Réduction du scope de versions Dolibarr supportées : 21 à 23 pour tous les templates (suppression des fichiers v18, v19, v20 de adminextrafields/ et linecreates/ ; suppression de v24 de linecreates/)</change>
+	</Version>
+	<Version Number="21.1.0" MonthVersion="2026-06">
+		<change type='add'>Ajout de la compatibilité avec Dolibarr v24 : templates adminextrafields/view_v24.tpl.php, add_v24.tpl.php, edit_v24.tpl.php, actions_v24.inc.php, linecreates/v24.tpl.php et page de substitution substitutionpages/dlb240x/contrat/card.php</change>
+	</Version>
+	<Version Number="21.1.1" MonthVersion="2026-06">
+		<change type='chg'>Compatibilité avec Dolibarr 21.x - 24.x : ajustements mineurs pour assurer le bon fonctionnement des templates avec les dernières mises à jour Dolibarr.</change>
+	</Version>
+	<Version Number="21.1.2" MonthVersion="2026-06">
+		<change type='fix'>Compatibilité avec le module Infrastructure</change>
+	</Version>
+	<Version Number="21.1.3" MonthVersion="2026-06">
+		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
+	</Version>
+	<InfraS Downloaded="20260619"/>
+	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>

@@ -176,7 +176,10 @@
 		<change type='fix'>Audit sécurité : IDOR dans consumption.php — suppression d'une consommation possible sans vérification d'appartenance au panier courant</change>
 		<change type='fix'>Audit sécurité : IDOR dans consumption.php — edit_fk_basket accepté sans vérification que le panier cible appartient au même tiers</change>
 	</Version>
-	<InfraS Downloaded="20260605"/>
+	<Version Number="18.3.2" MonthVersion="2026-06">
+		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
+	</Version>
+	<InfraS Downloaded="20260619"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>

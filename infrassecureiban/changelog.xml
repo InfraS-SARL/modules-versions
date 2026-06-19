@@ -49,7 +49,13 @@
 		<change type='add'>Ajout du fichier CLAUDE.md : documentation technique complète du module pour l'assistant IA</change>
 		<change type='add'>Ajout de la permission superIBAN : demander et valider la création/modification d'un IBAN en une seule opération</change>
 	</Version>
-	<InfraS Downloaded="20260301"/>
+	<Version Number="18.3.1" MonthVersion="2026-03">
+		<change type='fix'>Correction des vérifications de permissions : ajout de superIBAN en alternative à changeIBAN/validateIBAN dans list_iban.php, list_changes.php, infrassecureibanSociete.class.php et box_infrassecureiban_ibanmodification.php</change>
+	</Version>
+	<Version Number="18.3.2" MonthVersion="2026-06">
+		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
+	</Version>
+	<InfraS Downloaded="20260619"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>

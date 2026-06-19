@@ -90,7 +90,10 @@
 	<Version Number="18.4.3" MonthVersion="2026-06">
 		<change type='chg'>Affichage du lien de paiement sur la fiche facture (hook formObjectOptions) : le lien n'est plus affiché lorsqu'il est au statut "completed", c'est-à-dire une fois que le client a réglé sa part (total TTC − paiements spéciaux/primes). Seuls les liens "valid" restent affichés. Le lien disparaît donc de la fiche dès que la part client est payée, même si la part de l'État (Prime CEE, GRDF, coup de pouce…) reste impayée.</change>
 	</Version>
-	<InfraS Downloaded="20260608"/>
+	<Version Number="18.4.4" MonthVersion="2026-06">
+		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
+	</Version>
+	<InfraS Downloaded="20260619"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
