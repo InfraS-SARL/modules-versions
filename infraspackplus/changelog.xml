@@ -1881,7 +1881,16 @@
 		<change type='fix'>Correction d'une erreur d'affichage PDF pour les attributs supplémentaires de ligne de type HTML vide</change>
 		<change type='fix'>Correction d'une erreur d'affichage pour les attributs supplémentaires de ligne en mode visu</change>
 	</Version>
-	<InfraS Downloaded="20260625"/>
+	<Version Number="21.3.0" MonthVersion="2026-06">
+		<change type='fix'>Mentions de TVA — services : la mention d'un service suit désormais le lieu de livraison / d'exécution (adresse de livraison du document) et non plus le seul pays du siège du preneur. Un service rattaché à un lieu et réalisé en France pour un client étranger ne produit plus à tort de mention d'autoliquidation ou « hors champ ».</change>
+		<change type='fix'>Mentions de TVA — biens : l'exonération de livraison intracommunautaire (art. 262 ter I) n'est désormais émise que si le numéro de TVA communiqué par le client correspond au pays de livraison. Une livraison vers un autre État de l'UE avec un numéro de TVA français reste une vente taxable en France (aucune mention d'exonération).</change>
+		<change type='fix'>Mentions de TVA — données d'installation (data.sql) : correction de l'inversion des correspondances TVA_3 / TVA_4 (service à l'export / produit intracommunautaire) afin que les nouvelles installations et entités utilisent le bon mapping.</change>
+		<change type='add'>Mentions de TVA — départements d'outre-mer (DOM) : prise en charge des ventes depuis la métropole vers un DOM (La Réunion, Guadeloupe, Martinique, Guyane, Mayotte — détectés par le code pays ou le code postal 97xxx). Nouvelle mention « Exonération de TVA, article 294, 2 du CGI » pour les biens et mention d'autoliquidation pour les services entre professionnels (nouvelles entrées de dictionnaire TVA_DOM / TVA_DOMS, nouveaux emplacements de mention TVA_7 / TVA_8 et clés de langue dédiées en fr_FR, en_US, es_ES, it_IT).</change>
+	</Version>
+	<Version Number="21.3.1" MonthVersion="2026-06">
+		<change type='fix'>Pied de page : correction des lignes du pied (adresse, gérant, identifiants) trop serrées sur la dernière page lorsqu'un sous-total Infrastructure terminait le document. La ligne d'adresse se collait à la ligne du gérant. Le pied de page remet désormais à zéro les marges internes de cellule avant de s'imprimer, pour ne plus hériter du décalage laissé par le rendu du dernier sous-total.</change>
+	</Version>
+	<InfraS Downloaded="20260630"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
