@@ -179,7 +179,10 @@
 		<change type='add'>Ajout d'une action de masse « Classer payée » sur la liste des factures fournisseurs (activable dans les paramètres du module, section Gestion des factures)</change>
 		<change type='add'>Ajout d'une option (section Gestion des factures) pour passer automatiquement une commande fournisseur au statut « Reçue complètement » lorsqu'elle est classée « Facturé » alors qu'elle est au statut « Commandé » (sans mouvement de stock)</change>
 	</Version>
-	<InfraS Downloaded="20260622"/>
+	<Version Number="21.3.0" MonthVersion="2026-07">
+		<change type='add'>Ajout d'une option (section Gestion des contrats) pour autoriser la création d'un contrat depuis un devis dès qu'il est au statut validé, sans attendre sa signature</change>
+	</Version>
+	<InfraS Downloaded="20260701"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
