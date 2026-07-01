@@ -9,7 +9,10 @@
 	<Version Number="15.0.2" MonthVersion="2025-07">
 		<change type='chg'>Amélioration de la compatibilité CSS avec les thèmes Dolibarr</change>
 	</Version>
-<InfraS Downloaded="20250701"/>
+	<Version Number="15.0.3" MonthVersion="2025-07">
+		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
+	</Version>
+	<InfraS Downloaded="20260701"/>
 	<Dolibarr minVersion="15.0.0" maxVersion="21.0.3"/>
 	<PHP minVersion="7.4" maxVersion="8.2"/>
 </changelog>
