@@ -182,7 +182,10 @@
 	<Version Number="21.3.0" MonthVersion="2026-07">
 		<change type='add'>Ajout d'une option (section Gestion des contrats) pour autoriser la création d'un contrat depuis un devis dès qu'il est au statut validé, sans attendre sa signature</change>
 	</Version>
-	<InfraS Downloaded="20260701"/>
+	<Version Number="21.3.1" MonthVersion="2026-07">
+		<change type='fix'>Onglet "Produits du contrat" : le formulaire d'ajout de ligne ne s'affichait plus (chemin de template `/infrasworkflow/core/tpl` au lieu de `/custom/infrasworkflow/core/tpl` transmis à `CommonObject::formAddObjectLine()` par le hook formAddObjectLine, provoquant un include silencieux sur un fichier inexistant)</change>
+	</Version>
+	<InfraS Downloaded="20260702"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
