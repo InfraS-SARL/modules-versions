@@ -1,0 +1,19 @@
+<changelog>
+	<Version Number="18.0.0" MonthVersion="2026-03">
+		<change type='add'>Initiale release.</change>
+	</Version>
+	<Version Number="18.0.1" MonthVersion="2026-07">
+		<change type='fix'>Le module était une copie non finalisée du module dolinfras : classe descripteur (moddolinfras), classe de hook (Actionsdolinfras), fonctions de la librairie (dolinfras_*) et numéro de module (500100) entraient en conflit avec le vrai module dolinfras, provoquant une erreur fatale "Cannot redeclare class" (page blanche) sur admin/modules.php. Renommage complet vers l'espace de nom infrashelpdesk et attribution du numéro de module 500101.</change>
+		<change type='chg'>Retrait de la section "Forcer l'application des paramètres LTS" (sql/data.sql) : ce mécanisme était propre à la distribution LTS gérée par le module dolinfras et n'a pas de sens pour ce module.</change>
+	</Version>
+	<Version Number="18.1.0" MonthVersion="2026-07">
+		<change type='chg'>Le hook du module passe du contexte 'login' au contexte 'all' afin d'être présent sur toutes les pages.</change>
+		<change type='add'>Bouton flottant déplaçable affiché sur toutes les pages : le clic ouvre un panneau présentant le contexte de hook de la page courante et la liste des modules externes interagissant avec ce contexte. L'interaction est vérifiée sur deux critères : les contextes de hook déclarés par le module croisés avec ceux de la page, ET les fonctions de hook appelées par le script de la page (executeHooks) implémentées par la classe de hook du module — un module qui n'en implémente aucune n'est pas listé. Position mémorisée par utilisateur (localStorage).</change>
+		<change type='add'>Page de paramètres : option INFRASHELPDESK_BUTTON_FOR_ALL_USERS pour afficher le bouton flottant à tous les utilisateurs connectés (par défaut : administrateurs uniquement).</change>
+		<change type='add'>Dictionnaire llx_c_infrashelpdesk_ctxurl (éditable via Accueil / Configuration / Dictionnaires) : table de correspondance entre la liste exhaustive des contextes de hook Dolibarr (648 contextes générés depuis les sources, avec les fonctions de hook associées) et les URL des pages wiki. Contextes core : chapitre/sous-chapitre correspondant du livre guide-dolibarr-v24 (wiki.infras.fr) ; contextes de modules externes : livre du module dans l'étagère modules-infras (ou l'étagère elle-même à défaut). Le panneau du bouton flottant affiche les URL correspondant aux contextes de la page ; un clic sur une URL ouvre une fenêtre popup (dialog modale avec iframe) affichant le contenu du wiki.</change>
+		<change type='add'>Page de paramètres : option INFRASHELPDESK_PREFIX_LINK_WIKI_DOC pour personnaliser le préfixe (URL de base) des liens vers la documentation wiki ; s'il est renseigné, il remplace https://wiki.infras.fr dans les URL du dictionnaire (les URL pointant vers un autre domaine ne sont pas modifiées).</change>
+	</Version>
+	<InfraS Downloaded="20260709"/>
+	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
+	<PHP minVersion="7.4" maxVersion="8.4"/>
+</changelog>
