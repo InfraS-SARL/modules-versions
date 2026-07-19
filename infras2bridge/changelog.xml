@@ -92,8 +92,12 @@
 	</Version>
 	<Version Number="18.4.4" MonthVersion="2026-06">
 		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
+		<change type='fix'>Montant du lien de paiement Bridge : les écotaxes (INFRASPLUS_PDF_EXF_ECOTAX, ex. éco-participation DEEE) ne sont plus déduites du montant payable. Elles sont déjà incluses dans le total TTC et restent à la charge du client. Le lien Bridge correspond désormais à total TTC − paiements spéciaux (primes) uniquement, aussi bien à la création du lien (adjustTotalTtcWithSpecialPayments) qu'au contrôle de complétion (PAYMENT_CUSTOMER_CREATE et hook beforePDFCreation).</change>
 	</Version>
-	<InfraS Downloaded="20260619"/>
+	<Version Number="18.4.5" MonthVersion="2026-07">
+		<change type='fix'>Trigger : avertissement PHP "Undefined property" (TPropaleHist::$element) à chaque événement Dolibarr sans rapport avec les devis, factures ou paiements. Le test in_array($object->element, ['propal', 'facture', 'payment']) lisait la propriété sans vérifier son existence au préalable.</change>
+	</Version>
+	<InfraS Downloaded="20260718"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
