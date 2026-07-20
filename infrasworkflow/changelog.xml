@@ -191,7 +191,10 @@
 	<Version Number="21.4.1" MonthVersion="2026-07">
 		<change type='fix'>Correction d'avertissements PHP</change>
 	</Version>
-	<InfraS Downloaded="20260710"/>
+	<Version Number="21.4.2" MonthVersion="2026-07">
+		<change type='fix'>Trigger : avertissement PHP "Undefined property" (TPropaleHist::$element) à chaque événement Dolibarr sans rapport avec les devis, factures, tiers, produits, contrats ou commandes fournisseur. Le test in_array($object->element, [...]) lisait la propriété sans vérifier son existence au préalable.</change>
+	</Version>
+	<InfraS Downloaded="20260720"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
