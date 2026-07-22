@@ -194,7 +194,10 @@
 	<Version Number="21.4.2" MonthVersion="2026-07">
 		<change type='fix'>Trigger : avertissement PHP "Undefined property" (TPropaleHist::$element) à chaque événement Dolibarr sans rapport avec les devis, factures, tiers, produits, contrats ou commandes fournisseur. Le test in_array($object->element, [...]) lisait la propriété sans vérifier son existence au préalable.</change>
 	</Version>
-	<InfraS Downloaded="20260720"/>
+	<Version Number="21.5.0" MonthVersion="2026-07">
+		<change type='add'>Ajout d'un droit "Accéder aux médias" et d'une option (nouvelle section "Gestion des médias") pour autoriser les utilisateurs non administrateurs disposant de ce droit à utiliser le navigateur de médias de l'éditeur WYSIWYG (bouton "Parcourir le serveur") - constante INFRASWORKFLOW_MEDIAS_BROWSER_ALL_USERS. Dolibarr réserve nativement ce navigateur aux administrateurs et aux utilisateurs ayant le droit d'écriture sur le module Sites Web</change>
+	</Version>
+	<InfraS Downloaded="20260722"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
