@@ -1952,6 +1952,9 @@
 		<change type='fix'><![CDATA[Modèle PDF pdf_InfraSPlus_RE (réception) : le numéro de série reçu sur commande fournisseur ($serialStd) affiché en fin de description pouvait rester celui d'une ligne précédente au lieu d'être vide, sur une ligne de réception sans lot/série correspondant. La variable n'était affectée que dans la branche de correspondance ($commandefourndet == $fk_commandefourndet) et n'était jamais réinitialisée en tête de boucle par ligne. Ajout de $serialStd = ''; avant le test if (!empty($serialreceived)).]]></change>
 		<change type='fix'><![CDATA[Fonctions infraspackplus_get_serialreceived() et infraspackplus_get_alreadyreceived() (core/lib/infraspackplus.lib.php), utilisées par le modèle pdf_InfraSPlus_RE pour afficher respectivement le numéro de lot/série reçu et la colonne "Reliquat" (INFRASPLUS_PDF_BR_WITH_REL_COLUMN) : les deux fonctions interrogeaient la table llx_commande_fournisseur_dispatch, renommée llx_receptiondet_batch depuis Dolibarr 20.0.0 (colonnes fk_commande/fk_commandefourndet devenues fk_element/fk_elementdet, ajout de element_type). La requête échouait silencieusement sur cette instance (table absente), les deux fonctions retournant alors un résultat vide : le numéro de série reçu ne s'affichait jamais et la colonne "Reliquat" affichait systématiquement 0 au lieu de qty_asked - quantité déjà reçue. Requêtes réécrites sur llx_receptiondet_batch avec fk_element/fk_elementdet/element_type = 'supplier_order'.]]></change>
 	</Version>
+	<Version Number="21.5.12" MonthVersion="2026-07">
+		<change type='fix'>Correction d'une erreur sur le modèle pdf_InfraSPlus_NDF : Clé de tableau non initialisée si aucune ligne ne correspond, la clé n'existe pas (Génère une erreur PHP).</change>
+	</Version>
 	<InfraS Downloaded="20260728"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
