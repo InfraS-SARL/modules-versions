@@ -36,7 +36,28 @@
 	<Version Number="18.1.0" MonthVersion="2025-01">
 		<change type='add'>Core change : Compatibilité Dolibarr 18.0.6</change>
 	</Version>
+	<Version Number="18.1.1" MonthVersion="2025-06">
+		<change type='fix'>PHP8.1+ compatibility</change>
+	</Version>
 	<Version Number="18.2.0" MonthVersion="2026-03">
+		<change type='fix'>Sécurité : Correction des appels GETPOST sans type ou avec type déprécié 'none' => utilisation de 'alphanohtml' et 'alpha'</change>
+		<change type='fix'>Sécurité : Échappement de $_SERVER['PHP_SELF'] et $_SERVER['SERVER_SOFTWARE'] avec dol_escape_htmltag() contre les failles XSS</change>
+		<change type='fix'>Sécurité : Remplacement du secret OAuth2 en dur par getDolGlobalString() et suppression du token d'accès dans les logs</change>
+		<change type='fix'>Sécurité : Remplacement de addslashes() par $db->escape() dans la fonction de sauvegarde SQL</change>
+		<change type='fix'>Sécurité : Correction du cast de entity en integer dans la requête SQL de sauvegarde</change>
+		<change type='fix'>JavaScript : Correction du nom de cookie 'tblPSexp' non préfixé par le module => 'infrasexpense_tblPSexp' (cohérence avec les autres modules InfraS)</change>
+		<change type='chg'>Nouveau lien vers le Wiki InfraSExpense</change>
+		<change type='chg'>Amélioration du CSS</change>
+		<change type='chg'>Remplacement de la syntaxe dépréciée $user->rights->infrasexpense->use par $user->hasRight()</change>
+		<change type='chg'>Alignement du bloc JavaScript sur les conventions des modules infraspackplus, infrassearch et infraswidgets</change>
+		<change type='add'>Ajout du fichier CLAUDE.md complet pour guider le développement avec l'IA</change>
+		<change type='add'>Compatibilité avec Dolibarr V23</change>
+		<change type='add'>Compatibilité avec PHP8.4</change>
+	</Version>
+	<Version Number="18.2.1" MonthVersion="2026-03">
+		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
+	</Version>
+	<Version Number="18.3.0" MonthVersion="2026-03">
 		<change type='add'>Core change : Compatibilité Dolibarr 22.0.x</change>
 		<change type='chg'>Refactoring : Création des classes surcharge InfrasExpenseReport et InfrasExpenseReportLine</change>
 		<change type='chg'>Substitution pages : Mise à jour card.php, list.php, index.php, payment/payment.php vers syntaxe V22</change>
@@ -45,10 +66,11 @@
 		<change type='chg'>Code : Migration GETPOST('xxx', 'int') vers GETPOSTINT('xxx')</change>
 		<change type='fix'>card.php : Correction erreur dol_get_fiche_head() argument type</change>
 	</Version>
-	<Version Number="18.2.1" MonthVersion="2026-07">
-		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
+	<Version Number="18.3.1" MonthVersion="2026-07">
+		<change type='fix'>Modification de ligne : Correction de la TVA remise à 0 lors de la modification d'une ligne de note de frais (la valeur saisie était ignorée) => ajout de la surcharge updateline() dans la classe InfrasExpenseReport</change>
+		<change type='fix'>Modification de ligne : Correction de la case Carte Pro non prise en compte lors de la modification d'une ligne => ajout de la surcharge update() dans la classe InfrasExpenseReportLine pour enregistrer le champ special_code</change>
 	</Version>
-	<InfraS Downloaded="20260701"/>
+	<InfraS Downloaded="20260728"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="23.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
