@@ -15,7 +15,10 @@
 	<Version Number="18.2.1" MonthVersion="2026-07">
 		<change type='chg'>Préfixe du lien vers la documentation wiki : le jeton BRAND placé dans l'URL est désormais remplacé automatiquement par le contenu du fichier htdocs/BRAND de l'instance (ou par "dolibarr" si ce fichier est vide ou absent). Appliqué à l'activation du module et à chaque enregistrement de la page de paramètres.</change>
 	</Version>
-	<InfraS Downloaded="20260722"/>
+	<Version Number="18.2.2" MonthVersion="2026-07">
+		<change type='chg'>Dictionnaire llx_c_infrashelpdesk_ctxurl : ajout de la documentation des modules partenaires Oblyon et Sirene, pointant vers leurs livres dédiés sur le wiki InfraS (étagère "Module partenaire"). Le bouton flottant de contexte peut désormais afficher leur documentation, aussi bien sur leurs propres pages de configuration que lorsqu'ils sont détectés comme modules interagissant sur une autre page.</change>
+	</Version>
+	<InfraS Downloaded="20260730"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
