@@ -203,7 +203,10 @@
 	<Version Number="21.5.2" MonthVersion="2026-07">
 		<change type='fix'>Lignes produits d'un contrat enregistrées comme des services : la colonne contratdet.product_type a pour valeur par défaut 1 et Contrat::addline() ne la renseigne pas, si bien qu'un produit du catalogue ajouté par un chemin autre que l'onglet « Produits des Contrats » (formulaire natif de la fiche contrat, API, import) était typé service. Ces lignes n'apparaissaient alors pas dans l'onglet « Produits des Contrats » et étaient comptées dans le montant du contrat sur la fiche. Le trigger LINECONTRACT_INSERT force désormais product_type = 0 sur toute ligne pointant un produit du catalogue de type produit, quel que soit le chemin d'ajout (option INFRASWORKFLOW_CONTRACT_PRODUCTS_FROM_SOURCE)</change>
 	</Version>
-	<InfraS Downloaded="20260730"/>
+	<Version Number="21.5.3" MonthVersion="2026-07">
+		<change type='fix'>Glisser-déposer d'un fichier sur l'onglet "Fichiers joints" d'un produit/service (option INFRASWORKFLOW_DOCUMENTS_DRAGDROP_PRODUCT_NO_MASK) : le fichier déposé n'était pas indexé dans llx_ecm_files avec son objet source (colonnes src_object_type / src_object_id), contrairement à un envoi par le formulaire classique. Il n'apparaissait donc pas dans les listes filtrées sur cet index, notamment les attributs supplémentaires de type "liste" pointant les fichiers de l'objet (ex. champ "Image principale" du module onepagebasket), même après activation du partage public du fichier. La classe native FileUpload utilisée par le glisser-déposer n'indexe jamais les fichiers et l'indexation de rattrapage effectuée à l'affichage de l'onglet ne renseigne pas l'objet source ; l'endpoint AJAX du module indexe désormais chaque fichier déposé avec son objet source, comme le fait l'envoi classique</change>
+	</Version>
+	<InfraS Downloaded="20260731"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
