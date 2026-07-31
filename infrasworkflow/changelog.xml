@@ -197,7 +197,13 @@
 	<Version Number="21.5.0" MonthVersion="2026-07">
 		<change type='add'>Ajout d'un droit "Accéder aux médias" et d'une option (nouvelle section "Gestion des médias") pour autoriser les utilisateurs non administrateurs disposant de ce droit à utiliser le navigateur de médias de l'éditeur WYSIWYG (bouton "Parcourir le serveur") - constante INFRASWORKFLOW_MEDIAS_BROWSER_ALL_USERS. Dolibarr réserve nativement ce navigateur aux administrateurs et aux utilisateurs ayant le droit d'écriture sur le module Sites Web</change>
 	</Version>
-	<InfraS Downloaded="20260722"/>
+	<Version Number="21.5.1" MonthVersion="2026-07">
+		<change type='fix'>Montant du contrat dans l'infobulle affichée au survol de sa référence (fiche tiers, listes) : les lignes produits étaient additionnées au montant du contrat, alors que la fiche et le PDF les excluent. Les montants HT, TVA et TTC de l'infobulle sont désormais calculés sur les seules lignes de service, avec le critère d'exclusion exact des modèles PDF InfraSPlus (type du produit au catalogue, et non type de la ligne de contrat) afin que l'infobulle, le PDF et la fiche affichent toujours le même montant (hooks getTooltipContent sur le contexte contratdao et, si MAIN_ENABLE_AJAX_TOOLTIP est désactivé, getNomUrl sur le contexte contractdao)</change>
+	</Version>
+	<Version Number="21.5.2" MonthVersion="2026-07">
+		<change type='fix'>Lignes produits d'un contrat enregistrées comme des services : la colonne contratdet.product_type a pour valeur par défaut 1 et Contrat::addline() ne la renseigne pas, si bien qu'un produit du catalogue ajouté par un chemin autre que l'onglet « Produits des Contrats » (formulaire natif de la fiche contrat, API, import) était typé service. Ces lignes n'apparaissaient alors pas dans l'onglet « Produits des Contrats » et étaient comptées dans le montant du contrat sur la fiche. Le trigger LINECONTRACT_INSERT force désormais product_type = 0 sur toute ligne pointant un produit du catalogue de type produit, quel que soit le chemin d'ajout (option INFRASWORKFLOW_CONTRACT_PRODUCTS_FROM_SOURCE)</change>
+	</Version>
+	<InfraS Downloaded="20260730"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
