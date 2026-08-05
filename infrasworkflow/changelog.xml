@@ -206,7 +206,10 @@
 	<Version Number="21.5.3" MonthVersion="2026-07">
 		<change type='fix'>Glisser-déposer d'un fichier sur l'onglet "Fichiers joints" d'un produit/service (option INFRASWORKFLOW_DOCUMENTS_DRAGDROP_PRODUCT_NO_MASK) : le fichier déposé n'était pas indexé dans llx_ecm_files avec son objet source (colonnes src_object_type / src_object_id), contrairement à un envoi par le formulaire classique. Il n'apparaissait donc pas dans les listes filtrées sur cet index, notamment les attributs supplémentaires de type "liste" pointant les fichiers de l'objet (ex. champ "Image principale" du module onepagebasket), même après activation du partage public du fichier. La classe native FileUpload utilisée par le glisser-déposer n'indexe jamais les fichiers et l'indexation de rattrapage effectuée à l'affichage de l'onglet ne renseigne pas l'objet source ; l'endpoint AJAX du module indexe désormais chaque fichier déposé avec son objet source, comme le fait l'envoi classique</change>
 	</Version>
-	<InfraS Downloaded="20260731"/>
+	<Version Number="21.5.4" MonthVersion="2026-08">
+		<change type='fix'>Page de substitution contrat/card.php (5 branches) : les lignes libres (sans produit lié) n'étaient plus affichées sur la fiche contrat — le filtre d'exclusion des lignes de type produit testait p.fk_product_type (NULL pour une ligne libre, donc égal à 0 en comparaison souple) au lieu du type propre de la ligne (contratdet.product_type)</change>
+	</Version>
+	<InfraS Downloaded="20260805"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
