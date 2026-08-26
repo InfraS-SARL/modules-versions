@@ -2,7 +2,13 @@
 	<Version Number="22.0.0" MonthVersion="2020-01">
 		<change type='add'>initial release</change>
 	</Version>
-	<InfraS Downloaded="20260825"/>
+	<Version Number="22.1.0" MonthVersion="2026-08">
+		<change type='add'>gestion de la clé API SMTP2GO d'un sous-compte (création, modification, suppression, test des permissions) depuis sa fiche</change>
+	</Version>
+	<Version Number="22.1.1" MonthVersion="2026-08">
+		<change type='fix'>colonne endpoints de llx_infras2smtp2go_apikey trop courte (varchar(255)) sur les instances provisionnées avant son élargissement en text, provoquant une erreur "Data too long for column 'endpoints'" lors de la synchronisation d'une clé API ayant de nombreux endpoints autorisés</change>
+	</Version>
+	<InfraS Downloaded="20260826"/>
 	<Dolibarr minVersion="22.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
