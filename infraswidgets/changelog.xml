@@ -108,9 +108,13 @@
 		<change type='fix'>Compatibilité avec PHP 8.4</change>
 	</Version>
 	<Version Number="18.1.2" MonthVersion="2026-06">
+		<change type='fix'>Création du nouveau lien vers le Wiki InfraSWidgets</change>
 		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
 	</Version>
-	<InfraS Downloaded="20260619"/>
+	<Version Number="18.1.3" MonthVersion="2026-08">
+		<change type='fix'>Compatibilité CSRF (MAIN_SECURITY_CSRF_WITH_TOKEN niveau 2 et plus) : ajout du jeton de sécurité (paramètre token, newToken()) au picto de suppression d'un objectif commercial (admin/infraswidgetssalesobjectives.php) — sans lui, ce lien GET avec action=delete était bloqué (403) par la protection CSRF de main.inc.php dès l'activation de la constante</change>
+	</Version>
+	<InfraS Downloaded="20260827"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
