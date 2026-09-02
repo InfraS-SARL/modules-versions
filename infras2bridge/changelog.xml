@@ -100,6 +100,9 @@
 	<Version Number="18.4.6" MonthVersion="2026-09">
 		<change type='fix'>Création de lien de paiement : l'API Bridge rejetait la création (HTTP 400, code payment.user.company_name_invalid) quand le nom du tiers contenait des caractères hors du jeu SEPA — exposants, lettres accentuées, esperluette... (ex. « GS³ Architectes Associés ») — ce qui faisait échouer toute la validation de la facture (trigger BILL_VALIDATE en erreur, rollback complet, facture restant en brouillon). Nouvelle fonction infras2bridgeSanitizeUserField() appliquée au company_name avant l'envoi à l'API : conversion des exposants/indices unicode en chiffres (³ devient 3), translittération des accents (dol_string_unaccent), remplacement de tout caractère hors du jeu SEPA accepté par Bridge (lettres, chiffres, / - ? : ( ) . , ' + espace) par un espace, compression des espaces et troncature à 140 caractères. Si le nom ne contient aucun caractère autorisé après assainissement, company_name n'est pas envoyé (l'API renvoie alors son erreur explicite sur l'identité utilisateur requise).</change>
 	</Version>
+	<Version Number="18.4.7" MonthVersion="2026-09">
+		<change type='fix'>Validation de facture : quand le montant à payer était inférieur au montant minimum INFRAS2BRIDGE_MIN_PAYMENT_AMOUNT, le trigger BILL_VALIDATE renvoyait une erreur bloquante (rollback, facture restant en brouillon). La facture est désormais validée normalement, sans création de lien de paiement Bridge : les extrafields lien/QR restent vides, donc rien n'est affiché sur le PDF, et un simple avertissement non bloquant informe l'utilisateur. La création manuelle d'un lien sur devis conserve son contrôle bloquant du montant minimum.</change>
+	</Version>
 	<InfraS Downloaded="20260902"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
