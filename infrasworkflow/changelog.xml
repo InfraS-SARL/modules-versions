@@ -217,7 +217,11 @@
 		<change type='add'>Affichage du type de tiers à la création d'une commande client.</change>
 		<change type='add'>Reprise de la facturation en masse des commandes : copie des notes, auteur des factures, dédoublonnage de la référence commande.</change>
 	</Version>
-	<InfraS Downloaded="20260903"/>
+	<Version Number="21.7.0" MonthVersion="2026-09">
+		<change type='add'>Section "Gestion des stocks" : la couleur choisie pour les lignes non expédiables n'était jamais enregistrée. Le sélecteur de couleur était généré sans attribut name (paramètres transmis dans le désordre à FormOther::selectColor(), le préfixe qui sert de nom de champ recevait une chaîne vide et la valeur affichée était le nom de la constante), et le traitement du bouton d'enregistrement ne lisait aucune valeur soumise pour cette constante : la valeur calculée pour la constante précédente de la liste était réenregistrée à sa place</change>
+		<change type='add'>Identification améliorée des lignes de commandes clients non expédiables (option INFRASWORKFLOW_IDENTIFY_ORDER_LINES_NO_SHIPPABLE) : sur la fiche des commandes non annulées et non clôturées, la quantité des lignes produits dont la quantité restant à expédier dépasse le stock réel du produit est affichée en gras dans la couleur configurée (INFRASWORKFLOW_COLOR_TO_IDENTIFY, rouge par défaut), et le survol de cette quantité affiche le stock réel du produit. Sont concernées aussi bien les lignes sans stock que celles dont le stock est insuffisant pour couvrir la quantité commandée (quantité 10 pour un stock de 5), selon le critère exact de l'icône "expédiable" de la liste des commandes. La coloration et l'infobulle ciblent la cellule de quantité des lignes concernées sans surcharger le template des lignes : elles fonctionnent donc que les lignes soient rendues par InfraSPackPlus, par InfraSProject ou par Dolibarr</change>
+	</Version>
+	<InfraS Downloaded="20260908"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
