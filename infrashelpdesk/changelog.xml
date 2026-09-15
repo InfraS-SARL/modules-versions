@@ -18,7 +18,11 @@
 	<Version Number="18.2.2" MonthVersion="2026-07">
 		<change type='chg'>Dictionnaire llx_c_infrashelpdesk_ctxurl : ajout de la documentation des modules partenaires Oblyon et Sirene, pointant vers leurs livres dédiés sur le wiki InfraS (étagère "Module partenaire"). Le bouton flottant de contexte peut désormais afficher leur documentation, aussi bien sur leurs propres pages de configuration que lorsqu'ils sont détectés comme modules interagissant sur une autre page.</change>
 	</Version>
-	<InfraS Downloaded="20260730"/>
+	<Version Number="18.2.3" MonthVersion="2026-09">
+		<change type='chg'>Dictionnaire llx_c_infrashelpdesk_ctxurl : couverture complète du module InfraSFiles, dont les 12 chapitres du livre sont désormais rattachés aux pages sur lesquelles le module intervient. Pages natives Dolibarr, via une seconde ligne au contexte propre au module (la ligne du guide Dolibarr est conservée, les deux liens sont affichés) : fiche d'un bon de prélèvement / virement (bordereau), fiche d'inventaire et page de saisie des lignes d'inventaire (feuille de comptage), modèles d'emails (envoi par email). Pages du module : à propos (présentation, installation et activation, compatibilité), changelog (changelog et support, dépannage), paramètres (paramètres, sauvegarde et restauration, permissions), onglet Fichiers joints (génération et onglet Fichiers joints, envoi par email).</change>
+		<change type='chg'>Dictionnaire llx_c_infrashelpdesk_ctxurl : ajout de la documentation des modules E-INVOICING et MULTISMTP (section « Documentation des modules externes » du panneau contextuel) ainsi que des pages des modules InfraS2Smtp2go et InfraSFiles (section « Documentation Dolibarr »), pointant vers leurs livres respectifs sur le wiki InfraS. Le livre du module est désormais renseigné dans la colonne url_wiki de toutes les lignes de ces modules, ainsi que sur celles de Sirene, afin que le lien de la section « Documentation des modules externes » ouvre le livre du module quelle que soit la ligne retenue.</change>
+	</Version>
+	<InfraS Downloaded="20260914"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
