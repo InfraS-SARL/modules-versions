@@ -226,7 +226,13 @@
 		<change type='add'>Section "Gestion des inventaires" : à l'initialisation d'un inventaire, exclusion des produits à la fois hors vente et hors achat, et des produits rattachés à la catégorie "Obsolète" configurée ou à l'une de ses sous-catégories (options INFRASWORKFLOW_HIDE_ITEMS_TAGGED_OBSOLETE et INFRASWORKFLOW_INVENTORY_OBSOLETE_CATEGORY). Les deux traitements sont réalisés par le trigger INVENTORY_VALIDATED, dans la transaction ouverte par Inventory::validate() : une erreur annule la validation</change>
 		<change type='add'>Section "Gestion des inventaires" : colonne supplémentaire "Zone", triable, sur les lignes de saisie de l'inventaire, alimentée par un attribut supplémentaire du produit (INFRASWORKFLOW_INVENTORY_ZONE_EXTRAFIELD, prioritaire) ou par la sous-catégorie d'une catégorie parente de localisation à laquelle le produit est rattaché (INFRASWORKFLOW_INVENTORY_ZONE_PARENT_CATEGORY). La colonne est rendue par une nouvelle page de substitution product/inventory/inventory.php (branche dlb220x, constante INFRASWORKFLOW_PS_ACTIVE_PRODUCT_INVENTORY_INVENTORY synchronisée avec l'option INFRASWORKFLOW_DISPLAY_ZONE_COLUMN)</change>
 	</Version>
-	<InfraS Downloaded="20260910"/>
+	<Version Number="21.8.1" MonthVersion="2026-09">
+		<change type='chg'>Ajout d'une nouvelle famille dédiée aux modules d'hébergement</change>
+	</Version>
+	<Version Number="21.8.2" MonthVersion="2026-09">
+		<change type='chg'>Position du module dans la famille « Dolibarr LTS by InfraS » : 100008 → 100010 (renumérotation de la famille)</change>
+	</Version>
+	<InfraS Downloaded="20260929"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
