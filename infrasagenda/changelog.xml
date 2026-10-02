@@ -1,0 +1,43 @@
+<changelog>
+	<Version Number="18.0.0" MonthVersion="2026-10">
+		<change type='add'>version initiale : grille interactive sur la page Agenda (vues mois, semaine et jour) avec la bibliothèque FullCalendar 7.1.0 embarquée</change>
+		<change type='add'>création, modification, copie et suppression d'un événement dans une fenêtre, sans quitter l'agenda</change>
+		<change type='add'>déplacement et changement de durée d'un événement à la souris, avec retour à sa place si le serveur refuse</change>
+		<change type='add'>droit "Utiliser la grille interactive" et bascule par utilisateur entre l'affichage natif et l'affichage interactif</change>
+		<change type='add'>couleurs de la grille lues sur la grille native : fonctionne avec les thèmes eldy, md, oblyon ou tout autre thème</change>
+	</Version>
+	<Version Number="18.1.0" MonthVersion="2026-10">
+		<change type='fix'>couleur du texte des événements : texte noir sur les fonds clairs (jaune, orange, gris clair) au lieu d'un texte blanc peu lisible</change>
+		<change type='chg'>pages de paramètres : lignes alternées, trait de séparation entre les options et bandeaux de groupe, comme sur le module InfraSFiles</change>
+		<change type='add'>onglet "Couleurs" dans les paramètres : couleur de fond des événements pour chaque type d'événement, propre à chaque entité, avec une option pour activer ou non la coloration par type</change>
+		<change type='add'>choix d'une nuance (2 plus claires, 2 plus foncées) dans la fenêtre de création et de modification, pour distinguer les événements d'un même type</change>
+	</Version>
+	<Version Number="18.2.0" MonthVersion="2026-10">
+		<change type='fix'>la mise en forme de la grille et de la fenêtre d'un événement est chargée avec la version du module dans son adresse : après une mise à jour, la fenêtre ne s'affiche plus mal pendant une heure (boutons radio à la place des pastilles de nuance)</change>
+		<change type='chg'>tous les événements sont des blocs, y compris les événements horaires en vue mois (auparavant un simple point de couleur) ; heure au format 08:00, coche pour un événement terminé, pourcentage pour un événement en cours, cadenas pour un événement non modifiable, plus d'espace entre deux événements</change>
+		<change type='add'>réglage "Style des événements" : Plein, Doux, Pastille ou Dégradé</change>
+		<change type='add'>réglage "Infobulle au survol d'un événement" : Carte, Compacte ou Aucune ; l'infobulle s'affiche à côté du jour, sans recouvrir ses autres événements</change>
+		<change type='add'>réglage "Ouvrir la liste du jour au survol" : laisser la souris sur un jour qui affiche "+N" ouvre la liste de tous ses événements</change>
+	</Version>
+	<Version Number="18.2.1" MonthVersion="2026-10">
+		<change type='fix'>vues semaine et jour : le texte d'un événement ne déborde plus de son bloc ; un bloc trop bas pour deux lignes n'affiche que la première (le reste est dans l'infobulle) et le texte a la même taille que celui des événements sur la journée</change>
+		<change type='fix'>suppression d'un événement sous Dolibarr 18 et 19 : appel adapté à l'ancienne méthode de suppression, qui ne reçoit pas l'utilisateur en paramètre</change>
+		<change type='chg'>vues semaine et jour : l'heure de début est suivie de la durée en clair ("08:30 · 30 min") à la place de la plage horaire "08:30 – 09:00" ; l'heure de fin reste dans l'infobulle</change>
+		<change type='chg'>compatibilité étendue à Dolibarr 18.0 à 24.0 (auparavant 22.0 uniquement) ; les versions du module sont renumérotées en 18.x.x, le premier chiffre étant la version minimale de Dolibarr</change>
+	</Version>
+	<Version Number="18.3.0" MonthVersion="2026-10">
+		<change type='add'>première activation : les couleurs des types d'événement du dictionnaire Dolibarr sont copiées dans l'onglet "Couleurs" du module (une couleur déjà choisie dans le module n'est jamais remplacée)</change>
+		<change type='add'>première activation sur une instance où le module Full Calendar d'ATM est installé : ses réglages sont repris (durée d'une ligne, heures affichées, jours masqués, informations affichées, plages du matin et de l'après-midi) et les utilisateurs et groupes qui avaient le droit de l'utiliser reçoivent le droit d'utiliser la grille interactive</change>
+		<change type='add'>réglage "Remplir le lieu avec l'adresse du tiers" : dans la fenêtre d'un événement, le lieu reçoit l'adresse du tiers choisi (adresse d'installation du module InfraSPackPlus en priorité) ; un lieu saisi à la main n'est jamais remplacé</change>
+		<change type='add'>réglage "Proposer les raccourcis Matin, Après-midi, Journée et Toute la journée" : un clic remplit les heures de début et de fin ; les deux plages horaires se règlent dans les paramètres</change>
+	</Version>
+	<Version Number="18.4.0" MonthVersion="2026-10">
+		<change type='chg'>le message "pas encore affiché par la grille interactive" ne concerne plus que les calendriers de réservation</change>
+		<change type='add'>congés dans la grille quand la case "Congés" est cochée : demandes approuvées ou en attente d'approbation, demi-journées, mêmes droits que l'agenda natif ; un clic ouvre la demande de congé</change>
+		<change type='add'>calendriers externes (fichiers ICS configurés dans le module Agenda) dans la grille quand leur case est cochée, en lecture seule, avec le même cache que l'agenda natif ; les événements répétés et les heures données avec un nom de fuseau horaire sont affichés, ce que l'agenda natif ne fait pas</change>
+		<change type='add'>rappel par courriel ou par notification du navigateur dans la fenêtre d'un événement, quand les rappels sont activés dans le module Agenda ; les rappels non envoyés suivent un événement déplacé ou étiré à la souris</change>
+	</Version>
+	<InfraS Downloaded="20261001"/>
+	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
+	<PHP minVersion="7.1" maxVersion="8.4"/>
+</changelog>
