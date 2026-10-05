@@ -70,7 +70,33 @@
 		<change type='fix'>Modification de ligne : Correction de la TVA remise à 0 lors de la modification d'une ligne de note de frais (la valeur saisie était ignorée) => ajout de la surcharge updateline() dans la classe InfrasExpenseReport</change>
 		<change type='fix'>Modification de ligne : Correction de la case Carte Pro non prise en compte lors de la modification d'une ligne => ajout de la surcharge update() dans la classe InfrasExpenseReportLine pour enregistrer le champ special_code</change>
 	</Version>
-	<InfraS Downloaded="20260728"/>
-	<Dolibarr minVersion="18.0.0" maxVersion="23.x.x"/>
+	<Version Number="18.3.2" MonthVersion="2026-10">
+		<change type='fix'>Substitution pages : Correction de la détection de la distribution Dolibarr LTS by InfraS (constante DOLINFRAS_VERSION) => les pages substituées sont désormais lues dans le répertoire dlb220x-DolInfraS au lieu de dlb220x (le suffixe -Easya recherché n'existait pas)</change>
+		<change type='fix'>Activation du module : Suppression du changement récursif de propriétaire et de droits (www-data:www-data, 0755) appliqué au répertoire du module par init() => il écrasait les droits et le masque ACL de l'instance et retirait l'écriture au groupe d'exploitation. Suppression de la fonction infrasexpense_chmod_r() devenue inutilisée</change>
+	</Version>
+	<Version Number="22.0.0" MonthVersion="2026-10">
+		<change type='fix'>Sécurité : InfrasExpenseReport::updateline() vérifie dans tous les cas que la ligne appartient à la note de frais (une ligne forgée permettait de modifier une ligne de n'importe quelle autre note, même approuvée ou payée)</change>
+		<change type='fix'>Sécurité : Page de configuration => liste blanche des constantes modifiables (actions set_, del_ et update_), validation des valeurs, accès réservé aux administrateurs et jeton anti-CSRF obligatoire pour toute action (CSRFCHECK_WITH_TOKEN) ; droits du module non attribués par défaut aux nouveaux utilisateurs</change>
+		<change type='fix'>Sécurité : Pages À propos et Changelog => jeton anti-CSRF obligatoire, téléchargement du changelog exécuté après le contrôle d'accès, contrôle d'accès du changelog sur le droit paramSetup (droit inexistant auparavant)</change>
+		<change type='fix'>Sécurité : Export comptable => contrôle du droit paramExport, du statut de la note et du jeton anti-CSRF dans l'action (auparavant seulement sur le bouton) ; modèle d'export inconnu remplacé par excel2007</change>
+		<change type='fix'>Sécurité : Paiement (dlb220x, dlb220x-DolInfraS) => la note est marquée payée d'après le total des paiements en base (getSumPayments) et non plus d'après un montant envoyé par le navigateur</change>
+		<change type='fix'>Sécurité : Restauration des paramètres => le fichier de sauvegarde est lu comme des données, seules les constantes INFRASEXPENSE_ sont restaurées et aucune requête SQL du fichier n'est plus exécutée</change>
+		<change type='fix'>Sécurité : Échappement des sorties (champs de configuration, changelog local et téléchargé, formulaire de support, version du serveur web) et nettoyage des numéros de version utilisés dans les requêtes XPath</change>
+		<change type='fix'>Sécurité : Export comptable => les libellés, références et comptes commençant par =, +, -, @, tabulation ou retour chariot sont préfixés d'une apostrophe pour ne pas être interprétés comme des formules par le tableur (injection CSV / Excel)</change>
+		<change type='fix'>Lignes de note de frais : le montant de TVA saisi doit être de même signe que le prix unitaire TTC et ne pas le dépasser (contrôle dans addline() et updateline(), message traduit InfraSExpenseErrorVatAmount)</change>
+		<change type='fix'>Avertissements PHP : variable $vat non définie dans le formulaire d'ajout de ligne après un ajout réussi (dlb220x, dlb220x-DolInfraS) ; conversion de memory_limit sans avertissement « non-numeric value » et limite illimitée (-1) non abaissée à 128M à l'activation du module</change>
+		<change type='chg'>Compatibilité Dolibarr : version minimum portée à 22.0.0 et version maximum à 24.x.x</change>
+		<change type='chg'>Substitution pages : Suppression des répertoires des versions Dolibarr devenues non supportées (dlb180x, dlb180x-change, dlb190x, dlb200x, dlb210x)</change>
+		<change type='chg'>Classe InfrasExpenseReportLine : fetch(), insert() et update() appellent désormais les méthodes du core puis enregistrent special_code (comportement propre à chaque version de Dolibarr 22 à 24, champs ajoutés par le core conservés)</change>
+		<change type='chg'>Classe InfrasExpenseReport : updateline() refuse une ligne n'appartenant pas à la note de frais quand le core fournit le contrôle isLineOfObject() (Dolibarr 23 et suivants) et ne lit plus le projet quand aucun projet n'est choisi</change>
+		<change type='chg'>Substitution pages : Répertoire dlb230x reconstruit depuis les pages Dolibarr 23.0 avec les fonctions du module (TVA saisie en montant, carte pro, reste à payer hors carte pro, colonne Carte pro de la liste) ; suppression de la copie inutilisée de expensereport.class.php</change>
+		<change type='add'>Substitution pages : Compatibilité Dolibarr 24 => nouveau répertoire dlb240x construit depuis les pages Dolibarr 24.0 avec les fonctions du module. La note est marquée payée quand le total des paiements (getSumPayments) couvre le montant hors carte pro</change>
+		<change type='add'>Traductions : Ajout de la clé InfraSExpenseProCard (libellé de la colonne Carte pro) dans toutes les langues du module</change>
+	</Version>
+	<Version Number="22.0.1" MonthVersion="2026-10">
+		<change type='fix'>Accès simultanés : infrasexpense_test_php_ext() réécrivait la constante INFRAS_PHP_EXT_XML (suppression puis insertion dans llx_const) à chaque instanciation du descripteur du module (page des modules, activation, pages d'administration). Cette constante est partagée par tous les modules InfraS : une réécriture systématique pouvait bloquer ou faire annuler une transaction concurrente (incident constaté avec le module Infrastructure : lignes de document perdues lors d'ajouts simultanés). La constante n'est plus écrite que si sa valeur change ; l'avertissement « extension XML manquante » reste affiché à chaque appel tant que l'extension est absente.</change>
+	</Version>
+	<InfraS Downloaded="20261005"/>
+	<Dolibarr minVersion="22.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>

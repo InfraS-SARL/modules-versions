@@ -8,7 +8,16 @@
 	<Version Number="22.1.1" MonthVersion="2026-08">
 		<change type='fix'>colonne endpoints de llx_infras2smtp2go_apikey trop courte (varchar(255)) sur les instances provisionnées avant son élargissement en text, provoquant une erreur "Data too long for column 'endpoints'" lors de la synchronisation d'une clé API ayant de nombreux endpoints autorisés</change>
 	</Version>
-	<InfraS Downloaded="20260826"/>
+	<Version Number="22.2.0" MonthVersion="2026-08">
+		<change type='add'>Ajout d'un bouton "Réactiver" pour activer un sous-compte fermé</change>
+		<change type='add'>Ajout d'un graphique d'activité pour les sous-comptes</change>
+		<change type='fix'>Gestion de plusieurs clés API SMTP2GO par sous-compte (auparavant limité à une seule clé gérée par sous-compte)</change>
+		<change type='fix'>Ajout des traductions pour les endpoints (permissions) de l'API SMTP2GO</change>
+	</Version>
+	<Version Number="22.2.1" MonthVersion="2026-10">
+		<change type='fix'>Accès simultanés : infras2smtp2go_test_php_ext() réécrivait la constante INFRAS_PHP_EXT_XML (suppression puis insertion dans llx_const) à chaque instanciation du descripteur du module (page des modules, activation, pages d'administration). Cette constante est partagée par tous les modules InfraS : une réécriture systématique pouvait bloquer ou faire annuler une transaction concurrente (incident constaté avec le module Infrastructure : lignes de document perdues lors d'ajouts simultanés). La constante n'est plus écrite que si sa valeur change ; l'avertissement « extension XML manquante » reste affiché à chaque appel tant que l'extension est absente.</change>
+	</Version>
+	<InfraS Downloaded="20261005"/>
 	<Dolibarr minVersion="22.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>

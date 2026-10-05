@@ -28,8 +28,8 @@
 		<change type='chg'> Ajout d'informations sur les fonctions</change>
 	</Version>
 	<Version Number="18.2.0" MonthVersion="2025-09">
-		<change type='add'> Ajout de nouvelle colonne 'Numéro de compte bancaire(RIB)' pour afficher les fichiers joints(pdf) du RIB</change>
 		<change type='fix'> Correction du lien vers la page de demandes de modifications depuis le widget du Tableau de Bord. </change>
+		<change type='add'> Ajout de nouvelle colonne 'Numéro de compte bancaire(RIB)' pour afficher les fichiers joints(pdf) du RIB</change>
 	</Version>
 	<Version Number="18.2.1" MonthVersion="2025-10">
 		<change type='fix'> Correction du nom de l'utilisateur/Tiers propriétaires de l'IBAN</change>
@@ -39,11 +39,11 @@
 		<change type='fix'>Sécurité : échappement des URL de formulaires basées sur PHP_SELF pour limiter les risques XSS réfléchis</change>
 		<change type='fix'>Paramètres : isolation du cookie JS de l'état des panneaux (infrassecureiban_tblPSexp au lieu de tblPSexp) pour éviter les collisions inter-modules</change>
 		<change type='fix'>Paramètres : variable cookieName déplacée au scope script pour corriger la persistance de l'état des panneaux après soumission de formulaire</change>
-		<change type='fix'>Correction injection SQL : ajout de $db->escape()</change>
+		<change type='fix'><![CDATA[Correction injection SQL : ajout de $db->escape()]]></change>
 		<change type='fix'>Correction de l'identifiant du compte bancaire lors de l'ajout d'un IBAN utilisateur</change>
 		<change type='fix'>Correction du périmètre de chiffrement des IBAN : limitation aux tables du module uniquement</change>
-		<change type='fix'>Correction de l'identification utilisateur dans ibanManager (getUserId remplacé par $this->user->id)</change>
-		<change type='fix'>Remplacement des messages en dur par des clés de traduction ($langs->trans())</change>
+		<change type='fix'><![CDATA[Correction de l'identification utilisateur dans ibanManager (getUserId remplacé par $this->user->id)]]></change>
+		<change type='fix'><![CDATA[Remplacement des messages en dur par des clés de traduction ($langs->trans())]]></change>
 		<change type='chg'>Amélioration du CSS</change>
 		<change type='add'>Ajout d'un test de comparaison de la version majeur de Dolibarr supportée (avertissement si version non supportée)</change>
 		<change type='add'>Ajout du fichier CLAUDE.md : documentation technique complète du module pour l'assistant IA</change>
@@ -55,7 +55,49 @@
 	<Version Number="18.3.2" MonthVersion="2026-06">
 		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
 	</Version>
-	<InfraS Downloaded="20260619"/>
+	<Version Number="18.4.0" MonthVersion="2026-09">
+		<change type='fix'>Création d'un IBAN par un superIBAN : l'IBAN n'était jamais enregistré (effacé par la mise à jour du cœur qui suivait l'écriture directe), obligeant à ressaisir l'IBAN une seconde fois</change>
+		<change type='fix'>Création d'un IBAN par un demandeur : le compte était créé sans IBAN et personne n'était prévenu ; la seconde tentative échouait sur la clé unique du libellé (« clé doublonnée »)</change>
+		<change type='fix'>Validation d'une demande : l'IBAN était écrit en clair dans societe_rib alors que le cœur chiffre ; toute écriture passe désormais par CompanyBankAccount / UserBankAccount (chiffrement du cœur), dans une transaction, après contrôle que le compte existe encore et que son IBAN n'a pas changé</change>
+		<change type='fix'>Validation d'une demande salarié : l'identifiant utilisateur était pris pour l'identifiant du compte bancaire (mauvais compte modifié, faux ancien IBAN)</change>
+		<change type='fix'>Notifications : identifiant de droit codé en dur (jamais de destinataire), constante INFRASSECUREIBAN_SENDEMAIL jamais créée ni exposée, classe CMailFile non chargée ; envoi après commit, destinataires résolus par nom de droit (droits directs et de groupe), IBAN masqués</change>
+		<change type='fix'>Sécurité : validation, refus, suppression (unitaires et de masse) sans contrôle de droit dans la liste des demandes ; un demandeur pouvait valider sa propre demande par URL. Jeton CSRF exigé (CSRFCHECK_WITH_TOKEN), droits revérifiés par le service à chaque action</change>
+		<change type='fix'>Sécurité : suppression d'un compte bancaire et actions du cœur exécutables avec le seul droit du cœur ; la variable de permission du cœur est désormais combinée avec les droits du module (lecture seule sans droit du module)</change>
+		<change type='fix'>Sécurité : page de paramètres, action set_* écrivait n'importe quelle constante globale (liste blanche), update_* sur une clé inconnue provoquait une erreur fatale, sauvegarde/restauration accessibles sans le droit paramBkpRest, chiffrement sans confirmation</change>
+		<change type='fix'>Version de Dolibarr sans jeu de pages substituées : la page du cœur était servie sans aucun contrôle et sans trace ; désormais journal d'erreur, avertissement par session, bandeau bloquant dans les paramètres, et le trigger refuse les écritures</change>
+		<change type='fix'>Widget : visible par tous, IBAN en clair, sans limite ni filtre d'entité, boutons sans traitement ; réservé aux validateurs, IBAN masqués, liens vers la liste</change>
+		<change type='fix'>Listes : lignes dupliquées en multi-RIB (jointure sur le propriétaire remplacée par le compte), filtres IBAN perdus à la pagination, tabulation avant la balise PHP de list_iban.php, PHP_SELF non échappé, GETPOST('page','int') déprécié, $object indéfini</change>
+		<change type='fix'>Descripteur : fichier JS inexistant déclaré (404 sur chaque page), select2 inutile, contextes de hook sans méthode, libellé de menu en dur, mainmenu inexistant sur deux entrées, menus visibles sans droit, dir_output absent (téléchargement de la sauvegarde en erreur), retour de _load_tables ignoré</change>
+		<change type='fix'>Icônes Font Awesome 6 (fa-light, fa-duotone, fa-trash-can) absentes de Dolibarr : boutons Valider / Refuser / Supprimer invisibles ; remplacées par des icônes fas</change>
+		<change type='fix'>Traductions : clés utilisées mais absentes (clés brutes à l'écran), textes en dur ('Sécurité IBAN', 'Inconnu', 'Description de votre demande'), message RIB répété à chaque ligne</change>
+		<change type='fix'>infrassecureibanUser : droit 'read' au lieu de 'lire' (lien jamais généré), référence à un onglet inexistant, HTML invalide</change>
+		<change type='fix'>Migration : les demandes en attente héritées de l'ancien code restent de type modification (leur compte existe déjà, créé sans IBAN) au lieu de devenir des créations invalidables ; celles dont le compte a disparu sont annulées ; libellé et banque recopiés depuis le compte</change>
+		<change type='fix'>Garde-fou Stripe repris de l'instance Paris dans les pages tiers : test de $companypaymentmode->oldcopy avant lecture (erreur PHP 8 sur null)</change>
+		<change type='chg'>Refonte : une seule porte d'écriture, la classe InfrasSecureIbanService (droits, demandes, actions directes, validation, refus, annulation, purge, actions de masse, filet de sécurité, notifications) et l'objet InfrasSecureIbanRequest ; suppression de ibanManager et ibanRequestUpdater</change>
+		<change type='chg'>Pages substituées minces : copie exacte de la page du cœur de chaque version Dolibarr (18 à 24, Easya) plus cinq ancrages d'une ligne marqués « InfraSSecureIBAN anchor » ; toute la logique InfraS vit dans core/inc/*.inc.php. Générateur dev/build_substitution_page.php et contrôle de dérive dev/check_substitution_drift.php pour réaligner les pages après chaque mise à jour de Dolibarr</change>
+		<change type='chg'>Création et suppression par un demandeur : rien n'est écrit dans Dolibarr avant la validation ; la demande de création mémorise tous les champs saisis (request_data) et le compte est créé à la validation. Les demandes en attente s'affichent dans l'onglet Modes de règlement / Compte bancaire, avec annulation par le demandeur</change>
+		<change type='chg'>superIBAN : création, modification et suppression directes en une seule validation, historique auto-validé, demandes en attente du compte annulées (demandeurs prévenus)</change>
+		<change type='chg'>Modification sans changement d'IBAN (libellé, BIC, mandat…) : enregistrement immédiat sans demande ni historique</change>
+		<change type='chg'>Refus d'une demande : motif obligatoire, conservé et transmis au demandeur (statut refused au lieu d'une suppression)</change>
+		<change type='chg'>Table llx_infrassecureiban_modifications : statuts en texte (pending, validated, refused, cancelled), type d'action, source, entité, snapshot libellé / banque, données de création, motif de refus, index ; migration idempotente sql/update_18.4.0.sql rejouée à chaque activation (demandes orphelines annulées). Table _societe_rib_old abandonnée (plus alimentée, suppression prévue en 18.6.0)</change>
+		<change type='chg'>Chiffrement : le module ne chiffre plus lui-même les tables du cœur ; societe_rib est chiffré par Dolibarr à chaque écriture. Migration des IBAN tiers encore en clair par scripts/infrassecureiban_encrypt_ibans.php (dry-run, application avec sauvegarde, carte de retour arrière, revert)</change>
+		<change type='chg'>Trigger : règles d'exclusivité des droits lues en base (getRightId filtré sur module et entité), résultats des suppressions testés ; contextes de hook réduits à main et login ; menu sous Banque avec libellé traduit, icône fas et droits</change>
+		<change type='chg'>Fichiers de langue : 162 clés identiques dans les 5 langues, chapitres réorganisés, clés mortes supprimées</change>
+		<change type='add'>Trigger filet de sécurité sur COMPANY_RIB_MODIFY, COMPANY_RIB_DELETE et USERBANKACCOUNT_MODIFY : toute écriture hors des pages du module (API REST, import, autre module) est refusée, sauf pour un superIBAN dont l'action est journalisée (type external) et notifiée. Constante cachée INFRASSECUREIBAN_TRIGGER_MODE (refuse par défaut, log en secours)</change>
+		<change type='add'>Option INFRASSECUREIBAN_SENDEMAIL exposée (notifications : demande créée → validateurs et superIBAN ; validée, refusée ou annulée → demandeur) et option INFRASSECUREIBAN_NOTIFY_DIRECT (prévenir les validateurs des actions directes d'un superIBAN)</change>
+		<change type='add'>Options INFRASSECUREIBAN_PS_ACTIVE_SOCIETE_PAYMENTMODES et _USER_BANK exposées dans les paramètres (dépannage), avec affichage du jeu de pages substituées en service</change>
+		<change type='add'>Action de réparation dans les paramètres (droit paramBkpRest) : recopie dans les comptes vides d'IBAN l'IBAN de leur dernière demande validée, avec prévisualisation, confirmation et historique</change>
+		<change type='add'>Liste des demandes : filtres type d'objet, action, statut, demandeur, validateur, dates ; colonne motif ; confirmation de chaque action ; annulation par le demandeur ; icône de source (superIBAN, trigger)</change>
+		<change type='add'>Script d'autotest scripts/infrassecureiban_selfcheck.php (CLI, tous les profils de droits, retour arrière en fin de test)</change>
+	</Version>
+	<Version Number="18.4.1" MonthVersion="2026-09">
+		<change type='fix'>Exclusivité des droits IBAN : les droits portés par un groupe (llx_usergroup_rights) n'étaient jamais contrôlés, seuls les droits directs d'un utilisateur l'étaient. Un groupe pouvait donc cumuler changeIBAN et validateIBAN et ses membres demander et valider (constaté sur un groupe Administration). Le trigger traite désormais USERGROUP_MODIFY, déclenché par le cœur à chaque ajout ou retrait d'un droit sur un groupe : superIBAN retire changeIBAN et validateIBAN ; deleteIBAN sans validateIBAN ni superIBAN est retiré</change>
+		<change type='chg'>Groupe cumulant changeIBAN et validateIBAN : les deux droits sont remplacés par superIBAN (pas de « dernier accordé » comme pour un utilisateur). Les demandes en attente dont les membres actifs du groupe sont les demandeurs sont alors validées au nom de l'utilisateur qui modifie le groupe (validateRequest, commentaire « validation automatique »), car un demandeur devenu superIBAN ne peut pas valider sa propre demande ; celles qui ne peuvent pas l'être (acteur sans droit de validation ou lui-même demandeur) restent en attente et sont listées à l'écran. Limite connue : le cumul entre un droit direct et un droit de groupe n'est pas contrôlé</change>
+	</Version>
+	<Version Number="18.4.2" MonthVersion="2026-10">
+		<change type='fix'>Accès simultanés : infrassecureiban_test_php_ext() réécrivait la constante INFRAS_PHP_EXT_XML (suppression puis insertion dans llx_const) à chaque instanciation du descripteur du module (page des modules, activation, pages d'administration). Cette constante est partagée par tous les modules InfraS : une réécriture systématique pouvait bloquer ou faire annuler une transaction concurrente (incident constaté avec le module Infrastructure : lignes de document perdues lors d'ajouts simultanés). La constante n'est plus écrite que si sa valeur change ; l'avertissement « extension XML manquante » reste affiché à chaque appel tant que l'extension est absente.</change>
+	</Version>
+	<InfraS Downloaded="20261005"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
