@@ -15,6 +15,9 @@
 	<Version Number="18.0.1" MonthVersion="2025-07">
 		<change type='chg'>Changement de la source de téléchargement du changelog : infras.fr remplacé par le dépôt GitHub (InfraS-SARL/modules-versions)</change>
 	</Version>
+	<Version Number="18.0.2" MonthVersion="2026-10">
+		<change type='fix'>Téléchargement du changelog cassé depuis la 18.0.1 : la réécriture de la date utilisait une variable supprimée lors du changement de source (retour au modèle getURLContent des autres modules InfraS)</change>
+	</Version>
 	<InfraS Downloaded="20260701"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
