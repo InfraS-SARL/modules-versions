@@ -154,7 +154,13 @@
 	<Version Number="18.1.1" MonthVersion="2026-04">
 		<change type='fix'>Correction du filtre utilisateur dans public/index.php (Changement Dolibarr 21+)</change>
 	</Version>
-	<InfraS Downloaded="20250428"/>
+	<Version Number="18.1.2" MonthVersion="2026-05">
+		<change type='fix'>Rapport annuel : Correction des champs de date du filtre rendus non modifiables (paramètre disabled de selectDate)</change>
+		<change type='fix'>Rapport annuel : Correction du bouton de réinitialisation des filtres (la purge était écrasée par la lecture des GETPOST)</change>
+		<change type='chg'>Droit utilisateur "paramAnualReport" (InfraSTimePermHolidays) : précision du libellé en "Visualiser et exporter le rapport annuel pour tous les utilisateurs"</change>
+		<change type='add'>Nouveau droit utilisateur "paramOwnAnualReport" (InfraSTimePermOwnHolidays) : permet à un utilisateur de visualiser et exporter son propre rapport annuel uniquement (filtre nom verrouillé sur lui-même)</change>
+	</Version>
+	<InfraS Downloaded="20260512"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="22.0.4"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
