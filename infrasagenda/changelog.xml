@@ -40,7 +40,10 @@
 	<Version Number="18.4.1" MonthVersion="2026-10">
 		<change type='fix'>Accès simultanés : infrasagenda_test_php_ext() réécrivait la constante INFRAS_PHP_EXT_XML (suppression puis insertion dans llx_const) à chaque instanciation du descripteur du module (page des modules, activation, pages d'administration). Cette constante est partagée par tous les modules InfraS : une réécriture systématique pouvait bloquer ou faire annuler une transaction concurrente (incident constaté avec le module Infrastructure : lignes de document perdues lors d'ajouts simultanés). La constante n'est plus écrite que si sa valeur change ; l'avertissement « extension XML manquante » reste affiché à chaque appel tant que l'extension est absente.</change>
 	</Version>
-	<InfraS Downloaded="20261005"/>
+	<Version Number="18.4.2" MonthVersion="2026-10">
+		<change type='add'>Logo du module : une image dédiée (img/object_infrasagenda.png) remplace l'icône Font Awesome « calendar-alt » dans la liste des modules, les onglets d'administration et le lien de bascule vers l'agenda interactif.</change>
+	</Version>
+	<InfraS Downloaded="20261006"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.1" maxVersion="8.4"/>
 </changelog>
