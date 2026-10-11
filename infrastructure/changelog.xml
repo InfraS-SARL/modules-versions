@@ -618,7 +618,10 @@
 		<change type='fix'>Sous-total à libellé vide avec INFRASTRUCTURE_CONCAT_TITLE_LABEL_IN_TOTAL_LABEL (suite de la 21.8.14) : la description passait par dol_escape_htmltag() dans le gabarit de sous-total, mise en forme HTML perdue, alors que le hook des lignes d'origine utilisait dolPrintHTML() ; les deux affichages utilisent dolPrintHTML().</change>
 		<change type='chg'>Sous-totaux et totaux de bloc : la règle de calcul « vatbyrate » (Mode 3, MAIN_ROUNDOFTOTAL_NOT_TOTALOFROUND à 2 ou règle figée sur la pièce, cœur Dolibarr LTS by InfraS 2026-10-10, proposé par Kytom pour la conformité EN 16931 BR-CO-17) est traitée comme le Mode 2 : TVA du bloc = somme, par taux, de l'arrondi de (somme des HT de ligne arrondis du taux x taux), la base du bloc étant déjà la somme des lignes arrondies. Sans cela un bloc en Mode 3 suivait le Mode 1 et sa TVA pouvait différer d'un centime de celle de la pièce.</change>
 	</Version>
-	<InfraS Downloaded="20261010"/>
+	<Version Number="21.8.16" MonthVersion="2026-10">
+		<change type='fix'>Mise à jour sans cycle désactivation / réactivation : les extrafields de ligne et la migration du special_code 104777 vers 550090 (21.8.5) n'étaient joués que par init(). Nouvelle méthode postUpdate($dryrun) du descripteur, appelée par les migrations de build de dolinfras (18.9.0) après la mise à jour des fichiers : création des extrafields manquants (infrastructure_addExtraField(), idempotente) et conversion des lignes encore en 104777 s'il en reste. Les migrations depuis subtotal et soustotal, qui désactivent ces modules, restent réservées à init(). Sans remove() : droits des utilisateurs, placements de widgets et réglages conservés.</change>
+	</Version>
+	<InfraS Downloaded="20261011"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
