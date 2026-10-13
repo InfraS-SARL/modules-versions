@@ -2082,7 +2082,10 @@
 	<Version Number="21.12.2" MonthVersion="2026-10">
 		<change type='fix'>Modèle PDF pdf_InfraSPlus_CTS (dossier de contrat) : l'avertissement « Aucun document PDF n'a été généré pour le contrat … : aucun specialfile ne correspond aux conditions du contrat » s'affichait à chaque regénération alors que les specialfiles produisaient bien leurs PDF (constaté sur rgenergies, contrat CT2609-10102 avec ModeleBulletinVisiteBois_CT). Le contrôle comparait la liste des noms de fichiers PDF du répertoire du contrat avant et après assemblage ; un specialfile réécrivant toujours le même nom de fichier, aucun nouveau nom n'apparaissait dès la seconde génération. L'instantané mémorise désormais la date de modification de chaque PDF et l'avertissement n'est émis que si aucun fichier n'est nouveau ni modifié (clearstatcache() avant la relecture des dates).</change>
 	</Version>
-	<InfraS Downloaded="20261012"/>
+	<Version Number="21.12.3" MonthVersion="2026-10">
+		<change type='fix'>Hook printObjectLine (actions_infraspackplus.class.php, mode vue) : avec le module « Sous-total by iouston » (soustotal), les lignes titre, sous-total et texte libre étaient affichées deux fois sur les fiches devis, commande et facture. Ces lignes (special_code 3, product_type 9, extrafield soustotal_type) sont rendues par le hook printObjectLine de soustotal, qui renvoie 1 ; le HookManager n'arrête pas la boucle sur ce retour et infraspackplus, qui n'excluait que les lignes Ouvrage, Subtotal ATM et Infrastructure, les rendait une seconde fois comme lignes ordinaires (« Option » dans la colonne total). Les lignes reconnues par SousTotal::isTitleOrSubTotalOrFree() sont désormais laissées au module soustotal.</change>
+	</Version>
+	<InfraS Downloaded="20261013"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>

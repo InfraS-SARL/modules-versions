@@ -297,7 +297,10 @@
 		<change type='fix'>Accès simultanés : infrasproject_test_php_ext() réécrivait la constante INFRAS_PHP_EXT_XML (suppression puis insertion dans llx_const) à chaque instanciation du descripteur du module (page des modules, activation, pages d'administration). Cette constante est partagée par tous les modules InfraS : une réécriture systématique pouvait bloquer ou faire annuler une transaction concurrente (incident constaté avec le module Infrastructure : lignes de document perdues lors d'ajouts simultanés). La constante n'est plus écrite que si sa valeur change ; l'avertissement « extension XML manquante » reste affiché à chaque appel tant que l'extension est absente.</change>
 		<change type='chg'>Compatibility Dolibarr natif</change>
 	</Version>
-	<InfraS Downloaded="20261005"/>
+	<Version Number="21.1.14" MonthVersion="2026-10">
+		<change type='fix'>Hook printObjectLine (actions_infrasproject.class.php, mode vue) : avec le module « Sous-total by iouston » (soustotal), les lignes titre, sous-total et texte libre étaient affichées deux fois sur les fiches devis, commande et facture. Ces lignes (special_code 3, product_type 9, extrafield soustotal_type) sont rendues par le hook printObjectLine de soustotal, qui renvoie 1 ; le HookManager n'arrête pas la boucle sur ce retour et infrasproject, qui n'excluait que les special_code supérieurs à 3, les rendait une seconde fois comme lignes ordinaires (« Option » dans la colonne total). Les lignes reconnues par SousTotal::isTitleOrSubTotalOrFree() sont désormais laissées au module soustotal.</change>
+	</Version>
+	<InfraS Downloaded="20261013"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
