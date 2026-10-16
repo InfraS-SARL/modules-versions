@@ -2085,7 +2085,14 @@
 	<Version Number="21.12.3" MonthVersion="2026-10">
 		<change type='fix'>Hook printObjectLine (actions_infraspackplus.class.php, mode vue) : avec le module « Sous-total by iouston » (soustotal), les lignes titre, sous-total et texte libre étaient affichées deux fois sur les fiches devis, commande et facture. Ces lignes (special_code 3, product_type 9, extrafield soustotal_type) sont rendues par le hook printObjectLine de soustotal, qui renvoie 1 ; le HookManager n'arrête pas la boucle sur ce retour et infraspackplus, qui n'excluait que les lignes Ouvrage, Subtotal ATM et Infrastructure, les rendait une seconde fois comme lignes ordinaires (« Option » dans la colonne total). Les lignes reconnues par SousTotal::isTitleOrSubTotalOrFree() sont désormais laissées au module soustotal.</change>
 	</Version>
-	<InfraS Downloaded="20261013"/>
+	<Version Number="21.12.4" MonthVersion="2026-10">
+		<change type='fix'>Correction du doublons sur les lignes de textes libres : Sur devis et commande ; sur facture, facture récurrente, commande fournisseur et facture fournisseur les lignes titre, sous-total et texte libre de soustotal gardent le code 0 (Facture::updateline() remet même 3 à 0) et restaient affichées deux fois.</change>
+	</Version>
+	<Version Number="21.13.0" MonthVersion="2026-10">
+		<change type='add'>Bons de livraison (InfraSPlus_BL) : nouvelle option « Trier les lignes des bons de livraison sur la valeur de cet attribut » (INFRASPLUS_PDF_BL_SORT_BY_POS, sous la colonne de l'attribut produit, désactivée par défaut). Les lignes sont imprimées dans l'ordre naturel croissant de la valeur de la colonne (ex. zone de stockage : A 1, A 2, A 11, B 1…), les lignes sans valeur en dernier, l'ordre de la commande étant conservé à valeur égale. Les titres, sous-totaux et textes libres (modules de sous-totaux, Infrastructure) restent en place : les lignes sont triées à l'intérieur de chaque bloc. L'ordre des lignes de l'expédition est rétabli après la génération.</change>
+		<change type='fix'>Bons de livraison (InfraSPlus_BL) : avec la colonne de l'attribut produit, avertissement PHP « Undefined array key » sur chaque ligne sans produit (ligne libre) et « Undefined variable $value » si l'attribut n'existe pas sur les produits ; la cellule est désormais vide.</change>
+	</Version>
+	<InfraS Downloaded="20261014"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>

@@ -243,8 +243,12 @@
 		<change type='add'>Nouvelle option : Pour activer l'affichage de N° de série sur les lignes de produits dans les inventaires (option INFRASWORKFLOW_DISPLAY_SERIAL_NUMBER)</change>
 		<change type='chg'>Mettre en rouge les lignes de produits dont les qty réelle ne sont pas vides et différentes de la qty attendue et que la qty attendue est supérieure à la qty réelle</change>
 		<change type='add'>Section "Gestion des contrats" : envoi de la notification « Contrat modifié » (CONTRACT_MODIFY) quand un contrat réouvert est validé à nouveau (option INFRASWORKFLOW_CONTRACT_NOTIFY_MODIFY_ON_REVALIDATE).</change>
+		<change type='add'>Section "Gestion des inventaires" : la mise en rouge des lignes de l'inventaire dont la quantité réelle est inférieure à la quantité attendue n'est appliquée que si l'option INFRASWORKFLOW_INVENTORY_QTY_ALERT est activée (désactivée par défaut), avec choix de la couleur (INFRASWORKFLOW_INVENTORY_QTY_ALERT_COLOR, rouge par défaut) : texte de la ligne dans la couleur choisie, fond de la même couleur éclaircie.</change>
 	</Version>
-	<InfraS Downloaded="20261008"/>
+	<Version Number="21.10.0" MonthVersion="2026-10">
+		<change type='add'>Nouvelle option : reporter la référence client de la facture d'origine sur l'avoir créé depuis cette facture.</change>
+	</Version>
+	<InfraS Downloaded="20261015"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
