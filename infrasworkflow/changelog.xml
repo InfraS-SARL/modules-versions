@@ -247,8 +247,10 @@
 	</Version>
 	<Version Number="21.10.0" MonthVersion="2026-10">
 		<change type='add'>Nouvelle option : reporter la référence client de la facture d'origine sur l'avoir créé depuis cette facture.</change>
+		<change type='add'>Section « Gestion des contrats » : nouvelle option pour envoyer aussi la notification « Contrat modifié » (CONTRACT_MODIFY, module Notifications) à la première validation d'un contrat (option INFRASWORKFLOW_CONTRACT_NOTIFY_MODIFY_ON_VALIDATE). Le module Notifications ne propose pas d'événement « Contrat validé » : les destinataires et le modèle d'email sont ceux de « Contrat modifié ». La notification porte la référence définitive du contrat et non sa référence provisoire.</change>
+		<change type='chg'>Section « Gestion des inventaires » : avec l'option INFRASWORKFLOW_INVENTORY_QTY_ALERT, une ligne de l'inventaire est mise en évidence dès que la quantité réelle saisie est différente de la quantité attendue, qu'elle soit supérieure ou inférieure (auparavant seulement inférieure). Aucune mise en évidence tant que la quantité réelle est vide.</change>
 	</Version>
-	<InfraS Downloaded="20261015"/>
+	<InfraS Downloaded="20261016"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
