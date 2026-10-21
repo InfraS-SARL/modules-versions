@@ -2093,7 +2093,10 @@
 		<change type='fix'>Bons de livraison (InfraSPlus_BL) : avec la colonne de l'attribut produit, avertissement PHP « Undefined array key » sur chaque ligne sans produit (ligne libre) et « Undefined variable $value » si l'attribut n'existe pas sur les produits ; la cellule est désormais vide.</change>
 		<change type='add'>Modèle PDF InfraSPlus_RV pour les relevés de factures à régler par virement du module InfraSFiles : un document par client ou par maison mère, factures et avoirs restant à régler avec échéances (en rouge si dépassées), déjà réglé et reste à payer du jour de la génération, total à régler, coordonnées bancaires sous l'adresse de la société et référence à indiquer sur le virement, avec la mise en page et les options InfraSPackPlus (logo, cadres, mentions, notes, filigrane, pied de page sur chaque page, fichiers fusionnés).</change>
 	</Version>
-	<InfraS Downloaded="20261014"/>
+	<Version Number="21.13.1" MonthVersion="2026-10">
+		<change type='fix'>Modèle de contrat InfraSPlus_CTS : l'option « Type d'adresse destinataire » du formulaire de génération est désormais respectée. Le PDF affiche maintenant le nom, le téléphone, le mail et l'adresse d'un même destinataire. Le modèle transmet l'option aux specialfiles dans le contexte de l'objet (clé infrasplus_customerAddrSelect), et la nouvelle fonction pdf_InfraSPlus_getSpecialFileCustomerAddress() renvoie l'adresse et la ville à imprimer : celles du contact pour « Contact lié » et « Contact et Tiers » quand il a une adresse, celles du tiers sinon, comme pdf_InfraSPlus_getAddresses() pour les autres modèles. Les specialfiles de contrat (Contrat_*, ModeleBulletinVisite*_CT) l'utilisent pour l'adresse du client et la ville du « Fait à ».</change>
+	</Version>
+	<InfraS Downloaded="20261020"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
