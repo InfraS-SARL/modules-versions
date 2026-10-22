@@ -251,7 +251,10 @@
 		<change type='chg'>Section « Gestion des inventaires » : avec l'option INFRASWORKFLOW_INVENTORY_QTY_ALERT, une ligne de l'inventaire est mise en évidence dès que la quantité réelle saisie est différente de la quantité attendue, qu'elle soit supérieure ou inférieure (auparavant seulement inférieure). Aucune mise en évidence tant que la quantité réelle est vide.</change>
 		<change type='add'>Section « Gestion des inventaires » : choix « Lots / N° de série » (Oui / Non) à la création de chaque inventaire, modifiable tant qu'il est en brouillon</change>
 	</Version>
-	<InfraS Downloaded="20261016"/>
+	<Version Number="21.10.1" MonthVersion="2026-10">
+		<change type='fix'>Glisser-déposer sur l'onglet « Documents joints » d'un tiers : le fichier était enregistré dans un répertoire nommé d'après le nom du tiers (comportement de la classe FileUpload du cœur, qui utilise la référence de l'objet) alors que l'onglet lit le répertoire nommé d'après l'identifiant du tiers : message de succès mais fichier invisible dans la liste. Le glisser-déposer passe désormais toujours par le point d'entrée du module, qui range les fichiers d'un tiers dans le bon répertoire, indexe chaque fichier déposé dans llx_ecm_files quel que soit l'objet, et conserve le nom original sur les produits/services si l'option correspondante est activée.</change>
+	</Version>
+	<InfraS Downloaded="20261022"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
