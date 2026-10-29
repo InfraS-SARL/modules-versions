@@ -138,7 +138,10 @@
 	<Version Number="18.2.2" MonthVersion="2026-10">
 		<change type='fix'>Widget marges (box_infraswidgets_margin) : sur une ligne de facture à quantité négative (déduction, reprise), le prix de revient était ajouté à la marge au lieu d'en être retiré. La formule, reprise du cœur Dolibarr, donnait au prix d'achat le signe du total de la ligne puis le multipliait par la quantité signée : le signe était inversé deux fois. La quantité est désormais prise en valeur absolue (abs(fd.qty)) dans les deux requêtes du widget (marge totale et taux de marge), le signe restant porté par le total de la ligne. Même correctif que celui appliqué au cœur LTS le 2026-10-07 (fiche de marge, rapports et onglets de marge, rapport comptable client), signalé par Kytom.</change>
 	</Version>
-	<InfraS Downloaded="20261007"/>
+	<Version Number="18.2.3" MonthVersion="2026-10">
+		<change type='fix'>Fonction déclarée deux fois dans le code source, provoquant des erreurs de redéclaration. La duplication a été supprimée.</change>
+	</Version>
+	<InfraS Downloaded="20261012"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
