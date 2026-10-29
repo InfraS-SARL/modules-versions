@@ -254,7 +254,10 @@
 	<Version Number="21.10.1" MonthVersion="2026-10">
 		<change type='fix'>Glisser-déposer sur l'onglet « Documents joints » d'un tiers : le fichier était enregistré dans un répertoire nommé d'après le nom du tiers (comportement de la classe FileUpload du cœur, qui utilise la référence de l'objet) alors que l'onglet lit le répertoire nommé d'après l'identifiant du tiers : message de succès mais fichier invisible dans la liste. Le glisser-déposer passe désormais toujours par le point d'entrée du module, qui range les fichiers d'un tiers dans le bon répertoire, indexe chaque fichier déposé dans llx_ecm_files quel que soit l'objet, et conserve le nom original sur les produits/services si l'option correspondante est activée.</change>
 	</Version>
-	<InfraS Downloaded="20261022"/>
+	<Version Number="21.10.2" MonthVersion="2026-10">
+		<change type='fix'>Création d'une commande fournisseur depuis une facture fournisseur (INFRASWORKFLOW_CREATE_ORDER_SUPPLIER) : erreur 500 et aucune commande créée, les lignes copiées étaient des stdClass sur lesquelles CommandeFournisseur::create() appelle getPriceBaseType(). Les lignes sont désormais des CommandeFournisseurLigne, avec le mode de saisie TTC et la référence fournisseur de la facture d'origine.</change>
+	</Version>
+	<InfraS Downloaded="20261029"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
