@@ -2117,7 +2117,10 @@
 	<Version Number="21.14.4" MonthVersion="2026-10">
 		<change type='fix'>Devis, commandes et factures avec le module natif Sous-totaux de Dolibarr : quand la première ligne du document était un titre, la fiche s'arrêtait au début de cette ligne, sans les lignes suivantes ni les boutons (erreur fatale PHP 8 « Unsupported operand types: string + int » dans le template du cœur subtotal_view.tpl.php, avec la numérotation des lignes MAIN_VIEW_LINE_NUMBER). Le hook printObjectLine transmettait un rang vide au lieu de 0 pour la première ligne ; le rang et le nombre de lignes sont désormais des entiers, comme dans le cœur.</change>
 	</Version>
-	<InfraS Downloaded="20261028"/>
+	<Version Number="21.14.5" MonthVersion="2026-10">
+		<change type='fix'>Récapitulatif de TVA des PDF (pdf_InfraSPlus_roundAmounts(), appelée par pdf_InfraSPlus_normalizeTotals()) : l'écart d'arrondi entre la somme des bases par taux et le total HT comptable était réparti centime par centime sur tous les taux, y compris ceux dont la base est nulle (ligne de titre ou de texte libre à 0 %, ligne remisée à 100 %). Avec le Mode 3 (TVA par taux sur la somme des HT de ligne arrondis), une facture à 2 centimes d'écart imprimait « Total TVA 0 % (0,01 €) » et « Total TVA 20 % (408,34 €) » au lieu d'une seule base à 20 % de 408,35 €. Seuls les montants non nuls reçoivent désormais l'écart ; s'il n'y en a aucun, les montants restent tels quels.</change>
+	</Version>
+	<InfraS Downloaded="20261030"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
