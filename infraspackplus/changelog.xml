@@ -2120,7 +2120,10 @@
 	<Version Number="21.14.5" MonthVersion="2026-10">
 		<change type='fix'>Récapitulatif de TVA des PDF (pdf_InfraSPlus_roundAmounts(), appelée par pdf_InfraSPlus_normalizeTotals()) : l'écart d'arrondi entre la somme des bases par taux et le total HT comptable était réparti centime par centime sur tous les taux, y compris ceux dont la base est nulle (ligne de titre ou de texte libre à 0 %, ligne remisée à 100 %). Avec le Mode 3 (TVA par taux sur la somme des HT de ligne arrondis), une facture à 2 centimes d'écart imprimait « Total TVA 0 % (0,01 €) » et « Total TVA 20 % (408,34 €) » au lieu d'une seule base à 20 % de 408,35 €. Seuls les montants non nuls reçoivent désormais l'écart ; s'il n'y en a aucun, les montants restent tels quels.</change>
 	</Version>
-	<InfraS Downloaded="20261030"/>
+	<Version Number="21.14.6" MonthVersion="2026-11">
+		<change type='fix'>Documents en devise étrangère (module Multidevise, taux différent de 1), option « Cacher la remise par ligne » (INFRASPLUS_PDF_HIDE_DISCOUNT) ou colonne « PU remisé » : le prix unitaire HT net de remise était calculé sur le total HT de la ligne en devise de la société puis affiché avec le symbole de la devise du document (commande fournisseur en USD au taux 1,12 : 1 195,00 $ pour un total de ligne de 12 045,60 $ sur 9 unités). Le test multidevise de pdf_InfraSPlus_getlineincldiscountexcltax() était inversé depuis l'import de janvier 2026 (« !isModEnabled('multicurrency') ») ; la variante TTC et les fonctions sans remise étaient correctes. Le prix net est désormais lu sur le total HT de la ligne en devise du document, comme la colonne total. Sans multidevise ou au taux 1, aucun changement. Signalé par IECS (commande Cmd-PECS-2611_0053, PDF en anglais), reproduit sur dolinfras24.</change>
+	</Version>
+	<InfraS Downloaded="20261103"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
