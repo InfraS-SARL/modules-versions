@@ -117,7 +117,10 @@
 		<change type='chg'>Page de paramètres : le bloc « Substitution des pages du cœur » n'est plus affiché (la substitution est obligatoire avec le module ; constantes INFRASSECUREIBAN_PS_ACTIVE_* modifiables en base pour un dépannage InfraS, bloc réaffichable avec INFRASSECUREIBAN_SHOW_SUBSTITUTION_BLOCK = 1) ; en mode « Via InfraS », le texte d'information ne mentionne plus le compte Ibantrack ni son secret, et l'adresse du relais n'est pas un réglage visible</change>
 		<change type='add'>Bloc « Consommation » en tête de la page Vérifications de titulaire : par mois, vérifications facturables comptées dans le module (statut completed hors bac à sable), compteur du fournisseur (relais InfraS par mois, ou total Ibantrack du compte propre sur la période), détail par résultat et non facturables ; période choisie en mois (12 au plus), 3 derniers mois par défaut</change>
 	</Version>
-	<InfraS Downloaded="20261028"/>
+	<Version Number="18.6.1" MonthVersion="2026-11">
+		<change type='fix'>Dolibarr 18 et 19 : erreur fatale « Call to undefined method CompanyBankAccount::needBIC() » à la modification d'un compte bancaire de tiers (et donc à l'ajout, qui enchaîne création puis modification), page en erreur 500 : needBIC() n'existe qu'à partir de Dolibarr 20. Nouveau helper infrassecureiban_need_bic() utilisé par les chemins création et modification : needBIC() quand elle existe, sinon règle du cœur 18 et 19 (BIC obligatoire dès que needIBAN() vaut 1). Constaté sur l'instance org (Dolibarr 18.0.8)</change>
+	</Version>
+	<InfraS Downloaded="20261104"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
