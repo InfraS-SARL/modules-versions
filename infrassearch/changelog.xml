@@ -357,7 +357,15 @@
 		<change type='fix'>Performances de la recherche : la résolution des identifiants de dictionnaires (mentions et notes infraspackplus) instanciait tous les descripteurs de modules deux fois par recherche (260 requêtes, 165 ms) ; calculée une fois par requête et conservée en session. Les DESCRIBE des tables (~45 par recherche) sont conservés en session pendant 1 h, cache vidé si une recherche échoue en SQL.</change>
 		<change type='chg'>Recherche : l'identifiant est ajouté en tri secondaire (ordre stable à date égale) et sert de tri pour les types sans date (tiers, contacts, produits : plus récents en premier) quand le tri est activé.</change>
 	</Version>
-	<InfraS Downloaded="20261015"/>
+	<Version Number="15.5.5" MonthVersion="2026-11">
+		<change type='fix'>Fil d'Ariane : chaque fiche consultée déclenchait trois écritures dans llx_infrassearch_history (purge, suppression, insertion), même quand le fil d'Ariane était désactivé. Aucune écriture n'est faite quand l'option est désactivée.</change>
+		<change type='fix'>Fil d'Ariane : un objet dont l'accès était refusé était enregistré (les fiches chargent l'objet avant le contrôle des droits et la page « Accès refusé » affiche le pied de page) et sa référence apparaissait ensuite dans le fil. Rien n'est enregistré sur une page d'accès refusé.</change>
+		<change type='fix'>Accès simultanés et performances du fil d'Ariane : la purge et le dédoublonnage parcouraient toute la table (aucun index hors clé primaire) en posant des verrous à chaque page. L'enregistrement est une seule écriture indexée (INSERT avec mise à jour de la date en cas de doublon) grâce à une clé unique (entité, utilisateur, type, objet) et à des index sur la date et sur l'objet. Clés posées à l'activation ou par la mise à jour sans réactivation (postUpdate, appelée par les migrations de dolinfras) après suppression des doublons existants (la ligne la plus récente est conservée) et des entrées inexploitables. Tant que la clé unique manque, l'ancien mode (suppression ciblée puis insertion) reste utilisé.</change>
+		<change type='fix'>Interface AJAX (script/interface.php) : les requêtes étaient traitées même module désactivé. Refus (HTTP 403) si le module est désactivé, et pour le contenu du fil d'Ariane si l'option est désactivée. Identifiants de l'utilisateur et de l'entité convertis en entier dans la requête du fil d'Ariane ; message d'erreur affiché échappé, détail dans le journal.</change>
+		<change type='fix'>Fil d'Ariane : les paiements, groupes d'utilisateurs et bons de prélèvement consultés n'apparaissaient jamais (classe introuvable pour les types payment, usergroup et widthdraw).</change>
+		<change type='chg'>Fil d'Ariane : la purge des entrées antérieures au 1er du mois précédent est faite une fois par session et pour toutes les entités, et non plus à chaque page pour l'entité courante.</change>
+	</Version>
+	<InfraS Downloaded="20261107"/>
 	<Dolibarr minVersion="15.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
