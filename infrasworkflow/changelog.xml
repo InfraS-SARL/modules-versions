@@ -263,7 +263,10 @@
 		<change type='fix'>Sécurité, création d'un contrat depuis une pièce d'origine : le paramètre other_linked_objects (posté par aucun formulaire) ne lie plus qu'un devis, une commande ou une facture soumis aux mêmes contrôles que la pièce d'origine ; il permettait de lier une pièce d'un autre tiers ou d'une autre entité et, par le trigger OBJECT_LINK_INSERT, d'en copier les extrafields.</change>
 		<change type='fix'>Sécurité, onglet des produits du contrat : ajout d'une ligne par l'action du formulaire seulement, le paramètre addline seul contournait la vérification du jeton de main.inc.php (Kytom 21.9.0.2, 2026-10-28) ; contrôle d'accès fait sur le contrat chargé (avec ?ref=, aucun contrôle par objet n'était fait) ; duplication limitée aux lignes du contrat affiché ; déplacement des lignes (haut / bas) avec jeton et sur les lignes du contrat affiché seulement.</change>
 	</Version>
-	<InfraS Downloaded="20261107"/>
+	<Version Number="21.10.4" MonthVersion="2026-11">
+		<change type='chg'>Section « Gestion des contrats » : textes d'aide ajoutés aux deux options de notification « Contrat modifié » (première validation, revalidation d'un contrat réouvert), qui expliquent pourquoi la notification passe par l'événement « Contrat modifié » : le module Notifications ne propose pas d'événement « Contrat validé » et n'envoie « Contrat modifié » qu'à l'édition d'un champ de la fiche contrat. Libellé de l'option de première validation précisé. Textes repris d'un brouillon de la 21.10.0 resté sur une instance.</change>
+	</Version>
+	<InfraS Downloaded="20261108"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
