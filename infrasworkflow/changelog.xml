@@ -257,7 +257,13 @@
 	<Version Number="21.10.2" MonthVersion="2026-10">
 		<change type='fix'>Création d'une commande fournisseur depuis une facture fournisseur (INFRASWORKFLOW_CREATE_ORDER_SUPPLIER) : erreur 500 et aucune commande créée, les lignes copiées étaient des stdClass sur lesquelles CommandeFournisseur::create() appelle getPriceBaseType(). Les lignes sont désormais des CommandeFournisseurLigne, avec le mode de saisie TTC et la référence fournisseur de la facture d'origine.</change>
 	</Version>
-	<InfraS Downloaded="20261029"/>
+	<Version Number="21.10.3" MonthVersion="2026-11">
+		<change type='fix'>Sécurité, nettoyage des tarifs fournisseur en doublon avant fusion de tiers (INFRASWORKFLOW_MERGE_CLEAN_DUPLICATE_SUPPLIER_PRICES) : le hook, exécuté avant le contrôle du cœur, s'appliquait sur le seul appel de l'action confirm_merge. Il est soumis aux mêmes conditions que la fusion du cœur (droit de création des tiers, jamais un utilisateur externe) et le tiers d'origine est lu dans les entités autorisées (Kytom 21.9.0.2, 2026-10-28).</change>
+		<change type='fix'>Sécurité, création d'un contrat depuis une pièce d'origine (INFRASWORKFLOW_CONTRACT_PRODUCTS_FROM_SOURCE) : origines limitées au devis, à la commande et à la facture ; la pièce doit être d'une entité autorisée, l'utilisateur doit avoir le droit de lecture de son module et y avoir accès comme sur sa fiche (utilisateur externe : son tiers ; utilisateur sans le droit de voir tous les tiers : les tiers dont il est commercial) ; elle doit être du tiers du contrat, sauf pour un utilisateur interne quand l'option CHANGE_TIERS_CONTRACT_FROM_PROPAL_COMMANDE permet de choisir un autre tiers depuis un devis ou une commande ; un utilisateur externe est limité à son tiers (Kytom 21.9.0.2 et 21.9.0.3, 2026-10-28, complété). Le contrôle a lieu avant la création du contrat : un refus affiche la raison et ne crée plus de contrat vide lié à la pièce refusée.</change>
+		<change type='fix'>Sécurité, création d'un contrat depuis une pièce d'origine : le paramètre other_linked_objects (posté par aucun formulaire) ne lie plus qu'un devis, une commande ou une facture soumis aux mêmes contrôles que la pièce d'origine ; il permettait de lier une pièce d'un autre tiers ou d'une autre entité et, par le trigger OBJECT_LINK_INSERT, d'en copier les extrafields.</change>
+		<change type='fix'>Sécurité, onglet des produits du contrat : ajout d'une ligne par l'action du formulaire seulement, le paramètre addline seul contournait la vérification du jeton de main.inc.php (Kytom 21.9.0.2, 2026-10-28) ; contrôle d'accès fait sur le contrat chargé (avec ?ref=, aucun contrôle par objet n'était fait) ; duplication limitée aux lignes du contrat affiché ; déplacement des lignes (haut / bas) avec jeton et sur les lignes du contrat affiché seulement.</change>
+	</Version>
+	<InfraS Downloaded="20261107"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
