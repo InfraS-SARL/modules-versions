@@ -299,8 +299,9 @@
 	</Version>
 	<Version Number="21.1.14" MonthVersion="2026-10">
 		<change type='fix'>Hook printObjectLine (actions_infrasproject.class.php, mode vue) : avec le module « Sous-total by iouston » (soustotal), les lignes titre, sous-total et texte libre étaient affichées deux fois sur les fiches devis, commande et facture. Ces lignes (special_code 3, product_type 9, extrafield soustotal_type) sont rendues par le hook printObjectLine de soustotal, qui renvoie 1 ; le HookManager n'arrête pas la boucle sur ce retour et infrasproject, qui n'excluait que les special_code supérieurs à 3, les rendait une seconde fois comme lignes ordinaires (« Option » dans la colonne total). Les lignes reconnues par SousTotal::isTitleOrSubTotalOrFree() sont désormais laissées au module soustotal.</change>
+		<change type='fix'>Correction du doublons sur les lignes de textes libres : Sur devis et commande ; sur facture, facture récurrente, commande fournisseur et facture fournisseur les lignes titre, sous-total et texte libre de soustotal gardent le code 0 (Facture::updateline() remet même 3 à 0) et restaient affichées deux fois.</change>
 	</Version>
-	<InfraS Downloaded="20261013"/>
+	<InfraS Downloaded="20261014"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
