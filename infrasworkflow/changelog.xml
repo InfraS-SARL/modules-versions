@@ -269,7 +269,11 @@
 	<Version Number="21.10.5" MonthVersion="2026-11">
 		<change type='chg'>Liste des commandes clients, colonne « Expédiable » : avec l'option « Identification améliorée des lignes de commandes clients (non expédiables) » (INFRASWORKFLOW_IDENTIFY_ORDER_LINES_NO_SHIPPABLE), la colonne native est remplacée par celle du module, sans modification du cœur de Dolibarr. Dans l'infobulle de l'icône, les produits dont la quantité restant à expédier dépasse le stock réel (stock à 0 ou insuffisant) sont affichés en entier dans la couleur de l'option « Choix de la couleur de texte des lignes non expédiables » (INFRASWORKFLOW_COLOR_TO_IDENTIFY, rouge par défaut), et les lignes entièrement expédiées ne sont plus listées ni prises en compte pour l'état « Expédiable » de la commande. Le choix de colonnes enregistré par chaque utilisateur est respecté. La colonne native reste en place si les modules Stocks ou Expéditions sont désactivés, ou si la constante SHIPPABLE_ORDER_ICON_IN_LIST est posée.</change>
 	</Version>
-	<InfraS Downloaded="20261109"/>
+	<Version Number="21.11.0" MonthVersion="2026-11">
+		<change type='fix'>Option « Marquer automatiquement les factures "payées" quand "le reste à payer" est égale à 0 » (INFRASWORKFLOW_INVOICE_VALIDATION) : une facture à 0 classée payée à sa validation produisait l'événement « Facture (PROVn) passée à payée » avec la référence provisoire au lieu de la référence définitive.</change>
+		<change type='chg'>Page de saisie de l'inventaire (colonne « Zone ») : le numéro de page indique le nombre total de pages (« Page 1 / 3 »), et la flèche de page suivante n'est plus affichée sur la dernière page.</change>
+		<change type='add'>Section « Gestion des inventaires » : choix « Uniquement les produits sans zone » (Oui / Non, Non par défaut) à la création de chaque inventaire, modifiable tant qu'il est en brouillon et proposé quand la colonne « Zone » est configurée. Avec Oui, au démarrage de l'inventaire, seuls les produits dont la zone n'est pas renseignée sont conservés (attribut supplémentaire vide, ou aucune catégorie de localisation), y compris les produits sans stock ajoutés par l'option INFRASWORKFLOW_DISPLAY_SORTED_EMPTY_STOCK.</change>
+	</Version>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
