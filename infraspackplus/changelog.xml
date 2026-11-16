@@ -2123,7 +2123,10 @@
 	<Version Number="21.14.6" MonthVersion="2026-11">
 		<change type='fix'>Documents en devise étrangère (module Multidevise, taux différent de 1), option « Cacher la remise par ligne » (INFRASPLUS_PDF_HIDE_DISCOUNT) ou colonne « PU remisé » : le prix unitaire HT net de remise était calculé sur le total HT de la ligne en devise de la société puis affiché avec le symbole de la devise du document (commande fournisseur en USD au taux 1,12 : 1 195,00 $ pour un total de ligne de 12 045,60 $ sur 9 unités). Le test multidevise de pdf_InfraSPlus_getlineincldiscountexcltax() était inversé depuis l'import de janvier 2026 (« !isModEnabled('multicurrency') ») ; la variante TTC et les fonctions sans remise étaient correctes. Le prix net est désormais lu sur le total HT de la ligne en devise du document, comme la colonne total. Sans multidevise ou au taux 1, aucun changement. Signalé par IECS (commande Cmd-PECS-2611_0053, PDF en anglais), reproduit sur dolinfras24.</change>
 	</Version>
-	<InfraS Downloaded="20261103"/>
+	<Version Number="21.14.7" MonthVersion="2026-11">
+		<change type='fix'>Génération des PDF sur un serveur dont PHP n'a pas l'extension fileinfo (non activée par défaut sous Windows) : erreur 500 « Call to undefined function finfo_open() » dès qu'un fichier PDF devait être fusionné au document (conditions générales de vente, fichiers annexes, fond de page du modèle InfraSPlus_BLX, pièces du modèle InfraSPlus_PJ_Chantier). Le contrôle « ce fichier est-il un PDF ? » passe par la nouvelle fonction pdf_InfraSPlus_isPdfFile() : avec fileinfo, aucun changement ; sans fileinfo, ou si sa base de signatures est inutilisable, le fichier est reconnu à sa signature « %PDF- » dans les 1024 premiers octets. Signalé par un client sous Windows (module 21.11.2, Dolibarr 23.0.3, PHP 8.2).</change>
+	</Version>
+	<InfraS Downloaded="20261116"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
