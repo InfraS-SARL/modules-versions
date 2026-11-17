@@ -75,7 +75,12 @@
 		<change type='add'>Script scripts/dolinfras_rounding.php : rapport à blanc de la reprise (nombre de pièces par cas, détail par pièce), liste des pièces laissées à trancher, retour en arrière à partir du journal (une pièce modifiée depuis la reprise n'est pas rétablie).</change>
 		<change type='add'>Connexion : une fois la reprise terminée, un message informe chaque utilisateur, une seule fois, que la base de données a été mise à jour pour les nouvelles règles de calcul.</change>
 	</Version>
-	<InfraS Downloaded="20261111"/>
+	<Version Number="18.10.1" MonthVersion="2026-11">
+		<change type='fix'>Reprise des pièces à 8 décimales : une facture déjà figée (journal inaltérable, comptabilité, facture électronique) dont le total arrondi était le montant envoyé gardait son en-tête à 8 décimales. Le cœur calculant le reste à payer sur le total enregistré, une facture enregistrée 321,775 et réglée 321,78 affichait un reste à payer de -0,01 et ne se soldait pas (rgenergies, FA26-10_2106 et FA26-10_2108). L'en-tête d'une facture figée est désormais toujours écrit au montant envoyé quand il n'est pas au centime.</change>
+		<change type='add'>Migration de build 20261112_rounding_repair_frozen : rattrapage des instances passées par la reprise de la version 18.10.0 ; les factures figées laissées telles quelles sont réexaminées et leur en-tête écrit au montant envoyé, valeurs avant et après consignées au journal.</change>
+		<change type='add'>Script scripts/dolinfras_rounding.php, option --settled : liste des factures encore ouvertes dont le reste à payer est nul, à classer payée à la main depuis leur fiche (le cœur ne solde une facture qu'au moment d'un paiement).</change>
+	</Version>
+	<InfraS Downloaded="20261112"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
