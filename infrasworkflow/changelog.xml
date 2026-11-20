@@ -277,6 +277,15 @@
 	<Version Number="21.11.1" MonthVersion="2026-11">
 		<change type='fix'>Option « Marquer automatiquement les factures "payées" quand "le reste à payer" est égale à 0 » (INFRASWORKFLOW_INVOICE_VALIDATION) : depuis la 21.11.0, la validation d'une facture à 0 échouait avec l'erreur « Duplicate entry 'facture/FA...-FA....pdf-1' for key 'uk_ecm_files' » quand le brouillon avait déjà un PDF et que l'option « Régénérer automatiquement la facture lors de la classification "payée" » (INFRASWORKFLOW_INVOICE_REGENARATION_ON_CLASSIFY_PAID) était active : le PDF était régénéré sous la référence définitive avant que Dolibarr ne renomme celui du brouillon. La facture garde sa référence provisoire pendant le classement en payée ; seul le libellé de l'événement d'agenda est fourni avec la référence définitive (« Facture FA... passée à payée »).</change>
 	</Version>
+	<Version Number="21.12.0" MonthVersion="2026-11">
+		<change type='add'><![CDATA[Nouvelle section « Gestion des utilisateurs » : option « Appliquer la procédure de départ à la désactivation d'un utilisateur » (INFRASWORKFLOW_USER_DISABLE_OFFBOARDING, désactivée par défaut). À la désactivation d'un utilisateur (fiche, action de masse de la liste, API REST), le module renseigne la date de fin d'emploi si elle est vide, renomme l'identifiant en « ancienlogin_off_<id> », efface la clé API, retire le statut administrateur (si l'opérateur est lui-même administrateur), retire l'utilisateur de tous ses groupes et supprime tous ses droits individuels dans toutes les entités, puis remplace son mot de passe par un mot de passe aléatoire (ses sessions ouvertes sont fermées). Un message récapitule les opérations ; si l'une d'elles échoue, la désactivation est annulée. La réactivation ne restaure ni les groupes, ni les droits, ni l'identifiant : la liste des groupes retirés est écrite dans le journal Dolibarr.]]></change>
+	</Version>
+	<Version Number="21.13.0" MonthVersion="2026-11">
+		<change type='add'>Nouvelle option « Ne pas afficher les références des commandes d'origine dans la note de la facture » (INFRASWORKFLOW_MASS_CREATEBILLS_HIDE_ORDER_REF, désactivée par défaut). Les références des commandes sont retirées de la note publique des factures générées, le titre « Commandes » est conservé, et la note privée garde ses références.</change>
+		<change type='fix'>Les options de la section « Facturation en masse » fonctionnent désormais dès leur activation, sans réglage manuel supplémentaire.</change>
+		<change type='fix'>Chaque facture générée conserve désormais son auteur, qui est l'utilisateur ayant lancé l'action.</change>
+		<change type='chg'>Facturation en masse des commandes, mode « Créer une facture par tiers » : avec l'option « Copier les notes publiques de la commande vers la facture », les notes publique et privée de chaque commande regroupée sont désormais reprises dans la facture, chacune sous la référence de sa commande.</change>
+	</Version>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
