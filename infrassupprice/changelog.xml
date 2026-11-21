@@ -124,6 +124,9 @@
 		<change type='fix'>Sécurité, mise à jour des tarifs (script/interface.php) : jeton CSRF vérifié (Kytom 15.3.7.1, 2026-10-23) ; refus pour un utilisateur externe, pour un produit ou un fournisseur introuvable ou d'une autre entité, et sans le droit de création du produit ou du service (comme l'onglet des prix d'achat du cœur) ; un refus du serveur (HTTP 403) est désormais affiché sur la fiche au lieu d'être ignoré.</change>
 		<change type='fix'>Sécurité, recherche du tarif existant : référence fournisseur échappée, entité, tiers et quantité convertis dans la requête (Kytom 15.3.7.1, 2026-10-23).</change>
 	</Version>
+	<Version Number="15.3.9" MonthVersion="2026-11">
+		<change type='add'>postUpdate() : mise à jour sans réactivation, appelée par le module dolinfras de la distribution LTS après une mise à jour des fichiers, entité par entité. Met à jour INFRASSUPPRICE_DOL_VERSION et INFRASSUPPRICE_MAIN_VERSION, qui restaient à la version de la dernière activation ; init() les écrit désormais par postUpdate(). Idempotente, sans remove().</change>
+	</Version>
 	<InfraS Downloaded="20261107"/>
 	<Dolibarr minVersion="15.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
