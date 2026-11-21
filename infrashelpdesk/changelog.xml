@@ -57,6 +57,9 @@
 	<Version Number="18.2.13" MonthVersion="2026-11">
 		<change type='chg'>Dictionnaire llx_c_infrashelpdesk_ctxurl : les pages de configuration Options d'envoi, Options de réception et Options avancées du module E-Invoicing (admin/setup_send.php, setup_receive.php et setup_advanced.php) ouvrent chacune sa page du livre wiki e-invoicing (onglet-options-denvoi, onglet-options-de-reception, onglet-options-avancees), créées à la mise à jour du livre pour einvoicing 1.5.0.7. Les trois pointaient sur l'ancienne page « Onglet « Options » », renommée « Onglet « Options d'envoi » ».</change>
 	</Version>
+	<Version Number="18.2.14" MonthVersion="2026-11">
+		<change type='add'>postUpdate() : mise à jour sans réactivation, appelée par le module dolinfras de la distribution LTS après une mise à jour des fichiers, entité par entité. Résout le jeton BRAND du préfixe des liens wiki (INFRASHELPDESK_PREFIX_LINK_WIKI_DOC) : une constante ajoutée par la réinitialisation additive de dolinfras gardait le jeton brut et produisait de faux liens. init() fait désormais cette résolution par postUpdate(). Idempotente, sans remove().</change>
+	</Version>
 	<InfraS Downloaded="20261119"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
