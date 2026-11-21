@@ -86,6 +86,9 @@
 		<change type='chg'>Contrôle des réactivations requises étendu à tous les modules externes actifs, avec ou sans changelog.xml. Version de référence : constante de version propre au module quand le manifeste la déclare (écrite par son init()), sinon lastactivationversion de la ligne d'activation, sinon dernière version vérifiée par dolinfras (DOLINFRAS_MODULES_CHECKED) ; version courante lue dans le changelog.xml, sinon dans le descripteur (partie numérique : « 2.3 - InfraS » donne 2.3). L'avertissement nomme chaque version en attente avec son motif et la version de la dernière vraie activation ; le module reste exclu de la réinitialisation additive tant qu'il n'est pas réactivé.</change>
 		<change type='add'>Manifeste des réactivations du build : fichier install/mysql/migration/lts/reactivation.json du cœur LTS, tenu par la chaîne de construction de la distribution, qui déclare pour les modules sans changelog.xml les versions exigeant une vraie réactivation (reactivation), ou toute nouvelle version (always), et la constante de version écrite par leur init() (versionconst). Un manifeste illisible est signalé par les contrôles (« Manifeste des réactivations du build illisible »).</change>
 	</Version>
+	<Version Number="18.11.1" MonthVersion="2026-11">
+		<change type='add'>postUpdate() sur le descripteur, comme tous les modules InfraS de la LTS : point d'entrée de la mise à jour sans réactivation, appelé par les contrôles de build. Sans effet pour dolinfras (« skipped ») : son init() n'a rien à rejouer après une mise à jour, ses changements de base passant par les migrations de build et ses constantes par la réinitialisation additive.</change>
+	</Version>
 	<InfraS Downloaded="20261112"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
