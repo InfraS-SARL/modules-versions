@@ -89,6 +89,9 @@
 	<Version Number="18.11.1" MonthVersion="2026-11">
 		<change type='add'>postUpdate() sur le descripteur, comme tous les modules InfraS de la LTS : point d'entrée de la mise à jour sans réactivation, appelé par les contrôles de build. Sans effet pour dolinfras (« skipped ») : son init() n'a rien à rejouer après une mise à jour, ses changements de base passant par les migrations de build et ses constantes par la réinitialisation additive.</change>
 	</Version>
+	<Version Number="18.12.0" MonthVersion="2026-11">
+		<change type='add'>Contrôles, avertissement « Réactivation demandée » : bouton « Réactiver » sur la ligne du module, dans l'entité concernée (ailleurs, la ligne indique l'entité depuis laquelle agir). Après confirmation, le module est désactivé puis réactivé comme par l'action « recharger » de la page des modules (désactivation sans toucher aux modules qui en dépendent, puis activation), et les contrôles sont rejoués. Refusé si le contrôle de l'entité courante ne signale pas ou plus le module ; les effets propres au remove() et à l'init() du module s'appliquent comme depuis la page des modules.</change>
+	</Version>
 	<InfraS Downloaded="20261112"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
