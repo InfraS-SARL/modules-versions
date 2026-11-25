@@ -365,7 +365,10 @@
 		<change type='fix'>Fil d'Ariane : les paiements, groupes d'utilisateurs et bons de prélèvement consultés n'apparaissaient jamais (classe introuvable pour les types payment, usergroup et widthdraw).</change>
 		<change type='chg'>Fil d'Ariane : la purge des entrées antérieures au 1er du mois précédent est faite une fois par session et pour toutes les entités, et non plus à chaque page pour l'entité courante.</change>
 	</Version>
-	<InfraS Downloaded="20261107"/>
+	<Version Number="15.5.6" MonthVersion="2026-11">
+		<change type='fix'>Fil d'Ariane : des objets jamais ouverts apparaissaient dans le fil. De nombreuses listes du cœur et des modules réutilisent l'objet de la page dans leur boucle d'affichage (devis, projets, tâches, utilisateurs, agenda, tickets, catégories...) : la dernière ligne affichée était enregistrée comme fiche consultée à chaque ouverture de la liste. Un objet n'est plus enregistré que s'il est identique à l'en-tête et au pied de page de la page (cas des fiches) ; sans menu du haut, les pages de liste sont reconnues par leur contexte.</change>
+	</Version>
+	<InfraS Downloaded="20261124"/>
 	<Dolibarr minVersion="15.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
