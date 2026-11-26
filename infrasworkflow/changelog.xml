@@ -290,7 +290,10 @@
 		<change type='add'>Nouvelle option « Afficher l'onglet Suivi sur les factures clients, comme sur les factures fournisseur » (INFRASWORKFLOW_INVOICE_INFO_TAB, désactivée par défaut). Le cœur ne propose l'onglet « Suivi » (« Log » en anglais) que sur les factures fournisseur ; activée, l'option l'ajoute aux factures clients avec le créateur, le validateur, l'utilisateur de clôture et les dates de création, validation, modification et clôture. Aucune modification du cœur : l'onglet est déclaré par le descripteur du module. Sur une instance où le module est déjà actif, l'onglet est enregistré par la mise à jour de l'instance (méthode postUpdate() du module, appelée par dolinfras), sans réactivation.</change>
 		<change type='fix'>Page de paramètres : l'ouverture de la page provoquait une erreur fatale quand le module InfraSPackPlus n'est pas activé (la liste des mentions complémentaires était chargée sans vérifier la présence du module). La liste est désormais vide dans ce cas, l'option correspondante restant réservée aux instances qui ont InfraSPackPlus.</change>
 	</Version>
-	<InfraS Downloaded="20261125"/>
+	<Version Number="21.14.1" MonthVersion="2026-11">
+		<change type='fix'>Page « Attributs supplémentaires », bouton « Orphelins » : l'analyse ne lisait aucune colonne des tables d'attributs (requête SQL invalide), classait donc toutes les définitions comme orphelines et le nettoyage supprimait toutes celles de l'entité courante (incident du 24/11/2026 : 111 définitions supprimées sur une instance, restaurées depuis la sauvegarde). Les colonnes sont désormais lues par les fonctions natives de Dolibarr, et un type d'attribut dont les colonnes ne peuvent pas être lues est ignoré. Le nettoyage ne supprime plus que les définitions sans colonne (donc sans donnée) de l'entité courante : une colonne sans définition est seulement signalée et n'est jamais supprimée avec ses données. Les attributs des catégories sont recherchés dans leur vraie table (llx_categories_extrafields).</change>
+	</Version>
+	<InfraS Downloaded="20261126"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
