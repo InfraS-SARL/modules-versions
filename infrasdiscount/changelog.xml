@@ -198,7 +198,11 @@
 	<Version Number="15.3.14" MonthVersion="2026-10">
 		<change type='fix'>Mise à jour sans cycle désactivation / réactivation : les extrafields de ligne specialtype (15.2.11) et specialvalue (15.3.11) n'étaient créés que par init(), donc absents sur une instance mise à jour par simple copie des fichiers (7 instances en 15.3.8 constatées le 2026-10-11, dont une sans specialtype) : les valeurs spéciales de remise n'étaient pas enregistrées. Nouvelle méthode postUpdate($dryrun) du descripteur, appelée par les migrations de build de dolinfras (18.9.0), qui crée les extrafields manquants sur devis, commandes et factures. Idempotente, sans remove().</change>
 	</Version>
-	<InfraS Downloaded="20261011"/>
+	<Version Number="15.3.15" MonthVersion="2026-11">
+		<change type='fix'>Modifier les remises : la saisie d'un montant précédé d'un signe moins (-146,08) était refusée avec « Le montant de la remise doit être supérieur à zéro » depuis les contrôles de saisie de 15.3.11, alors que le formulaire affiche la remise prorata combinée (produits + services) en négatif et invite donc à la saisir ainsi. Une remise en montant étant toujours une déduction, le signe saisi est désormais ignoré (-146,08 et 146,08 donnent la même remise), à la modification (prorata combiné, montant fixe, ligne prorata isolée) comme à la création ; le refus d'un montant nul ou supérieur au total des lignes concernées est conservé. L'indication du champ prorata combiné est affichée en positif, comme celle des autres remises en montant</change>
+		<change type='fix'>Modifier les remises : aucun message ne confirmait une modification réussie, et l'échec de l'enregistrement d'une ligne de remise n'était pas signalé. Le message « Enregistrement modifié avec succès » (clé du cœur RecordModifiedSuccessfully) s'affiche désormais quand au moins une remise a été modifiée sans erreur ; une erreur d'enregistrement de ligne est remontée avec le message du document, et aucune confirmation n'est affichée si une saisie a été refusée ou si le recalcul a échoué</change>
+	</Version>
+	<InfraS Downloaded="20261126"/>
 	<Dolibarr minVersion="15.0.0" maxVersion="23.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
