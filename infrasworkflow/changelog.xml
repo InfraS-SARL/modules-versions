@@ -293,7 +293,10 @@
 	<Version Number="21.14.1" MonthVersion="2026-11">
 		<change type='fix'>Page « Attributs supplémentaires », bouton « Orphelins » : l'analyse ne lisait aucune colonne des tables d'attributs (requête SQL invalide), classait donc toutes les définitions comme orphelines et le nettoyage supprimait toutes celles de l'entité courante (incident du 24/11/2026 : 111 définitions supprimées sur une instance, restaurées depuis la sauvegarde). Les colonnes sont désormais lues par les fonctions natives de Dolibarr, et un type d'attribut dont les colonnes ne peuvent pas être lues est ignoré. Le nettoyage ne supprime plus que les définitions sans colonne (donc sans donnée) de l'entité courante : une colonne sans définition est seulement signalée et n'est jamais supprimée avec ses données. Les attributs des catégories sont recherchés dans leur vraie table (llx_categories_extrafields).</change>
 	</Version>
-	<InfraS Downloaded="20261126"/>
+	<Version Number="21.14.2" MonthVersion="2026-11">
+		<change type='fix'>Option « Activer automatiquement les services à la validation du contrat » (INFRASWORKFLOW_CONTRACT_SERVICE_AUTO) : la validation d'un contrat tournait sans fin puis échouait (page bloquée une dizaine de minutes, erreur « Lock wait timeout exceeded » sur les tentatives suivantes, tiers et contrat verrouillés pendant ce temps). Le module passait par la méthode d'activation globale du cœur, qui revalide le contrat tant que la validation en cours n'est pas terminée. Les services sont désormais mis en service ligne par ligne, sans revalidation. Seules les lignes jamais mises en service sont activées : un service clôturé n'est plus rouvert lors de la revalidation d'un contrat modifié. Si la mise en service d'une ligne échoue, la validation du contrat est annulée et l'erreur est affichée.</change>
+	</Version>
+	<InfraS Downloaded="20261127"/>
 	<Dolibarr minVersion="21.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
