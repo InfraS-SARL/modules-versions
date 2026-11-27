@@ -85,7 +85,12 @@
 		<change type='add'>Bons de prélèvement et de virement, envoi d'un email par tiers : Nouvelles options « Destinataires présélectionnés à l'envoi par email », une pour les prélèvements (rôle de contact des factures clients, ex. « Responsable suivi relance facture ») et une pour les virements (rôle de contact des factures fournisseurs, ex. « Contact fournisseur facturation »). Les contacts qui ont ce rôle sur les factures du PDF sont proposés en tête de liste et présélectionnés, sans doublon d'adresse. Avec « Aucun rôle » (par défaut), la présélection reste celle d'avant : email de la fiche du tiers, à défaut tous ses contacts. Sans effet sur les virements de salaires.</change>
 		<change type='fix'>Bons de prélèvement et de virement, relevés de virement, envoi d'un email par tiers : si aucune facture du PDF n'a de contact du rôle choisi dans « Destinataires présélectionnés à l'envoi par email », les contacts qui ont ce rôle par défaut (onglet « Contacts/Adresses ») sur le tiers destinataire ou sur les tiers de ses factures sont maintenant proposés et présélectionnés, au lieu de l'email de la fiche du tiers. Cause : les rôles par défaut d'un tiers ne sont copiés sur une facture qu'à sa création, donc les factures plus anciennes n'avaient aucun contact de ce rôle.</change>
 	</Version>
-	<InfraS Downloaded="20261125"/>
+	<Version Number="18.7.1" MonthVersion="2026-11">
+		<change type='fix'>Envoi d'un email par tiers : quand la limite PHP max_input_vars est trop basse, l'envoi s'arrête avant tout email et un message clair indique le réglage à modifier.</change>
+		<change type='fix'>Envoi d'un email par tiers : un objet vide affiche un seul message traduit, et les erreurs d'envoi sont désormais traduites.</change>
+		<change type='add'>Écran d'envoi par tiers : un avertissement s'affiche quand le formulaire dépasse la limite PHP max_input_vars, avec le nombre de champs et la limite du serveur.</change>
+	</Version>
+	<InfraS Downloaded="20261127"/>
 	<Dolibarr minVersion="18.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
