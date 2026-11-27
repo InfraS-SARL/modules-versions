@@ -109,7 +109,10 @@
 	<Version Number="15.2.6" MonthVersion="2026-11">
 		<change type='add'>postUpdate() : mise à jour sans réactivation, appelée par le module dolinfras de la distribution LTS après une mise à jour des fichiers, entité par entité. Met à jour INFRASTECHINFOS_DOL_VERSION et INFRASTECHINFOS_MAIN_VERSION, qui restaient à la version de la dernière activation ; init() les écrit désormais par postUpdate(). Idempotente, sans remove().</change>
 	</Version>
-	<InfraS Downloaded="20261005"/>
+	<Version Number="15.2.7" MonthVersion="2026-11">
+		<change type='chg'>Fiches devis, commandes, expéditions, demandes de prix et commandes fournisseurs : le tableau des informations techniques, auparavant replié en bas de page, est remplacé par un bouton « Informations techniques » parmi les boutons d'action, qui l'ouvre dans une fenêtre popup. Sans javascript, le tableau reste affiché dans la page.</change>
+	</Version>
+	<InfraS Downloaded="20261127"/>
 	<Dolibarr minVersion="15.0.0" maxVersion="24.x.x"/>
 	<PHP minVersion="7.4" maxVersion="8.4"/>
 </changelog>
